@@ -1,0 +1,55 @@
+======================================================================
+MERGED/SIMPLIFIED RULES
+======================================================================
+
+Generated: 20260418_023410
+Original rules: 3
+After merging: 3
+Rules merged: 0
+======================================================================
+
+MERGED RULE 1:
+  (Original rule 1)
+Failure Probability: 0.89
+Coverage: 25.97%
+Support: 129,726 states
+
+Conditions:
+  State_12 <= 0.000
+    (State_12)
+  State_13 > 0.000
+    (State_13)
+  State_58 > 0.420
+    (State_58)
+----------------------------------------------------------------------
+
+MERGED RULE 2:
+  (Original rule 2)
+Failure Probability: 0.69
+Coverage: 195.79%
+Support: 977,958 states
+
+Conditions:
+  State_12 <= 0.000
+    (State_12)
+  State_13 <= 0.000
+    (State_13)
+  State_16 > 0.000
+    (State_16)
+----------------------------------------------------------------------
+
+MERGED RULE 3:
+  (Original rule 3)
+Failure Probability: 0.67
+Coverage: 158.63%
+Support: 792,360 states
+
+Conditions:
+  State_12 <= 0.000
+    (State_12)
+  State_13 <= 0.000
+    (State_13)
+  State_15 > 0.000
+    (State_15)
+----------------------------------------------------------------------
+

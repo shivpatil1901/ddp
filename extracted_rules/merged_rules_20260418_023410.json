@@ -1,0 +1,282 @@
+{
+  "metadata": {
+    "timestamp": "20260418_023410",
+    "total_states": 499500,
+    "bad_percentile": 20,
+    "num_original_rules": 3,
+    "num_merged_rules": 3,
+    "num_rules_merged": 0
+  },
+  "rules": [
+    {
+      "rule_id": 1,
+      "precision": 0.8908006105175523,
+      "coverage": 0.2597117117117117,
+      "support": 129726,
+      "recall": 1.1567567567567567,
+      "merged_from": [
+        1
+      ],
+      "conditions": [
+        {
+          "feature_index": 12,
+          "feature_name": "State_12",
+          "operator": "<=",
+          "threshold": 0.0
+        },
+        {
+          "feature_index": 13,
+          "feature_name": "State_13",
+          "operator": ">",
+          "threshold": 0.0
+        },
+        {
+          "feature_index": 58,
+          "feature_name": "State_58",
+          "operator": ">",
+          "threshold": 0.42
+        }
+      ],
+      "action_recommendations": {
+        "best_actions_top5pct": {
+          "q_value_range": {
+            "min": -0.06204228475689888,
+            "max": -0.018015511333942413,
+            "mean": -0.04222874715924263,
+            "std": 0.018126584589481354
+          },
+          "action_ranges": [
+            {
+              "action_index": 0,
+              "action_name": "force_x",
+              "min": -0.9328253387972825,
+              "max": 0.3624516409323905,
+              "mean": -0.1846944694498349,
+              "std": 0.42185533565059
+            },
+            {
+              "action_index": 1,
+              "action_name": "velocity_z",
+              "min": 0.8633902487773073,
+              "max": 1.3168374758139325,
+              "mean": 1.0598014910416649,
+              "std": 0.18511738539467743
+            }
+          ]
+        },
+        "worst_actions_bottom5pct": {
+          "q_value_range": {
+            "min": -1.1583528518676758,
+            "max": -0.6027002930641174,
+            "mean": -0.8160226941108704,
+            "std": 0.21649137139320374
+          },
+          "action_ranges": [
+            {
+              "action_index": 0,
+              "action_name": "force_x",
+              "min": -0.8132999268142634,
+              "max": 1.7753486908413707,
+              "mean": 0.4851803010643761,
+              "std": 0.8456072215384761
+            },
+            {
+              "action_index": 1,
+              "action_name": "velocity_z",
+              "min": -3.073793432334127,
+              "max": -1.513325057365702,
+              "mean": -2.199932794240892,
+              "std": 0.5361003267032812
+            }
+          ]
+        },
+        "overall_q_value_range": {
+          "min": -1.1583528518676758,
+          "max": -0.018015511333942413,
+          "mean": -0.2476041465997696,
+          "std": 0.19380737841129303
+        }
+      }
+    },
+    {
+      "rule_id": 2,
+      "precision": 0.690857889602621,
+      "coverage": 1.957873873873874,
+      "support": 977958,
+      "recall": 6.763063063063063,
+      "merged_from": [
+        2
+      ],
+      "conditions": [
+        {
+          "feature_index": 12,
+          "feature_name": "State_12",
+          "operator": "<=",
+          "threshold": 0.0
+        },
+        {
+          "feature_index": 13,
+          "feature_name": "State_13",
+          "operator": "<=",
+          "threshold": 0.0
+        },
+        {
+          "feature_index": 16,
+          "feature_name": "State_16",
+          "operator": ">",
+          "threshold": 0.0
+        }
+      ],
+      "action_recommendations": {
+        "best_actions_top5pct": {
+          "q_value_range": {
+            "min": -0.18248754739761353,
+            "max": -0.125848650932312,
+            "mean": -0.16542348265647888,
+            "std": 0.020201707258820534
+          },
+          "action_ranges": [
+            {
+              "action_index": 0,
+              "action_name": "force_x",
+              "min": 1.3601350005707917,
+              "max": 3.092726028653775,
+              "mean": 1.9097443736592559,
+              "std": 0.6346786402451564
+            },
+            {
+              "action_index": 1,
+              "action_name": "velocity_z",
+              "min": -0.7997194261099201,
+              "max": 1.5516922631228014,
+              "mean": 0.46650917107663137,
+              "std": 0.9223684605852709
+            }
+          ]
+        },
+        "worst_actions_bottom5pct": {
+          "q_value_range": {
+            "min": -0.491519957780838,
+            "max": -0.47429734468460083,
+            "mean": -0.4817574620246887,
+            "std": 0.0066495719365775585
+          },
+          "action_ranges": [
+            {
+              "action_index": 0,
+              "action_name": "force_x",
+              "min": -2.4969491280860003,
+              "max": -1.6790425389432602,
+              "mean": -2.0520329437332365,
+              "std": 0.2716962965787656
+            },
+            {
+              "action_index": 1,
+              "action_name": "velocity_z",
+              "min": -1.2933335740016991,
+              "max": 0.9391227669927712,
+              "mean": -0.2899840754615246,
+              "std": 0.8725844321553933
+            }
+          ]
+        },
+        "overall_q_value_range": {
+          "min": -0.491519957780838,
+          "max": -0.125848650932312,
+          "mean": -0.33988797664642334,
+          "std": 0.0914129987359047
+        }
+      }
+    },
+    {
+      "rule_id": 3,
+      "precision": 0.6743399464889697,
+      "coverage": 1.5863063063063063,
+      "support": 792360,
+      "recall": 5.348548548548549,
+      "merged_from": [
+        3
+      ],
+      "conditions": [
+        {
+          "feature_index": 12,
+          "feature_name": "State_12",
+          "operator": "<=",
+          "threshold": 0.0
+        },
+        {
+          "feature_index": 13,
+          "feature_name": "State_13",
+          "operator": "<=",
+          "threshold": 0.0
+        },
+        {
+          "feature_index": 15,
+          "feature_name": "State_15",
+          "operator": ">",
+          "threshold": 0.0
+        }
+      ],
+      "action_recommendations": {
+        "best_actions_top5pct": {
+          "q_value_range": {
+            "min": -0.17647701501846313,
+            "max": -0.15138453245162964,
+            "mean": -0.16587918996810913,
+            "std": 0.010662788525223732
+          },
+          "action_ranges": [
+            {
+              "action_index": 0,
+              "action_name": "force_x",
+              "min": 1.3379138832270658,
+              "max": 1.972091268365462,
+              "mean": 1.6429712735644024,
+              "std": 0.24076480147864457
+            },
+            {
+              "action_index": 1,
+              "action_name": "velocity_z",
+              "min": 0.07321039498810351,
+              "max": 1.3078169341776702,
+              "mean": 0.7527516398850267,
+              "std": 0.44555825413539896
+            }
+          ]
+        },
+        "worst_actions_bottom5pct": {
+          "q_value_range": {
+            "min": -0.515660285949707,
+            "max": -0.467896044254303,
+            "mean": -0.48093193769454956,
+            "std": 0.018076607957482338
+          },
+          "action_ranges": [
+            {
+              "action_index": 0,
+              "action_name": "force_x",
+              "min": -3.3418642149286315,
+              "max": -1.546681694373492,
+              "mean": -2.0773983482645972,
+              "std": 0.6427386208149313
+            },
+            {
+              "action_index": 1,
+              "action_name": "velocity_z",
+              "min": -1.548333836544052,
+              "max": 1.3184206188124372,
+              "mean": -0.24821940507920823,
+              "std": 0.9991788320288787
+            }
+          ]
+        },
+        "overall_q_value_range": {
+          "min": -0.515660285949707,
+          "max": -0.15138453245162964,
+          "mean": -0.33057188987731934,
+          "std": 0.08716429024934769
+        }
+      }
+    }
+  ]
+}

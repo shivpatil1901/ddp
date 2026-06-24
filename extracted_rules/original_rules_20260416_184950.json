@@ -1,0 +1,188 @@
+{
+  "metadata": {
+    "timestamp": "20260416_184950",
+    "total_states": 300000,
+    "bad_percentile": 20,
+    "num_states_explained": 200,
+    "num_lime_features": 3,
+    "min_rule_support": 30,
+    "min_rule_precision": 0.6,
+    "num_rules": 2
+  },
+  "rules": [
+    {
+      "rule_id": 1,
+      "precision": 0.9092659961480848,
+      "coverage": 0.23365,
+      "support": 70095,
+      "recall": 1.06225,
+      "conditions": [
+        {
+          "feature_index": 12,
+          "feature_name": "State_12",
+          "operator": "<=",
+          "threshold": 0.0
+        },
+        {
+          "feature_index": 13,
+          "feature_name": "State_13",
+          "operator": ">",
+          "threshold": 0.0
+        },
+        {
+          "feature_index": 58,
+          "feature_name": "State_58",
+          "operator": ">",
+          "threshold": 0.42
+        }
+      ],
+      "action_recommendations": {
+        "best_actions_top5pct": {
+          "q_value_range": {
+            "min": -0.09998103231191635,
+            "max": -0.033028922975063324,
+            "mean": -0.05887329578399658,
+            "std": 0.0222101379185915
+          },
+          "action_ranges": [
+            {
+              "action_index": 0,
+              "action_name": "force_x",
+              "min": -2.2532249209666886,
+              "max": -1.3151492661390858,
+              "mean": -1.6685038348913726,
+              "std": 0.3652718022144711
+            },
+            {
+              "action_index": 1,
+              "action_name": "velocity_z",
+              "min": 0.9914606871490176,
+              "max": 1.6543428422792266,
+              "mean": 1.3303438819047975,
+              "std": 0.23131922818514367
+            }
+          ]
+        },
+        "worst_actions_bottom5pct": {
+          "q_value_range": {
+            "min": -1.657400131225586,
+            "max": -1.3480805158615112,
+            "mean": -1.4993184804916382,
+            "std": 0.10401651263237
+          },
+          "action_ranges": [
+            {
+              "action_index": 0,
+              "action_name": "force_x",
+              "min": -0.17880701432430102,
+              "max": 1.3154422418197544,
+              "mean": 0.5139296892706815,
+              "std": 0.6152916568373368
+            },
+            {
+              "action_index": 1,
+              "action_name": "velocity_z",
+              "min": -2.93137297396498,
+              "max": -1.590126072227948,
+              "mean": -2.2416058124118665,
+              "std": 0.5194792092667049
+            }
+          ]
+        },
+        "overall_q_value_range": {
+          "min": -1.657400131225586,
+          "max": -0.033028922975063324,
+          "mean": -0.46928107738494873,
+          "std": 0.37298232316970825
+        }
+      }
+    },
+    {
+      "rule_id": 2,
+      "precision": 0.7064987562189055,
+      "coverage": 0.3216,
+      "support": 96480,
+      "recall": 1.13605,
+      "conditions": [
+        {
+          "feature_index": 12,
+          "feature_name": "State_12",
+          "operator": "<=",
+          "threshold": 0.0
+        },
+        {
+          "feature_index": 13,
+          "feature_name": "State_13",
+          "operator": "<=",
+          "threshold": 0.0
+        },
+        {
+          "feature_index": 16,
+          "feature_name": "State_16",
+          "operator": ">",
+          "threshold": 0.0
+        }
+      ],
+      "action_recommendations": {
+        "best_actions_top5pct": {
+          "q_value_range": {
+            "min": -0.7103779315948486,
+            "max": -0.7035244107246399,
+            "mean": -0.7072110176086426,
+            "std": 0.002641899511218071
+          },
+          "action_ranges": [
+            {
+              "action_index": 0,
+              "action_name": "force_x",
+              "min": 0.26891876721984687,
+              "max": 0.6202388691583807,
+              "mean": 0.43886290998335725,
+              "std": 0.11266203923994843
+            },
+            {
+              "action_index": 1,
+              "action_name": "velocity_z",
+              "min": 1.0057330522649373,
+              "max": 1.484596904084983,
+              "mean": 1.2476211585990533,
+              "std": 0.1779235002915996
+            }
+          ]
+        },
+        "worst_actions_bottom5pct": {
+          "q_value_range": {
+            "min": -0.8856207132339478,
+            "max": -0.8346498012542725,
+            "mean": -0.8653667569160461,
+            "std": 0.01714261621236801
+          },
+          "action_ranges": [
+            {
+              "action_index": 0,
+              "action_name": "force_x",
+              "min": 0.2023927074598856,
+              "max": 0.8203544435816374,
+              "mean": 0.3685501547843177,
+              "std": 0.22789642854940487
+            },
+            {
+              "action_index": 1,
+              "action_name": "velocity_z",
+              "min": -2.138509778337643,
+              "max": 2.5598018072578768,
+              "mean": -1.0094106771004456,
+              "std": 1.790079226213028
+            }
+          ]
+        },
+        "overall_q_value_range": {
+          "min": -0.8856207132339478,
+          "max": -0.7035244107246399,
+          "mean": -0.7516165375709534,
+          "std": 0.034650932997465134
+        }
+      }
+    }
+  ]
+}

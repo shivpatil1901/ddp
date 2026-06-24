@@ -1,0 +1,28 @@
+SafeDICE Value Function Evaluation on Combined Datasets
+================================================================================
+
+Weights: SafeDICE/weights/antidice_PointGoal1_seed0_20260330_205404_iter850000.pickle
+Dataset 1: SafeDICE/dataset/safetygym/ppo_PointGoal1_s0.pickle
+Dataset 2: SafeDICE/dataset/safetygym/ppo_lagrangian_PointGoal1_s0.pickle
+
+Sampling seed: 42
+Total states evaluated: 201998
+Safe states: 100999 (50.0%)
+Unsafe states: 100999 (50.0%)
+
+Value-Reward Correlation: 0.0573
+Value-Cost Correlation: 0.0779
+
+Reward Classification Accuracy: 0.6333
+  Precision: 0.6333
+  Recall: 0.6333
+  F1: 0.6333
+
+Safety Classification Accuracy: 0.4721
+  Precision: 0.4721
+  Recall: 0.4721
+  F1: 0.4721
+
+Mean cost (predicted unsafe): 0.4721
+Mean cost (predicted safe): 0.5279
+Unsafe has higher mean cost: False

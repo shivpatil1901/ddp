@@ -1,0 +1,192 @@
+{
+  "metadata": {
+    "timestamp": "20260416_184950",
+    "total_states": 300000,
+    "bad_percentile": 20,
+    "num_original_rules": 2,
+    "num_merged_rules": 2,
+    "num_rules_merged": 0
+  },
+  "rules": [
+    {
+      "rule_id": 1,
+      "precision": 0.9092659961480848,
+      "coverage": 0.23365,
+      "support": 70095,
+      "recall": 1.06225,
+      "merged_from": [
+        1
+      ],
+      "conditions": [
+        {
+          "feature_index": 12,
+          "feature_name": "State_12",
+          "operator": "<=",
+          "threshold": 0.0
+        },
+        {
+          "feature_index": 13,
+          "feature_name": "State_13",
+          "operator": ">",
+          "threshold": 0.0
+        },
+        {
+          "feature_index": 58,
+          "feature_name": "State_58",
+          "operator": ">",
+          "threshold": 0.42
+        }
+      ],
+      "action_recommendations": {
+        "best_actions_top5pct": {
+          "q_value_range": {
+            "min": -0.09257491677999496,
+            "max": -0.020379625260829926,
+            "mean": -0.06205189228057861,
+            "std": 0.02388050965964794
+          },
+          "action_ranges": [
+            {
+              "action_index": 0,
+              "action_name": "force_x",
+              "min": -2.5872926959938933,
+              "max": -1.0689583630139141,
+              "mean": -1.7411737316938545,
+              "std": 0.6767427600137468
+            },
+            {
+              "action_index": 1,
+              "action_name": "velocity_z",
+              "min": 1.0726998505687622,
+              "max": 1.5660915873657082,
+              "mean": 1.2162195977068095,
+              "std": 0.18119299389186844
+            }
+          ]
+        },
+        "worst_actions_bottom5pct": {
+          "q_value_range": {
+            "min": -1.3523688316345215,
+            "max": -1.0525684356689453,
+            "mean": -1.1687798500061035,
+            "std": 0.1085435301065445
+          },
+          "action_ranges": [
+            {
+              "action_index": 0,
+              "action_name": "force_x",
+              "min": 0.19313512386680834,
+              "max": 1.910275950683892,
+              "mean": 0.8533242468557265,
+              "std": 0.6348519657061213
+            },
+            {
+              "action_index": 1,
+              "action_name": "velocity_z",
+              "min": -1.857595266098822,
+              "max": -0.8228578535310018,
+              "mean": -1.3468261458301363,
+              "std": 0.3309545278055818
+            }
+          ]
+        },
+        "overall_q_value_range": {
+          "min": -1.3523688316345215,
+          "max": -0.020379625260829926,
+          "mean": -0.421726256608963,
+          "std": 0.2961052656173706
+        }
+      }
+    },
+    {
+      "rule_id": 2,
+      "precision": 0.7064987562189055,
+      "coverage": 0.3216,
+      "support": 96480,
+      "recall": 1.13605,
+      "merged_from": [
+        2
+      ],
+      "conditions": [
+        {
+          "feature_index": 12,
+          "feature_name": "State_12",
+          "operator": "<=",
+          "threshold": 0.0
+        },
+        {
+          "feature_index": 13,
+          "feature_name": "State_13",
+          "operator": "<=",
+          "threshold": 0.0
+        },
+        {
+          "feature_index": 16,
+          "feature_name": "State_16",
+          "operator": ">",
+          "threshold": 0.0
+        }
+      ],
+      "action_recommendations": {
+        "best_actions_top5pct": {
+          "q_value_range": {
+            "min": -0.7106871008872986,
+            "max": -0.6597186923027039,
+            "mean": -0.6971917748451233,
+            "std": 0.018898040056228638
+          },
+          "action_ranges": [
+            {
+              "action_index": 0,
+              "action_name": "force_x",
+              "min": 0.30989361067805943,
+              "max": 2.8797275330472014,
+              "mean": 1.0155253676265912,
+              "std": 0.9539349640140706
+            },
+            {
+              "action_index": 1,
+              "action_name": "velocity_z",
+              "min": 0.04561860093396655,
+              "max": 1.3467169946970412,
+              "mean": 0.9262927019215821,
+              "std": 0.45270899919855184
+            }
+          ]
+        },
+        "worst_actions_bottom5pct": {
+          "q_value_range": {
+            "min": -0.8957659602165222,
+            "max": -0.7976845502853394,
+            "mean": -0.8600306510925293,
+            "std": 0.03486203774809837
+          },
+          "action_ranges": [
+            {
+              "action_index": 0,
+              "action_name": "force_x",
+              "min": -0.10118118264849649,
+              "max": 1.6173567693642128,
+              "mean": 0.4834151073275811,
+              "std": 0.6333490600499311
+            },
+            {
+              "action_index": 1,
+              "action_name": "velocity_z",
+              "min": -2.326799081106175,
+              "max": 2.907798776969867,
+              "mean": -0.4074513184856527,
+              "std": 2.284108592606021
+            }
+          ]
+        },
+        "overall_q_value_range": {
+          "min": -0.8957659602165222,
+          "max": -0.6597186923027039,
+          "mean": -0.7502447366714478,
+          "std": 0.03310691937804222
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+name: safedice
+channels:
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - cudatoolkit=11.2
+  - patchelf
+  - tqdm
+  - python=3.6
+  - cffi
+  - lockfile
+  - cudnn=8.1
+  - pip
+  - matplotlib
+  - cmake[version='>=3.21']
+

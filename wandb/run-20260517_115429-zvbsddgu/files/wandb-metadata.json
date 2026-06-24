@@ -1,0 +1,65 @@
+{
+  "os": "Linux-6.8.0-106-generic-x86_64-with-debian-trixie-sid",
+  "python": "3.7.16",
+  "startedAt": "2026-05-17T06:24:29.291385Z",
+  "args": [
+    "--algo=trpo_lagrangian",
+    "--robot=point",
+    "--task=goal2",
+    "--seed=0",
+    "--cost_lim=25",
+    "--cpu=10"
+  ],
+  "program": "train.py",
+  "codePath": "train.py",
+  "email": "ed21b059@smail.iitm.ac.in",
+  "root": "/home/ed21b059/ddp",
+  "host": "ip-91-203-132-11",
+  "username": "ed21b059",
+  "executable": "/home/ed21b059/miniconda3/envs/safeil/bin/python",
+  "codePathLocal": "train.py",
+  "cpu_count": 64,
+  "cpu_count_logical": 64,
+  "gpu": "NVIDIA A100 80GB PCIe",
+  "gpu_count": 4,
+  "disk": {
+    "/": {
+      "total": "5814857658368",
+      "used": "5812054310912"
+    }
+  },
+  "memory": {
+    "total": "474466279424"
+  },
+  "cpu": {
+    "count": 64,
+    "countLogical": 64
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA A100 80GB PCIe",
+      "memoryTotal": "85899345920",
+      "cudaCores": 6912,
+      "architecture": "Ampere"
+    },
+    {
+      "name": "NVIDIA A100 80GB PCIe",
+      "memoryTotal": "85899345920",
+      "cudaCores": 6912,
+      "architecture": "Ampere"
+    },
+    {
+      "name": "NVIDIA A100 80GB PCIe",
+      "memoryTotal": "85899345920",
+      "cudaCores": 6912,
+      "architecture": "Ampere"
+    },
+    {
+      "name": "NVIDIA A100 80GB PCIe",
+      "memoryTotal": "85899345920",
+      "cudaCores": 6912,
+      "architecture": "Ampere"
+    }
+  ],
+  "cudaVersion": "13.2"
+}

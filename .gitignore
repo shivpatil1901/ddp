@@ -1,0 +1,27 @@
+# datasets
+dataset/
+datasets/
+datasets_new/
+SafeDICE/dataset/
+rudder/dataset/
+anish_ddp
+data_resume
+data_new
+data
+logs
+
+# large artifacts
+*.pickle
+*.pkl
+*.npz
+*.pt
+*.pth
+*.ckpt
+*.bin
+
+# python
+__pycache__/
+*.pyc
+
+# jupyter
+.ipynb_checkpoints/

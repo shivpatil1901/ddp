@@ -1,0 +1,4146 @@
+Warning: Log dir ./data_new/trpo_lagrangian_PointGoal2/trpo_lagrangian_PointGoal2_s0 already exists! Storing info there anyway.
+[32;1mLogging data to ./data_new/trpo_lagrangian_PointGoal2/trpo_lagrangian_PointGoal2_s0/progress.txt[0m
+[36;1mSaving config:
+[0m
+{
+    "ac_kwargs":	{
+        "hidden_sizes":	[
+            256,
+            256
+        ]
+    },
+    "actor_critic":	"mlp_actor_critic",
+    "agent":	{
+        "<safe_rl.pg.agents.TRPOAgent object at 0x78fb4c648e50>":	{
+            "backtrack_coeff":	0.8,
+            "backtrack_iters":	10,
+            "damping_coeff":	0.1,
+            "params":	{
+                "constrained":	false,
+                "learn_penalty":	true,
+                "objective_penalized":	true,
+                "penalty_param_loss":	true,
+                "reward_penalized":	false,
+                "trust_region":	true
+            }
+        }
+    },
+    "cost_gamma":	0.99,
+    "cost_lam":	0.97,
+    "cost_lim":	25,
+    "critic_checkpoint_dir":	"critic_checkpoints_point_goal2_s0",
+    "ent_reg":	0.0,
+    "env_fn":	"<function main.<locals>.<lambda> at 0x78fb4c302ef0>",
+    "epochs":	103,
+    "exp_name":	"trpo_lagrangian_PointGoal2",
+    "gamma":	0.99,
+    "initial_cumulative_cost":	0.0,
+    "lam":	0.97,
+    "logger":	{
+        "<safe_rl.utils.logx.EpochLogger object at 0x78fb4c291e50>":	{
+            "epoch_dict":	{},
+            "exp_name":	"trpo_lagrangian_PointGoal2",
+            "first_row":	true,
+            "log_current_row":	{},
+            "log_headers":	[],
+            "output_dir":	"./data_new/trpo_lagrangian_PointGoal2/trpo_lagrangian_PointGoal2_s0",
+            "output_file":	{
+                "<_io.TextIOWrapper name='./data_new/trpo_lagrangian_PointGoal2/trpo_lagrangian_PointGoal2_s0/progress.txt' mode='w' encoding='UTF-8'>":	{
+                    "mode":	"w"
+                }
+            }
+        }
+    },
+    "logger_kwargs":	{
+        "exp_name":	"trpo_lagrangian_PointGoal2",
+        "output_dir":	"./data_new/trpo_lagrangian_PointGoal2/trpo_lagrangian_PointGoal2_s0"
+    },
+    "max_ep_len":	1000,
+    "penalty_init":	1.0,
+    "penalty_lr":	0.05,
+    "render":	false,
+    "restore_path":	"./data_new/trpo_lagrangian_PointGoal2/trpo_lagrangian_PointGoal2_s0/simple_save230",
+    "save_critic":	true,
+    "save_critic_freq":	1,
+    "save_freq":	10,
+    "seed":	0,
+    "start_epoch":	230,
+    "steps_per_epoch":	30000,
+    "target_kl":	0.01,
+    "vf_iters":	80,
+    "vf_lr":	0.001
+}
+/home/ed21b059/miniconda3/envs/safeil/lib/python3.7/site-packages/gym/logger.py:30: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  warnings.warn(colorize('%s: %s'%('WARN', msg % args), 'yellow'))
+[32;1m
+Number of parameters: 	 pi: 81924, 	 v: 81665, 	 vc: 81665
+[0m
+[32;1mRestoring policy weights from: ./data_new/trpo_lagrangian_PointGoal2/trpo_lagrangian_PointGoal2_s0/simple_save230[0m
+[32;1mPolicy weights restored successfully.[0m
+[36;1mCritic checkpoints will be saved in: ./data_new/trpo_lagrangian_PointGoal2/trpo_lagrangian_PointGoal2_s0/critic_checkpoints_point_goal2_s0[0m
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             230 |
+|      AverageEpRet |            4.37 |
+|          StdEpRet |            3.48 |
+|          MaxEpRet |            11.7 |
+|          MinEpRet |           -2.53 |
+|     AverageEpCost |            26.4 |
+|         StdEpCost |            36.1 |
+|         MaxEpCost |             134 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |             792 |
+|          CostRate |        0.000114 |
+|      AverageVVals |           0.446 |
+|          StdVVals |           0.708 |
+|          MaxVVals |            2.69 |
+|          MinVVals |           -1.52 |
+|  AverageCostVVals |            2.36 |
+|      StdCostVVals |            4.24 |
+|      MaxCostVVals |            47.7 |
+|      MinCostVVals |           -2.23 |
+|            LossPi |        1.19e-08 |
+|       DeltaLossPi |         -0.0152 |
+|          SurrCost |        1.19e-08 |
+|     DeltaSurrCost |         -0.0319 |
+|             LossV |            0.21 |
+|        DeltaLossV |          -0.113 |
+|            LossVC |            46.6 |
+|       DeltaLossVC |           -28.8 |
+|           Penalty |           0.767 |
+|      DeltaPenalty |          0.0271 |
+|             Alpha |             1.3 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.22 |
+|                KL |         0.00933 |
+| TotalEnvInteracts |        6.93e+06 |
+|              Time |            76.4 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             231 |
+|      AverageEpRet |            3.45 |
+|          StdEpRet |            2.83 |
+|          MaxEpRet |            8.08 |
+|          MinEpRet |            -2.7 |
+|     AverageEpCost |            24.3 |
+|         StdEpCost |            33.4 |
+|         MaxEpCost |             153 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        1.52e+03 |
+|          CostRate |        0.000219 |
+|      AverageVVals |           0.423 |
+|          StdVVals |           0.775 |
+|          MaxVVals |            2.54 |
+|          MinVVals |           -1.38 |
+|  AverageCostVVals |            2.38 |
+|      StdCostVVals |            3.63 |
+|      MaxCostVVals |              39 |
+|      MinCostVVals |           -1.43 |
+|            LossPi |        2.98e-09 |
+|       DeltaLossPi |          -0.011 |
+|          SurrCost |        5.96e-09 |
+|     DeltaSurrCost |         -0.0216 |
+|             LossV |           0.234 |
+|        DeltaLossV |          -0.155 |
+|            LossVC |            27.8 |
+|       DeltaLossVC |           -15.8 |
+|           Penalty |           0.794 |
+|      DeltaPenalty |         0.00783 |
+|             Alpha |            1.87 |
+|    BacktrackIters |               0 |
+|           Entropy |             2.2 |
+|                KL |         0.00943 |
+| TotalEnvInteracts |        6.96e+06 |
+|              Time |             159 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             232 |
+|      AverageEpRet |            3.99 |
+|          StdEpRet |             2.8 |
+|          MaxEpRet |            9.62 |
+|          MinEpRet |          -0.306 |
+|     AverageEpCost |              26 |
+|         StdEpCost |            48.7 |
+|         MaxEpCost |             256 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |         2.3e+03 |
+|          CostRate |        0.000329 |
+|      AverageVVals |            0.41 |
+|          StdVVals |           0.713 |
+|          MaxVVals |             2.5 |
+|          MinVVals |           -1.41 |
+|  AverageCostVVals |            2.77 |
+|      StdCostVVals |            4.23 |
+|      MaxCostVVals |            40.4 |
+|      MinCostVVals |           -4.81 |
+|            LossPi |       -1.34e-08 |
+|       DeltaLossPi |          -0.013 |
+|          SurrCost |       -2.38e-08 |
+|     DeltaSurrCost |         -0.0283 |
+|             LossV |           0.254 |
+|        DeltaLossV |          -0.162 |
+|            LossVC |            63.5 |
+|       DeltaLossVC |           -47.2 |
+|           Penalty |           0.802 |
+|      DeltaPenalty |          0.0149 |
+|             Alpha |             1.5 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.22 |
+|                KL |         0.00966 |
+| TotalEnvInteracts |        6.99e+06 |
+|              Time |             248 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             233 |
+|      AverageEpRet |            4.77 |
+|          StdEpRet |            2.76 |
+|          MaxEpRet |            9.59 |
+|          MinEpRet |           0.471 |
+|     AverageEpCost |            16.9 |
+|         StdEpCost |            22.6 |
+|         MaxEpCost |             109 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        2.81e+03 |
+|          CostRate |          0.0004 |
+|      AverageVVals |             0.5 |
+|          StdVVals |           0.715 |
+|          MaxVVals |            2.51 |
+|          MinVVals |           -1.31 |
+|  AverageCostVVals |            1.61 |
+|      StdCostVVals |            2.42 |
+|      MaxCostVVals |            23.9 |
+|      MinCostVVals |           -3.89 |
+|            LossPi |        1.04e-08 |
+|       DeltaLossPi |         -0.0102 |
+|          SurrCost |        2.98e-08 |
+|     DeltaSurrCost |         -0.0181 |
+|             LossV |           0.271 |
+|        DeltaLossV |          -0.176 |
+|            LossVC |            23.2 |
+|       DeltaLossVC |           -14.5 |
+|           Penalty |           0.816 |
+|      DeltaPenalty |          -0.013 |
+|             Alpha |            1.88 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.23 |
+|                KL |         0.00952 |
+| TotalEnvInteracts |        7.02e+06 |
+|              Time |             338 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             234 |
+|      AverageEpRet |            4.88 |
+|          StdEpRet |             3.6 |
+|          MaxEpRet |            12.2 |
+|          MinEpRet |           -2.12 |
+|     AverageEpCost |            20.2 |
+|         StdEpCost |            24.7 |
+|         MaxEpCost |              78 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        3.42e+03 |
+|          CostRate |        0.000484 |
+|      AverageVVals |           0.528 |
+|          StdVVals |           0.784 |
+|          MaxVVals |            2.95 |
+|          MinVVals |           -1.55 |
+|  AverageCostVVals |            2.06 |
+|      StdCostVVals |            3.62 |
+|      MaxCostVVals |              53 |
+|      MinCostVVals |           -4.76 |
+|            LossPi |        2.38e-08 |
+|       DeltaLossPi |         -0.0137 |
+|          SurrCost |        2.38e-08 |
+|     DeltaSurrCost |         -0.0283 |
+|             LossV |           0.302 |
+|        DeltaLossV |          -0.207 |
+|            LossVC |            30.1 |
+|       DeltaLossVC |           -18.3 |
+|           Penalty |           0.803 |
+|      DeltaPenalty |         -0.0169 |
+|             Alpha |            1.49 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.21 |
+|                KL |         0.00969 |
+| TotalEnvInteracts |        7.05e+06 |
+|              Time |             426 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             235 |
+|      AverageEpRet |            5.68 |
+|          StdEpRet |            2.89 |
+|          MaxEpRet |            11.8 |
+|          MinEpRet |          -0.395 |
+|     AverageEpCost |            19.3 |
+|         StdEpCost |            18.5 |
+|         MaxEpCost |              78 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        3.99e+03 |
+|          CostRate |        0.000564 |
+|      AverageVVals |           0.634 |
+|          StdVVals |           0.776 |
+|          MaxVVals |            2.93 |
+|          MinVVals |           -1.57 |
+|  AverageCostVVals |            1.91 |
+|      StdCostVVals |            3.09 |
+|      MaxCostVVals |            35.2 |
+|      MinCostVVals |           -5.09 |
+|            LossPi |       -1.79e-08 |
+|       DeltaLossPi |        -0.00859 |
+|          SurrCost |       -2.68e-08 |
+|     DeltaSurrCost |         -0.0163 |
+|             LossV |            0.29 |
+|        DeltaLossV |          -0.194 |
+|            LossVC |              20 |
+|       DeltaLossVC |           -11.5 |
+|           Penalty |           0.787 |
+|      DeltaPenalty |         -0.0195 |
+|             Alpha |            2.24 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.25 |
+|                KL |         0.00942 |
+| TotalEnvInteracts |        7.08e+06 |
+|              Time |             516 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             236 |
+|      AverageEpRet |            3.85 |
+|          StdEpRet |            3.37 |
+|          MaxEpRet |              12 |
+|          MinEpRet |           -2.85 |
+|     AverageEpCost |            33.6 |
+|         StdEpCost |            95.5 |
+|         MaxEpCost |             518 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |           5e+03 |
+|          CostRate |        0.000703 |
+|      AverageVVals |           0.393 |
+|          StdVVals |           0.743 |
+|          MaxVVals |            2.59 |
+|          MinVVals |           -1.25 |
+|  AverageCostVVals |            2.07 |
+|      StdCostVVals |            3.55 |
+|      MaxCostVVals |            38.6 |
+|      MinCostVVals |           -5.14 |
+|            LossPi |        3.58e-08 |
+|       DeltaLossPi |         -0.0165 |
+|          SurrCost |        4.77e-08 |
+|     DeltaSurrCost |         -0.0381 |
+|             LossV |           0.251 |
+|        DeltaLossV |          -0.168 |
+|            LossVC |             111 |
+|       DeltaLossVC |           -90.6 |
+|           Penalty |           0.767 |
+|      DeltaPenalty |        -0.00517 |
+|             Alpha |            1.18 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.27 |
+|                KL |          0.0095 |
+| TotalEnvInteracts |        7.11e+06 |
+|              Time |             605 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             237 |
+|      AverageEpRet |               4 |
+|          StdEpRet |            3.02 |
+|          MaxEpRet |            9.27 |
+|          MinEpRet |           -3.07 |
+|     AverageEpCost |            18.5 |
+|         StdEpCost |              32 |
+|         MaxEpCost |             156 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        5.55e+03 |
+|          CostRate |        0.000778 |
+|      AverageVVals |           0.526 |
+|          StdVVals |           0.735 |
+|          MaxVVals |            2.62 |
+|          MinVVals |           -1.36 |
+|  AverageCostVVals |            1.78 |
+|      StdCostVVals |            3.14 |
+|      MaxCostVVals |            38.9 |
+|      MinCostVVals |           -5.95 |
+|            LossPi |       -8.94e-09 |
+|       DeltaLossPi |         -0.0113 |
+|          SurrCost |       -1.19e-08 |
+|     DeltaSurrCost |         -0.0202 |
+|             LossV |            0.26 |
+|        DeltaLossV |          -0.191 |
+|            LossVC |            38.4 |
+|       DeltaLossVC |           -24.5 |
+|           Penalty |           0.762 |
+|      DeltaPenalty |        -0.00964 |
+|             Alpha |            1.75 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.26 |
+|                KL |           0.009 |
+| TotalEnvInteracts |        7.14e+06 |
+|              Time |             695 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             238 |
+|      AverageEpRet |            3.61 |
+|          StdEpRet |            3.15 |
+|          MaxEpRet |            10.8 |
+|          MinEpRet |           -1.65 |
+|     AverageEpCost |            17.7 |
+|         StdEpCost |            32.2 |
+|         MaxEpCost |             112 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        6.08e+03 |
+|          CostRate |        0.000849 |
+|      AverageVVals |           0.401 |
+|          StdVVals |           0.673 |
+|          MaxVVals |            2.22 |
+|          MinVVals |           -1.68 |
+|  AverageCostVVals |            1.75 |
+|      StdCostVVals |            2.61 |
+|      MaxCostVVals |            33.2 |
+|      MinCostVVals |            -4.2 |
+|            LossPi |       -1.04e-08 |
+|       DeltaLossPi |         -0.0104 |
+|          SurrCost |       -1.56e-08 |
+|     DeltaSurrCost |         -0.0209 |
+|             LossV |            0.26 |
+|        DeltaLossV |          -0.177 |
+|            LossVC |            31.1 |
+|       DeltaLossVC |           -9.76 |
+|           Penalty |           0.752 |
+|      DeltaPenalty |         -0.0131 |
+|             Alpha |            1.86 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.29 |
+|                KL |         0.00956 |
+| TotalEnvInteracts |        7.17e+06 |
+|              Time |             785 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             239 |
+|      AverageEpRet |            5.02 |
+|          StdEpRet |            3.68 |
+|          MaxEpRet |            13.7 |
+|          MinEpRet |           -1.73 |
+|     AverageEpCost |            20.5 |
+|         StdEpCost |            23.7 |
+|         MaxEpCost |              96 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |         6.7e+03 |
+|          CostRate |        0.000931 |
+|      AverageVVals |           0.432 |
+|          StdVVals |           0.732 |
+|          MaxVVals |             2.3 |
+|          MinVVals |           -1.58 |
+|  AverageCostVVals |            1.64 |
+|      StdCostVVals |            2.06 |
+|      MaxCostVVals |            28.6 |
+|      MinCostVVals |           -7.21 |
+|            LossPi |        3.73e-09 |
+|       DeltaLossPi |        -0.00926 |
+|          SurrCost |        2.68e-08 |
+|     DeltaSurrCost |         -0.0172 |
+|             LossV |            0.27 |
+|        DeltaLossV |          -0.187 |
+|            LossVC |            26.7 |
+|       DeltaLossVC |           -16.3 |
+|           Penalty |           0.739 |
+|      DeltaPenalty |         -0.0144 |
+|             Alpha |            2.05 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.26 |
+|                KL |         0.00966 |
+| TotalEnvInteracts |         7.2e+06 |
+|              Time |             874 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             240 |
+|      AverageEpRet |            5.51 |
+|          StdEpRet |             3.3 |
+|          MaxEpRet |            12.8 |
+|          MinEpRet |           -1.19 |
+|     AverageEpCost |              23 |
+|         StdEpCost |            32.3 |
+|         MaxEpCost |             136 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        7.39e+03 |
+|          CostRate |         0.00102 |
+|      AverageVVals |           0.576 |
+|          StdVVals |           0.788 |
+|          MaxVVals |            3.19 |
+|          MinVVals |           -1.64 |
+|  AverageCostVVals |            2.51 |
+|      StdCostVVals |            4.14 |
+|      MaxCostVVals |            49.3 |
+|      MinCostVVals |           -3.56 |
+|            LossPi |       -5.96e-09 |
+|       DeltaLossPi |         -0.0116 |
+|          SurrCost |       -3.58e-08 |
+|     DeltaSurrCost |         -0.0252 |
+|             LossV |           0.302 |
+|        DeltaLossV |          -0.217 |
+|            LossVC |            41.7 |
+|       DeltaLossVC |           -25.9 |
+|           Penalty |           0.725 |
+|      DeltaPenalty |          -0.014 |
+|             Alpha |            1.77 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.24 |
+|                KL |         0.00967 |
+| TotalEnvInteracts |        7.23e+06 |
+|              Time |             963 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             241 |
+|      AverageEpRet |             5.2 |
+|          StdEpRet |            3.56 |
+|          MaxEpRet |            12.9 |
+|          MinEpRet |           -2.58 |
+|     AverageEpCost |            17.4 |
+|         StdEpCost |            28.6 |
+|         MaxEpCost |             128 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        7.91e+03 |
+|          CostRate |         0.00109 |
+|      AverageVVals |           0.602 |
+|          StdVVals |           0.747 |
+|          MaxVVals |             2.8 |
+|          MinVVals |           -1.89 |
+|  AverageCostVVals |            2.13 |
+|      StdCostVVals |            3.87 |
+|      MaxCostVVals |            52.4 |
+|      MinCostVVals |           -2.87 |
+|            LossPi |       -5.22e-09 |
+|       DeltaLossPi |        -0.00955 |
+|          SurrCost |       -1.56e-08 |
+|     DeltaSurrCost |         -0.0169 |
+|             LossV |           0.277 |
+|        DeltaLossV |          -0.191 |
+|            LossVC |            19.6 |
+|       DeltaLossVC |           -11.2 |
+|           Penalty |           0.711 |
+|      DeltaPenalty |         -0.0162 |
+|             Alpha |            2.04 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.26 |
+|                KL |         0.00935 |
+| TotalEnvInteracts |        7.26e+06 |
+|              Time |        1.05e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             242 |
+|      AverageEpRet |            3.66 |
+|          StdEpRet |            2.82 |
+|          MaxEpRet |            9.23 |
+|          MinEpRet |           -1.51 |
+|     AverageEpCost |            16.5 |
+|         StdEpCost |            21.1 |
+|         MaxEpCost |              70 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        8.41e+03 |
+|          CostRate |         0.00115 |
+|      AverageVVals |           0.441 |
+|          StdVVals |           0.755 |
+|          MaxVVals |            2.46 |
+|          MinVVals |           -1.88 |
+|  AverageCostVVals |            1.85 |
+|      StdCostVVals |             3.8 |
+|      MaxCostVVals |            49.1 |
+|      MinCostVVals |           -5.69 |
+|            LossPi |       -8.94e-09 |
+|       DeltaLossPi |         -0.0093 |
+|          SurrCost |       -2.38e-08 |
+|     DeltaSurrCost |         -0.0196 |
+|             LossV |           0.255 |
+|        DeltaLossV |          -0.153 |
+|            LossVC |            24.5 |
+|       DeltaLossVC |           -14.5 |
+|           Penalty |           0.695 |
+|      DeltaPenalty |         -0.0179 |
+|             Alpha |            2.11 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.24 |
+|                KL |         0.00921 |
+| TotalEnvInteracts |        7.29e+06 |
+|              Time |        1.14e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             243 |
+|      AverageEpRet |            4.45 |
+|          StdEpRet |            3.01 |
+|          MaxEpRet |            9.78 |
+|          MinEpRet |           -1.38 |
+|     AverageEpCost |            14.2 |
+|         StdEpCost |            17.7 |
+|         MaxEpCost |              68 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        8.84e+03 |
+|          CostRate |         0.00121 |
+|      AverageVVals |           0.431 |
+|          StdVVals |           0.739 |
+|          MaxVVals |            2.49 |
+|          MinVVals |           -1.65 |
+|  AverageCostVVals |            1.94 |
+|      StdCostVVals |            2.78 |
+|      MaxCostVVals |            27.6 |
+|      MinCostVVals |           -4.82 |
+|            LossPi |        4.47e-09 |
+|       DeltaLossPi |        -0.00901 |
+|          SurrCost |        2.98e-09 |
+|     DeltaSurrCost |          -0.018 |
+|             LossV |           0.259 |
+|        DeltaLossV |          -0.152 |
+|            LossVC |            18.9 |
+|       DeltaLossVC |           -10.1 |
+|           Penalty |           0.677 |
+|      DeltaPenalty |         -0.0195 |
+|             Alpha |            2.17 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.24 |
+|                KL |         0.00917 |
+| TotalEnvInteracts |        7.32e+06 |
+|              Time |        1.23e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             244 |
+|      AverageEpRet |            4.61 |
+|          StdEpRet |            3.57 |
+|          MaxEpRet |              12 |
+|          MinEpRet |           -2.75 |
+|     AverageEpCost |            28.9 |
+|         StdEpCost |            43.5 |
+|         MaxEpCost |             208 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |         9.7e+03 |
+|          CostRate |         0.00132 |
+|      AverageVVals |            0.54 |
+|          StdVVals |           0.704 |
+|          MaxVVals |            2.88 |
+|          MinVVals |           -1.32 |
+|  AverageCostVVals |            1.73 |
+|      StdCostVVals |            2.44 |
+|      MaxCostVVals |            24.7 |
+|      MinCostVVals |            -5.6 |
+|            LossPi |       -5.96e-09 |
+|       DeltaLossPi |         -0.0117 |
+|          SurrCost |       -2.01e-08 |
+|     DeltaSurrCost |          -0.027 |
+|             LossV |           0.243 |
+|        DeltaLossV |           -0.16 |
+|            LossVC |            50.8 |
+|       DeltaLossVC |           -33.6 |
+|           Penalty |           0.657 |
+|      DeltaPenalty |         -0.0152 |
+|             Alpha |            1.66 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.19 |
+|                KL |         0.00935 |
+| TotalEnvInteracts |        7.35e+06 |
+|              Time |        1.32e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             245 |
+|      AverageEpRet |            4.89 |
+|          StdEpRet |            3.18 |
+|          MaxEpRet |            13.8 |
+|          MinEpRet |           -1.08 |
+|     AverageEpCost |            14.3 |
+|         StdEpCost |            22.1 |
+|         MaxEpCost |              71 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        1.01e+04 |
+|          CostRate |         0.00137 |
+|      AverageVVals |           0.514 |
+|          StdVVals |           0.745 |
+|          MaxVVals |            2.34 |
+|          MinVVals |           -1.72 |
+|  AverageCostVVals |            2.84 |
+|      StdCostVVals |             4.2 |
+|      MaxCostVVals |            35.2 |
+|      MinCostVVals |           -2.78 |
+|            LossPi |       -1.19e-08 |
+|       DeltaLossPi |         -0.0115 |
+|          SurrCost |       -2.98e-08 |
+|     DeltaSurrCost |         -0.0224 |
+|             LossV |           0.228 |
+|        DeltaLossV |          -0.128 |
+|            LossVC |            25.2 |
+|       DeltaLossVC |           -18.6 |
+|           Penalty |           0.642 |
+|      DeltaPenalty |          -0.017 |
+|             Alpha |            1.73 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.19 |
+|                KL |         0.00909 |
+| TotalEnvInteracts |        7.38e+06 |
+|              Time |        1.41e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             246 |
+|      AverageEpRet |            5.61 |
+|          StdEpRet |            2.75 |
+|          MaxEpRet |              11 |
+|          MinEpRet |            1.49 |
+|     AverageEpCost |            26.1 |
+|         StdEpCost |            38.9 |
+|         MaxEpCost |             177 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        1.09e+04 |
+|          CostRate |         0.00147 |
+|      AverageVVals |           0.589 |
+|          StdVVals |           0.742 |
+|          MaxVVals |            2.36 |
+|          MinVVals |           -1.51 |
+|  AverageCostVVals |             1.6 |
+|      StdCostVVals |            2.95 |
+|      MaxCostVVals |            30.4 |
+|      MinCostVVals |            -4.2 |
+|            LossPi |        1.79e-08 |
+|       DeltaLossPi |        -0.00941 |
+|          SurrCost |        2.98e-08 |
+|     DeltaSurrCost |         -0.0201 |
+|             LossV |            0.25 |
+|        DeltaLossV |           -0.15 |
+|            LossVC |            36.1 |
+|       DeltaLossVC |           -22.7 |
+|           Penalty |           0.625 |
+|      DeltaPenalty |         -0.0147 |
+|             Alpha |            1.99 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.19 |
+|                KL |          0.0096 |
+| TotalEnvInteracts |        7.41e+06 |
+|              Time |         1.5e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             247 |
+|      AverageEpRet |             4.6 |
+|          StdEpRet |            3.02 |
+|          MaxEpRet |            10.1 |
+|          MinEpRet |          -0.238 |
+|     AverageEpCost |            22.5 |
+|         StdEpCost |            27.5 |
+|         MaxEpCost |             109 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        1.16e+04 |
+|          CostRate |         0.00156 |
+|      AverageVVals |           0.546 |
+|          StdVVals |           0.769 |
+|          MaxVVals |            2.59 |
+|          MinVVals |           -1.47 |
+|  AverageCostVVals |            2.36 |
+|      StdCostVVals |            4.87 |
+|      MaxCostVVals |            54.1 |
+|      MinCostVVals |           -3.58 |
+|            LossPi |        1.79e-08 |
+|       DeltaLossPi |         -0.0101 |
+|          SurrCost |        2.38e-08 |
+|     DeltaSurrCost |         -0.0223 |
+|             LossV |           0.257 |
+|        DeltaLossV |          -0.167 |
+|            LossVC |            27.8 |
+|       DeltaLossVC |           -14.9 |
+|           Penalty |            0.61 |
+|      DeltaPenalty |         -0.0141 |
+|             Alpha |            1.91 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.17 |
+|                KL |         0.00927 |
+| TotalEnvInteracts |        7.44e+06 |
+|              Time |        1.59e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             248 |
+|      AverageEpRet |            5.35 |
+|          StdEpRet |            4.41 |
+|          MaxEpRet |            15.1 |
+|          MinEpRet |            -2.4 |
+|     AverageEpCost |            23.2 |
+|         StdEpCost |            21.3 |
+|         MaxEpCost |              73 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        1.23e+04 |
+|          CostRate |         0.00164 |
+|      AverageVVals |           0.583 |
+|          StdVVals |           0.701 |
+|          MaxVVals |             2.5 |
+|          MinVVals |           -1.43 |
+|  AverageCostVVals |            2.42 |
+|      StdCostVVals |            4.24 |
+|      MaxCostVVals |            45.5 |
+|      MinCostVVals |           -3.55 |
+|            LossPi |       -1.12e-09 |
+|       DeltaLossPi |        -0.00934 |
+|          SurrCost |       -6.71e-09 |
+|     DeltaSurrCost |         -0.0212 |
+|             LossV |           0.261 |
+|        DeltaLossV |          -0.155 |
+|            LossVC |            21.1 |
+|       DeltaLossVC |           -10.2 |
+|           Penalty |           0.596 |
+|      DeltaPenalty |         -0.0133 |
+|             Alpha |            2.13 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.16 |
+|                KL |         0.00981 |
+| TotalEnvInteracts |        7.47e+06 |
+|              Time |        1.68e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             249 |
+|      AverageEpRet |             5.2 |
+|          StdEpRet |            3.54 |
+|          MaxEpRet |            13.2 |
+|          MinEpRet |          -0.695 |
+|     AverageEpCost |            22.8 |
+|         StdEpCost |            37.1 |
+|         MaxEpCost |             184 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |         1.3e+04 |
+|          CostRate |         0.00173 |
+|      AverageVVals |           0.591 |
+|          StdVVals |           0.737 |
+|          MaxVVals |            2.29 |
+|          MinVVals |            -1.7 |
+|  AverageCostVVals |            2.46 |
+|      StdCostVVals |            3.44 |
+|      MaxCostVVals |            36.4 |
+|      MinCostVVals |           -7.61 |
+|            LossPi |        8.94e-09 |
+|       DeltaLossPi |         -0.0092 |
+|          SurrCost |        8.94e-09 |
+|     DeltaSurrCost |         -0.0194 |
+|             LossV |           0.247 |
+|        DeltaLossV |          -0.148 |
+|            LossVC |              28 |
+|       DeltaLossVC |           -16.6 |
+|           Penalty |           0.583 |
+|      DeltaPenalty |         -0.0128 |
+|             Alpha |            2.09 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.17 |
+|                KL |         0.00933 |
+| TotalEnvInteracts |         7.5e+06 |
+|              Time |        1.77e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             250 |
+|      AverageEpRet |            4.53 |
+|          StdEpRet |            3.72 |
+|          MaxEpRet |              13 |
+|          MinEpRet |           -2.52 |
+|     AverageEpCost |              24 |
+|         StdEpCost |            25.6 |
+|         MaxEpCost |             102 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        1.37e+04 |
+|          CostRate |         0.00182 |
+|      AverageVVals |            0.48 |
+|          StdVVals |           0.748 |
+|          MaxVVals |            2.59 |
+|          MinVVals |           -1.47 |
+|  AverageCostVVals |            2.17 |
+|      StdCostVVals |            3.57 |
+|      MaxCostVVals |            53.7 |
+|      MinCostVVals |           -5.47 |
+|            LossPi |        1.49e-08 |
+|       DeltaLossPi |        -0.00961 |
+|          SurrCost |        2.68e-08 |
+|     DeltaSurrCost |         -0.0206 |
+|             LossV |           0.263 |
+|        DeltaLossV |          -0.178 |
+|            LossVC |            23.3 |
+|       DeltaLossVC |             -13 |
+|           Penalty |            0.57 |
+|      DeltaPenalty |         -0.0119 |
+|             Alpha |            1.98 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.16 |
+|                KL |         0.00921 |
+| TotalEnvInteracts |        7.53e+06 |
+|              Time |        1.86e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             251 |
+|      AverageEpRet |            4.49 |
+|          StdEpRet |            3.32 |
+|          MaxEpRet |            9.67 |
+|          MinEpRet |            -2.3 |
+|     AverageEpCost |              29 |
+|         StdEpCost |            36.8 |
+|         MaxEpCost |             163 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        1.46e+04 |
+|          CostRate |         0.00193 |
+|      AverageVVals |           0.523 |
+|          StdVVals |           0.796 |
+|          MaxVVals |            2.68 |
+|          MinVVals |           -1.42 |
+|  AverageCostVVals |            2.61 |
+|      StdCostVVals |            3.64 |
+|      MaxCostVVals |            29.5 |
+|      MinCostVVals |            -2.2 |
+|            LossPi |        3.73e-10 |
+|       DeltaLossPi |        -0.00992 |
+|          SurrCost |        8.94e-09 |
+|     DeltaSurrCost |         -0.0257 |
+|             LossV |           0.267 |
+|        DeltaLossV |          -0.177 |
+|            LossVC |            31.5 |
+|       DeltaLossVC |             -21 |
+|           Penalty |           0.558 |
+|      DeltaPenalty |        -0.00889 |
+|             Alpha |            1.99 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.13 |
+|                KL |         0.00906 |
+| TotalEnvInteracts |        7.56e+06 |
+|              Time |        1.95e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             252 |
+|      AverageEpRet |            4.57 |
+|          StdEpRet |            3.33 |
+|          MaxEpRet |            11.2 |
+|          MinEpRet |           -3.05 |
+|     AverageEpCost |            24.9 |
+|         StdEpCost |            36.1 |
+|         MaxEpCost |             166 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        1.53e+04 |
+|          CostRate |         0.00202 |
+|      AverageVVals |           0.525 |
+|          StdVVals |           0.778 |
+|          MaxVVals |            2.78 |
+|          MinVVals |           -1.51 |
+|  AverageCostVVals |            3.36 |
+|      StdCostVVals |            5.64 |
+|      MaxCostVVals |            46.6 |
+|      MinCostVVals |          -0.663 |
+|            LossPi |        1.94e-08 |
+|       DeltaLossPi |         -0.0122 |
+|          SurrCost |        3.58e-08 |
+|     DeltaSurrCost |         -0.0288 |
+|             LossV |           0.237 |
+|        DeltaLossV |          -0.145 |
+|            LossVC |            45.4 |
+|       DeltaLossVC |           -28.4 |
+|           Penalty |           0.549 |
+|      DeltaPenalty |        -0.00805 |
+|             Alpha |            1.62 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.12 |
+|                KL |         0.00937 |
+| TotalEnvInteracts |        7.59e+06 |
+|              Time |        2.04e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             253 |
+|      AverageEpRet |            6.62 |
+|          StdEpRet |            2.98 |
+|          MaxEpRet |            13.5 |
+|          MinEpRet |           0.776 |
+|     AverageEpCost |            34.8 |
+|         StdEpCost |            34.8 |
+|         MaxEpCost |             121 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        1.64e+04 |
+|          CostRate |         0.00215 |
+|      AverageVVals |            0.63 |
+|          StdVVals |           0.758 |
+|          MaxVVals |            2.88 |
+|          MinVVals |           -1.47 |
+|  AverageCostVVals |            2.78 |
+|      StdCostVVals |            3.93 |
+|      MaxCostVVals |            57.9 |
+|      MinCostVVals |          -0.172 |
+|            LossPi |        8.94e-09 |
+|       DeltaLossPi |          -0.011 |
+|          SurrCost |        2.38e-08 |
+|     DeltaSurrCost |         -0.0261 |
+|             LossV |           0.278 |
+|        DeltaLossV |          -0.192 |
+|            LossVC |            44.5 |
+|       DeltaLossVC |           -25.9 |
+|           Penalty |           0.541 |
+|      DeltaPenalty |        -0.00302 |
+|             Alpha |            1.77 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.13 |
+|                KL |         0.00938 |
+| TotalEnvInteracts |        7.62e+06 |
+|              Time |        2.13e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             254 |
+|      AverageEpRet |            5.07 |
+|          StdEpRet |            3.11 |
+|          MaxEpRet |            10.2 |
+|          MinEpRet |          -0.712 |
+|     AverageEpCost |            30.1 |
+|         StdEpCost |            43.9 |
+|         MaxEpCost |             163 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        1.73e+04 |
+|          CostRate |         0.00226 |
+|      AverageVVals |           0.546 |
+|          StdVVals |           0.734 |
+|          MaxVVals |            2.44 |
+|          MinVVals |           -1.74 |
+|  AverageCostVVals |            3.03 |
+|      StdCostVVals |            4.06 |
+|      MaxCostVVals |            32.9 |
+|      MinCostVVals |           -1.98 |
+|            LossPi |        1.04e-08 |
+|       DeltaLossPi |          -0.012 |
+|          SurrCost |        2.38e-08 |
+|     DeltaSurrCost |         -0.0293 |
+|             LossV |           0.254 |
+|        DeltaLossV |          -0.157 |
+|            LossVC |            50.2 |
+|       DeltaLossVC |           -38.6 |
+|           Penalty |           0.538 |
+|      DeltaPenalty |       -0.000743 |
+|             Alpha |            1.61 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.13 |
+|                KL |         0.00982 |
+| TotalEnvInteracts |        7.65e+06 |
+|              Time |        2.22e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             255 |
+|      AverageEpRet |            5.55 |
+|          StdEpRet |            3.42 |
+|          MaxEpRet |            11.4 |
+|          MinEpRet |          -0.724 |
+|     AverageEpCost |            17.7 |
+|         StdEpCost |            18.6 |
+|         MaxEpCost |              61 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        1.78e+04 |
+|          CostRate |         0.00232 |
+|      AverageVVals |           0.572 |
+|          StdVVals |           0.745 |
+|          MaxVVals |            3.15 |
+|          MinVVals |           -1.55 |
+|  AverageCostVVals |            3.75 |
+|      StdCostVVals |            6.16 |
+|      MaxCostVVals |            50.2 |
+|      MinCostVVals |           -3.48 |
+|            LossPi |       -2.09e-08 |
+|       DeltaLossPi |         -0.0107 |
+|          SurrCost |       -4.17e-08 |
+|     DeltaSurrCost |         -0.0275 |
+|             LossV |           0.247 |
+|        DeltaLossV |          -0.159 |
+|            LossVC |            42.2 |
+|       DeltaLossVC |           -31.8 |
+|           Penalty |           0.537 |
+|      DeltaPenalty |        -0.00341 |
+|             Alpha |            1.91 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.11 |
+|                KL |         0.00983 |
+| TotalEnvInteracts |        7.68e+06 |
+|              Time |        2.31e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             256 |
+|      AverageEpRet |             4.3 |
+|          StdEpRet |            4.02 |
+|          MaxEpRet |            13.2 |
+|          MinEpRet |           -3.23 |
+|     AverageEpCost |            23.3 |
+|         StdEpCost |              40 |
+|         MaxEpCost |             178 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        1.85e+04 |
+|          CostRate |          0.0024 |
+|      AverageVVals |           0.568 |
+|          StdVVals |           0.756 |
+|          MaxVVals |             2.5 |
+|          MinVVals |           -1.42 |
+|  AverageCostVVals |            1.77 |
+|      StdCostVVals |             2.6 |
+|      MaxCostVVals |            24.5 |
+|      MinCostVVals |           -4.44 |
+|            LossPi |        1.79e-08 |
+|       DeltaLossPi |        -0.00903 |
+|          SurrCost |        2.38e-08 |
+|     DeltaSurrCost |         -0.0161 |
+|             LossV |           0.282 |
+|        DeltaLossV |          -0.167 |
+|            LossVC |            33.5 |
+|       DeltaLossVC |           -21.7 |
+|           Penalty |           0.534 |
+|      DeltaPenalty |        -0.00372 |
+|             Alpha |            2.16 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.12 |
+|                KL |         0.00967 |
+| TotalEnvInteracts |        7.71e+06 |
+|              Time |         2.4e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             257 |
+|      AverageEpRet |            4.69 |
+|          StdEpRet |            2.93 |
+|          MaxEpRet |            10.8 |
+|          MinEpRet |          0.0313 |
+|     AverageEpCost |            26.4 |
+|         StdEpCost |            30.5 |
+|         MaxEpCost |             116 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        1.93e+04 |
+|          CostRate |         0.00249 |
+|      AverageVVals |           0.543 |
+|          StdVVals |           0.752 |
+|          MaxVVals |            2.55 |
+|          MinVVals |           -1.49 |
+|  AverageCostVVals |            2.58 |
+|      StdCostVVals |            4.72 |
+|      MaxCostVVals |            53.2 |
+|      MinCostVVals |           -2.33 |
+|            LossPi |        5.22e-09 |
+|       DeltaLossPi |         -0.0119 |
+|          SurrCost |       -8.94e-09 |
+|     DeltaSurrCost |         -0.0271 |
+|             LossV |           0.254 |
+|        DeltaLossV |          -0.163 |
+|            LossVC |            42.1 |
+|       DeltaLossVC |           -27.2 |
+|           Penalty |            0.53 |
+|      DeltaPenalty |        -0.00284 |
+|             Alpha |             1.7 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.12 |
+|                KL |         0.00926 |
+| TotalEnvInteracts |        7.74e+06 |
+|              Time |        2.48e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             258 |
+|      AverageEpRet |            6.29 |
+|          StdEpRet |            3.66 |
+|          MaxEpRet |            15.7 |
+|          MinEpRet |           -2.79 |
+|     AverageEpCost |            38.8 |
+|         StdEpCost |            46.1 |
+|         MaxEpCost |             142 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        2.04e+04 |
+|          CostRate |         0.00263 |
+|      AverageVVals |           0.562 |
+|          StdVVals |            0.76 |
+|          MaxVVals |            2.76 |
+|          MinVVals |           -1.56 |
+|  AverageCostVVals |             3.5 |
+|      StdCostVVals |            5.76 |
+|      MaxCostVVals |              48 |
+|      MinCostVVals |           -1.99 |
+|            LossPi |       -2.98e-09 |
+|       DeltaLossPi |         -0.0112 |
+|          SurrCost |               0 |
+|     DeltaSurrCost |         -0.0271 |
+|             LossV |           0.297 |
+|        DeltaLossV |          -0.184 |
+|            LossVC |            56.9 |
+|       DeltaLossVC |           -40.1 |
+|           Penalty |           0.527 |
+|      DeltaPenalty |         0.00248 |
+|             Alpha |             1.8 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.12 |
+|                KL |         0.00893 |
+| TotalEnvInteracts |        7.77e+06 |
+|              Time |        2.57e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             259 |
+|      AverageEpRet |            5.67 |
+|          StdEpRet |             2.5 |
+|          MaxEpRet |            11.7 |
+|          MinEpRet |           0.335 |
+|     AverageEpCost |            31.6 |
+|         StdEpCost |            29.4 |
+|         MaxEpCost |             107 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        2.14e+04 |
+|          CostRate |         0.00274 |
+|      AverageVVals |           0.603 |
+|          StdVVals |           0.721 |
+|          MaxVVals |            3.41 |
+|          MinVVals |           -1.29 |
+|  AverageCostVVals |            4.38 |
+|      StdCostVVals |            7.27 |
+|      MaxCostVVals |            60.1 |
+|      MinCostVVals |           0.138 |
+|            LossPi |        1.19e-08 |
+|       DeltaLossPi |         -0.0136 |
+|          SurrCost |        7.15e-08 |
+|     DeltaSurrCost |         -0.0341 |
+|             LossV |           0.256 |
+|        DeltaLossV |          -0.169 |
+|            LossVC |            63.5 |
+|       DeltaLossVC |           -42.6 |
+|           Penalty |            0.53 |
+|      DeltaPenalty |         0.00454 |
+|             Alpha |            1.51 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.14 |
+|                KL |         0.00946 |
+| TotalEnvInteracts |         7.8e+06 |
+|              Time |        2.66e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             260 |
+|      AverageEpRet |            5.28 |
+|          StdEpRet |            3.25 |
+|          MaxEpRet |            13.3 |
+|          MinEpRet |            -2.3 |
+|     AverageEpCost |            19.9 |
+|         StdEpCost |            23.2 |
+|         MaxEpCost |              98 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |         2.2e+04 |
+|          CostRate |         0.00281 |
+|      AverageVVals |           0.651 |
+|          StdVVals |           0.753 |
+|          MaxVVals |            2.61 |
+|          MinVVals |           -2.01 |
+|  AverageCostVVals |            2.68 |
+|      StdCostVVals |            3.95 |
+|      MaxCostVVals |            44.9 |
+|      MinCostVVals |           -2.13 |
+|            LossPi |        1.49e-09 |
+|       DeltaLossPi |          -0.011 |
+|          SurrCost |       -5.96e-09 |
+|     DeltaSurrCost |         -0.0235 |
+|             LossV |           0.291 |
+|        DeltaLossV |          -0.191 |
+|            LossVC |            21.4 |
+|       DeltaLossVC |           -9.62 |
+|           Penalty |           0.534 |
+|      DeltaPenalty |         0.00232 |
+|             Alpha |            1.88 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.15 |
+|                KL |         0.00976 |
+| TotalEnvInteracts |        7.83e+06 |
+|              Time |        2.75e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             261 |
+|      AverageEpRet |            4.35 |
+|          StdEpRet |            3.73 |
+|          MaxEpRet |            15.2 |
+|          MinEpRet |           -2.24 |
+|     AverageEpCost |            29.5 |
+|         StdEpCost |            73.8 |
+|         MaxEpCost |             409 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        2.29e+04 |
+|          CostRate |         0.00291 |
+|      AverageVVals |           0.465 |
+|          StdVVals |           0.784 |
+|          MaxVVals |            2.53 |
+|          MinVVals |            -1.4 |
+|  AverageCostVVals |            2.07 |
+|      StdCostVVals |            3.21 |
+|      MaxCostVVals |              34 |
+|      MinCostVVals |           -3.85 |
+|            LossPi |               0 |
+|       DeltaLossPi |         -0.0118 |
+|          SurrCost |       -2.38e-08 |
+|     DeltaSurrCost |         -0.0265 |
+|             LossV |           0.257 |
+|        DeltaLossV |          -0.178 |
+|            LossVC |             102 |
+|       DeltaLossVC |           -81.9 |
+|           Penalty |           0.537 |
+|      DeltaPenalty |         0.00371 |
+|             Alpha |            1.67 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.14 |
+|                KL |         0.00932 |
+| TotalEnvInteracts |        7.86e+06 |
+|              Time |        2.84e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             262 |
+|      AverageEpRet |            6.49 |
+|          StdEpRet |            3.48 |
+|          MaxEpRet |            13.5 |
+|          MinEpRet |          -0.177 |
+|     AverageEpCost |            32.4 |
+|         StdEpCost |            38.3 |
+|         MaxEpCost |             149 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        2.38e+04 |
+|          CostRate |         0.00302 |
+|      AverageVVals |           0.629 |
+|          StdVVals |            0.78 |
+|          MaxVVals |            2.89 |
+|          MinVVals |           -1.38 |
+|  AverageCostVVals |            2.51 |
+|      StdCostVVals |            3.74 |
+|      MaxCostVVals |            44.8 |
+|      MinCostVVals |           -1.59 |
+|            LossPi |        5.96e-09 |
+|       DeltaLossPi |         -0.0118 |
+|          SurrCost |        5.96e-09 |
+|     DeltaSurrCost |         -0.0298 |
+|             LossV |            0.26 |
+|        DeltaLossV |          -0.171 |
+|            LossVC |            54.8 |
+|       DeltaLossVC |           -30.2 |
+|           Penalty |            0.54 |
+|      DeltaPenalty |         0.00594 |
+|             Alpha |            1.66 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.12 |
+|                KL |         0.00934 |
+| TotalEnvInteracts |        7.89e+06 |
+|              Time |        2.93e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             263 |
+|      AverageEpRet |            5.44 |
+|          StdEpRet |            3.83 |
+|          MaxEpRet |            11.7 |
+|          MinEpRet |           -2.01 |
+|     AverageEpCost |            52.1 |
+|         StdEpCost |            96.3 |
+|         MaxEpCost |             513 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        2.54e+04 |
+|          CostRate |         0.00321 |
+|      AverageVVals |           0.607 |
+|          StdVVals |           0.781 |
+|          MaxVVals |            2.73 |
+|          MinVVals |           -1.33 |
+|  AverageCostVVals |            3.81 |
+|      StdCostVVals |            5.02 |
+|      MaxCostVVals |            48.3 |
+|      MinCostVVals |           -1.15 |
+|            LossPi |        1.34e-08 |
+|       DeltaLossPi |         -0.0151 |
+|          SurrCost |        3.58e-08 |
+|     DeltaSurrCost |         -0.0372 |
+|             LossV |           0.259 |
+|        DeltaLossV |          -0.166 |
+|            LossVC |             126 |
+|       DeltaLossVC |            -103 |
+|           Penalty |           0.546 |
+|      DeltaPenalty |          0.0121 |
+|             Alpha |            1.36 |
+|    BacktrackIters |               0 |
+|           Entropy |             2.1 |
+|                KL |         0.00952 |
+| TotalEnvInteracts |        7.92e+06 |
+|              Time |        3.02e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             264 |
+|      AverageEpRet |            6.02 |
+|          StdEpRet |            3.64 |
+|          MaxEpRet |            13.6 |
+|          MinEpRet |           0.295 |
+|     AverageEpCost |            31.9 |
+|         StdEpCost |            39.3 |
+|         MaxEpCost |             155 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        2.64e+04 |
+|          CostRate |         0.00332 |
+|      AverageVVals |           0.698 |
+|          StdVVals |           0.775 |
+|          MaxVVals |             2.8 |
+|          MinVVals |           -1.43 |
+|  AverageCostVVals |            4.58 |
+|      StdCostVVals |             7.5 |
+|      MaxCostVVals |            79.7 |
+|      MinCostVVals |           -2.71 |
+|            LossPi |       -8.94e-09 |
+|       DeltaLossPi |         -0.0152 |
+|          SurrCost |       -3.73e-08 |
+|     DeltaSurrCost |         -0.0427 |
+|             LossV |           0.274 |
+|        DeltaLossV |          -0.165 |
+|            LossVC |            67.2 |
+|       DeltaLossVC |           -48.2 |
+|           Penalty |           0.558 |
+|      DeltaPenalty |           0.013 |
+|             Alpha |            1.38 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.12 |
+|                KL |         0.00956 |
+| TotalEnvInteracts |        7.95e+06 |
+|              Time |        3.11e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             265 |
+|      AverageEpRet |             4.6 |
+|          StdEpRet |            3.54 |
+|          MaxEpRet |            12.7 |
+|          MinEpRet |           -1.56 |
+|     AverageEpCost |              28 |
+|         StdEpCost |            37.6 |
+|         MaxEpCost |             203 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        2.72e+04 |
+|          CostRate |         0.00341 |
+|      AverageVVals |           0.561 |
+|          StdVVals |           0.856 |
+|          MaxVVals |            2.55 |
+|          MinVVals |           -1.74 |
+|  AverageCostVVals |            2.73 |
+|      StdCostVVals |            3.72 |
+|      MaxCostVVals |            49.7 |
+|      MinCostVVals |            -2.5 |
+|            LossPi |        1.49e-08 |
+|       DeltaLossPi |         -0.0111 |
+|          SurrCost |        4.17e-08 |
+|     DeltaSurrCost |         -0.0244 |
+|             LossV |           0.302 |
+|        DeltaLossV |          -0.202 |
+|            LossVC |            44.5 |
+|       DeltaLossVC |           -15.7 |
+|           Penalty |           0.572 |
+|      DeltaPenalty |          0.0129 |
+|             Alpha |             1.7 |
+|    BacktrackIters |               0 |
+|           Entropy |             2.1 |
+|                KL |          0.0093 |
+| TotalEnvInteracts |        7.98e+06 |
+|              Time |         3.2e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             266 |
+|      AverageEpRet |            5.15 |
+|          StdEpRet |            2.68 |
+|          MaxEpRet |            11.8 |
+|          MinEpRet |           -1.06 |
+|     AverageEpCost |            28.1 |
+|         StdEpCost |            34.5 |
+|         MaxEpCost |             153 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        2.81e+04 |
+|          CostRate |          0.0035 |
+|      AverageVVals |           0.612 |
+|          StdVVals |           0.832 |
+|          MaxVVals |            2.73 |
+|          MinVVals |           -1.66 |
+|  AverageCostVVals |            3.11 |
+|      StdCostVVals |            3.93 |
+|      MaxCostVVals |            38.1 |
+|      MinCostVVals |            1.07 |
+|            LossPi |        8.94e-09 |
+|       DeltaLossPi |          -0.011 |
+|          SurrCost |        1.19e-08 |
+|     DeltaSurrCost |         -0.0275 |
+|             LossV |           0.271 |
+|        DeltaLossV |          -0.161 |
+|            LossVC |              40 |
+|       DeltaLossVC |           -22.5 |
+|           Penalty |           0.584 |
+|      DeltaPenalty |          0.0129 |
+|             Alpha |            1.73 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.06 |
+|                KL |         0.00946 |
+| TotalEnvInteracts |        8.01e+06 |
+|              Time |        3.29e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             267 |
+|      AverageEpRet |            5.38 |
+|          StdEpRet |             4.1 |
+|          MaxEpRet |            12.2 |
+|          MinEpRet |            -2.3 |
+|     AverageEpCost |            29.7 |
+|         StdEpCost |            29.7 |
+|         MaxEpCost |             103 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        2.89e+04 |
+|          CostRate |          0.0036 |
+|      AverageVVals |           0.621 |
+|          StdVVals |           0.804 |
+|          MaxVVals |            2.59 |
+|          MinVVals |           -1.58 |
+|  AverageCostVVals |            2.78 |
+|      StdCostVVals |            4.06 |
+|      MaxCostVVals |            65.7 |
+|      MinCostVVals |           -1.42 |
+|            LossPi |        1.19e-08 |
+|       DeltaLossPi |         -0.0124 |
+|          SurrCost |        2.38e-08 |
+|     DeltaSurrCost |         -0.0279 |
+|             LossV |           0.297 |
+|        DeltaLossV |          -0.193 |
+|            LossVC |            27.7 |
+|       DeltaLossVC |           -11.3 |
+|           Penalty |           0.597 |
+|      DeltaPenalty |          0.0133 |
+|             Alpha |            1.61 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.03 |
+|                KL |         0.00941 |
+| TotalEnvInteracts |        8.04e+06 |
+|              Time |        3.38e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             268 |
+|      AverageEpRet |            5.68 |
+|          StdEpRet |             2.9 |
+|          MaxEpRet |            11.5 |
+|          MinEpRet |           0.417 |
+|     AverageEpCost |            16.9 |
+|         StdEpCost |            19.4 |
+|         MaxEpCost |              69 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        2.94e+04 |
+|          CostRate |         0.00365 |
+|      AverageVVals |           0.592 |
+|          StdVVals |           0.741 |
+|          MaxVVals |            2.45 |
+|          MinVVals |           -1.24 |
+|  AverageCostVVals |            3.06 |
+|      StdCostVVals |            3.33 |
+|      MaxCostVVals |            30.2 |
+|      MinCostVVals |           -4.05 |
+|            LossPi |       -5.96e-09 |
+|       DeltaLossPi |        -0.00914 |
+|          SurrCost |       -2.68e-08 |
+|     DeltaSurrCost |         -0.0177 |
+|             LossV |           0.276 |
+|        DeltaLossV |          -0.182 |
+|            LossVC |            20.6 |
+|       DeltaLossVC |           -9.43 |
+|           Penalty |           0.611 |
+|      DeltaPenalty |         0.00954 |
+|             Alpha |            2.21 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.05 |
+|                KL |         0.00936 |
+| TotalEnvInteracts |        8.07e+06 |
+|              Time |        3.47e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             269 |
+|      AverageEpRet |            5.11 |
+|          StdEpRet |            3.69 |
+|          MaxEpRet |            12.2 |
+|          MinEpRet |           -2.18 |
+|     AverageEpCost |            22.7 |
+|         StdEpCost |              29 |
+|         MaxEpCost |             107 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        3.01e+04 |
+|          CostRate |         0.00372 |
+|      AverageVVals |           0.604 |
+|          StdVVals |           0.758 |
+|          MaxVVals |            2.55 |
+|          MinVVals |           -1.49 |
+|  AverageCostVVals |            2.15 |
+|      StdCostVVals |            2.67 |
+|      MaxCostVVals |            33.3 |
+|      MinCostVVals |           -3.36 |
+|            LossPi |        1.04e-08 |
+|       DeltaLossPi |         -0.0101 |
+|          SurrCost |        2.31e-08 |
+|     DeltaSurrCost |         -0.0206 |
+|             LossV |           0.252 |
+|        DeltaLossV |           -0.16 |
+|            LossVC |            29.1 |
+|       DeltaLossVC |           -20.2 |
+|           Penalty |            0.62 |
+|      DeltaPenalty |         0.00801 |
+|             Alpha |            1.88 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.04 |
+|                KL |         0.00917 |
+| TotalEnvInteracts |         8.1e+06 |
+|              Time |        3.56e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             270 |
+|      AverageEpRet |            4.94 |
+|          StdEpRet |            3.31 |
+|          MaxEpRet |            12.4 |
+|          MinEpRet |           -1.79 |
+|     AverageEpCost |            41.5 |
+|         StdEpCost |             121 |
+|         MaxEpCost |             683 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        3.14e+04 |
+|          CostRate |         0.00386 |
+|      AverageVVals |           0.592 |
+|          StdVVals |           0.745 |
+|          MaxVVals |            2.76 |
+|          MinVVals |           -1.42 |
+|  AverageCostVVals |            2.08 |
+|      StdCostVVals |            2.93 |
+|      MaxCostVVals |            35.1 |
+|      MinCostVVals |           -2.04 |
+|            LossPi |        4.77e-08 |
+|       DeltaLossPi |         -0.0141 |
+|          SurrCost |        1.19e-07 |
+|     DeltaSurrCost |         -0.0328 |
+|             LossV |           0.237 |
+|        DeltaLossV |          -0.155 |
+|            LossVC |             168 |
+|       DeltaLossVC |            -144 |
+|           Penalty |           0.628 |
+|      DeltaPenalty |          0.0121 |
+|             Alpha |            1.25 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.03 |
+|                KL |         0.00957 |
+| TotalEnvInteracts |        8.13e+06 |
+|              Time |        3.65e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             271 |
+|      AverageEpRet |            4.83 |
+|          StdEpRet |            3.93 |
+|          MaxEpRet |              13 |
+|          MinEpRet |           -1.76 |
+|     AverageEpCost |            21.2 |
+|         StdEpCost |            26.7 |
+|         MaxEpCost |              86 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |         3.2e+04 |
+|          CostRate |         0.00392 |
+|      AverageVVals |           0.569 |
+|          StdVVals |           0.765 |
+|          MaxVVals |            2.74 |
+|          MinVVals |           -1.41 |
+|  AverageCostVVals |            2.12 |
+|      StdCostVVals |            3.56 |
+|      MaxCostVVals |            54.6 |
+|      MinCostVVals |           -3.06 |
+|            LossPi |       -1.19e-08 |
+|       DeltaLossPi |         -0.0102 |
+|          SurrCost |       -2.38e-08 |
+|     DeltaSurrCost |         -0.0216 |
+|             LossV |           0.277 |
+|        DeltaLossV |          -0.153 |
+|            LossVC |            34.7 |
+|       DeltaLossVC |           -15.4 |
+|           Penalty |            0.64 |
+|      DeltaPenalty |         0.00988 |
+|             Alpha |            1.91 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.03 |
+|                KL |         0.00941 |
+| TotalEnvInteracts |        8.16e+06 |
+|              Time |        3.74e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             272 |
+|      AverageEpRet |            6.35 |
+|          StdEpRet |            3.82 |
+|          MaxEpRet |            14.1 |
+|          MinEpRet |           -2.86 |
+|     AverageEpCost |            27.6 |
+|         StdEpCost |            25.1 |
+|         MaxEpCost |             108 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        3.28e+04 |
+|          CostRate |         0.00401 |
+|      AverageVVals |            0.66 |
+|          StdVVals |           0.774 |
+|          MaxVVals |            2.82 |
+|          MinVVals |           -1.43 |
+|  AverageCostVVals |            2.64 |
+|      StdCostVVals |            3.37 |
+|      MaxCostVVals |            37.3 |
+|      MinCostVVals |              -3 |
+|            LossPi |       -4.47e-09 |
+|       DeltaLossPi |         -0.0105 |
+|          SurrCost |        1.19e-08 |
+|     DeltaSurrCost |         -0.0207 |
+|             LossV |           0.302 |
+|        DeltaLossV |          -0.185 |
+|            LossVC |            29.3 |
+|       DeltaLossVC |           -11.3 |
+|           Penalty |            0.65 |
+|      DeltaPenalty |         0.00992 |
+|             Alpha |            1.82 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.03 |
+|                KL |         0.00952 |
+| TotalEnvInteracts |        8.19e+06 |
+|              Time |        3.83e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             273 |
+|      AverageEpRet |            6.29 |
+|          StdEpRet |            3.74 |
+|          MaxEpRet |            17.7 |
+|          MinEpRet |           0.315 |
+|     AverageEpCost |            18.5 |
+|         StdEpCost |            19.9 |
+|         MaxEpCost |              58 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        3.34e+04 |
+|          CostRate |         0.00406 |
+|      AverageVVals |           0.717 |
+|          StdVVals |           0.791 |
+|          MaxVVals |            3.26 |
+|          MinVVals |           -1.71 |
+|  AverageCostVVals |             2.7 |
+|      StdCostVVals |             3.4 |
+|      MaxCostVVals |            34.4 |
+|      MinCostVVals |         0.00669 |
+|            LossPi |       -1.19e-08 |
+|       DeltaLossPi |        -0.00969 |
+|          SurrCost |       -2.09e-08 |
+|     DeltaSurrCost |         -0.0187 |
+|             LossV |            0.34 |
+|        DeltaLossV |          -0.201 |
+|            LossVC |            19.2 |
+|       DeltaLossVC |           -9.31 |
+|           Penalty |            0.66 |
+|      DeltaPenalty |         0.00691 |
+|             Alpha |            2.08 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.02 |
+|                KL |         0.00967 |
+| TotalEnvInteracts |        8.22e+06 |
+|              Time |        3.92e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             274 |
+|      AverageEpRet |            6.06 |
+|          StdEpRet |            3.94 |
+|          MaxEpRet |            14.6 |
+|          MinEpRet |           -1.49 |
+|     AverageEpCost |            32.9 |
+|         StdEpCost |            37.3 |
+|         MaxEpCost |             173 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        3.44e+04 |
+|          CostRate |         0.00417 |
+|      AverageVVals |           0.651 |
+|          StdVVals |           0.753 |
+|          MaxVVals |            3.05 |
+|          MinVVals |           -1.37 |
+|  AverageCostVVals |            2.23 |
+|      StdCostVVals |            3.27 |
+|      MaxCostVVals |            24.8 |
+|      MinCostVVals |           -4.02 |
+|            LossPi |        -4.1e-09 |
+|       DeltaLossPi |         -0.0113 |
+|          SurrCost |       -2.09e-08 |
+|     DeltaSurrCost |         -0.0248 |
+|             LossV |           0.291 |
+|        DeltaLossV |           -0.19 |
+|            LossVC |            41.4 |
+|       DeltaLossVC |           -24.9 |
+|           Penalty |           0.667 |
+|      DeltaPenalty |         0.00885 |
+|             Alpha |            1.86 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.01 |
+|                KL |         0.00983 |
+| TotalEnvInteracts |        8.25e+06 |
+|              Time |        4.01e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 1 of line search.[0m
+---------------------------------------
+|             Epoch |             275 |
+|      AverageEpRet |            6.49 |
+|          StdEpRet |            3.19 |
+|          MaxEpRet |            13.5 |
+|          MinEpRet |           0.591 |
+|     AverageEpCost |            35.6 |
+|         StdEpCost |            39.2 |
+|         MaxEpCost |             148 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        3.54e+04 |
+|          CostRate |         0.00428 |
+|      AverageVVals |            0.67 |
+|          StdVVals |           0.716 |
+|          MaxVVals |               3 |
+|          MinVVals |           -1.34 |
+|  AverageCostVVals |            3.37 |
+|      StdCostVVals |            4.37 |
+|      MaxCostVVals |            44.7 |
+|      MinCostVVals |           -3.44 |
+|            LossPi |       -8.94e-09 |
+|       DeltaLossPi |        -0.00913 |
+|          SurrCost |       -3.58e-08 |
+|     DeltaSurrCost |         -0.0198 |
+|             LossV |           0.288 |
+|        DeltaLossV |          -0.187 |
+|            LossVC |            44.8 |
+|       DeltaLossVC |           -28.1 |
+|           Penalty |           0.676 |
+|      DeltaPenalty |          0.0114 |
+|             Alpha |            1.71 |
+|    BacktrackIters |               1 |
+|           Entropy |            2.03 |
+|                KL |         0.00644 |
+| TotalEnvInteracts |        8.28e+06 |
+|              Time |         4.1e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             276 |
+|      AverageEpRet |            6.34 |
+|          StdEpRet |             3.9 |
+|          MaxEpRet |            12.7 |
+|          MinEpRet |           -1.98 |
+|     AverageEpCost |            33.6 |
+|         StdEpCost |            47.4 |
+|         MaxEpCost |             210 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        3.65e+04 |
+|          CostRate |         0.00439 |
+|      AverageVVals |           0.667 |
+|          StdVVals |           0.729 |
+|          MaxVVals |            2.36 |
+|          MinVVals |           -1.67 |
+|  AverageCostVVals |            2.87 |
+|      StdCostVVals |            4.11 |
+|      MaxCostVVals |            46.9 |
+|      MinCostVVals |          -0.824 |
+|            LossPi |        4.47e-09 |
+|       DeltaLossPi |         -0.0133 |
+|          SurrCost |        5.96e-09 |
+|     DeltaSurrCost |         -0.0273 |
+|             LossV |           0.256 |
+|        DeltaLossV |          -0.134 |
+|            LossVC |            43.5 |
+|       DeltaLossVC |           -22.7 |
+|           Penalty |           0.687 |
+|      DeltaPenalty |          0.0132 |
+|             Alpha |            1.52 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.02 |
+|                KL |         0.00966 |
+| TotalEnvInteracts |        8.31e+06 |
+|              Time |        4.19e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             277 |
+|      AverageEpRet |            5.86 |
+|          StdEpRet |            3.15 |
+|          MaxEpRet |            12.6 |
+|          MinEpRet |          -0.609 |
+|     AverageEpCost |            22.6 |
+|         StdEpCost |            29.2 |
+|         MaxEpCost |             119 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        3.71e+04 |
+|          CostRate |         0.00445 |
+|      AverageVVals |           0.629 |
+|          StdVVals |           0.757 |
+|          MaxVVals |             2.9 |
+|          MinVVals |           -1.47 |
+|  AverageCostVVals |            3.06 |
+|      StdCostVVals |            4.99 |
+|      MaxCostVVals |            65.8 |
+|      MinCostVVals |          -0.845 |
+|            LossPi |        1.79e-08 |
+|       DeltaLossPi |         -0.0144 |
+|          SurrCost |        4.77e-08 |
+|     DeltaSurrCost |         -0.0301 |
+|             LossV |           0.312 |
+|        DeltaLossV |          -0.186 |
+|            LossVC |            31.5 |
+|       DeltaLossVC |           -17.8 |
+|           Penalty |             0.7 |
+|      DeltaPenalty |          0.0113 |
+|             Alpha |            1.31 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.02 |
+|                KL |         0.00953 |
+| TotalEnvInteracts |        8.34e+06 |
+|              Time |        4.28e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             278 |
+|      AverageEpRet |            6.65 |
+|          StdEpRet |            3.76 |
+|          MaxEpRet |            16.1 |
+|          MinEpRet |           -1.19 |
+|     AverageEpCost |            36.2 |
+|         StdEpCost |              34 |
+|         MaxEpCost |             146 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        3.82e+04 |
+|          CostRate |         0.00457 |
+|      AverageVVals |           0.674 |
+|          StdVVals |           0.758 |
+|          MaxVVals |            2.78 |
+|          MinVVals |           -1.32 |
+|  AverageCostVVals |            2.94 |
+|      StdCostVVals |            3.66 |
+|      MaxCostVVals |            29.6 |
+|      MinCostVVals |           -3.41 |
+|            LossPi |        1.19e-08 |
+|       DeltaLossPi |         -0.0126 |
+|          SurrCost |       -5.96e-09 |
+|     DeltaSurrCost |         -0.0262 |
+|             LossV |            0.33 |
+|        DeltaLossV |          -0.192 |
+|            LossVC |            43.9 |
+|       DeltaLossVC |           -25.5 |
+|           Penalty |           0.712 |
+|      DeltaPenalty |           0.014 |
+|             Alpha |            1.56 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.01 |
+|                KL |         0.00972 |
+| TotalEnvInteracts |        8.37e+06 |
+|              Time |        4.37e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             279 |
+|      AverageEpRet |            7.18 |
+|          StdEpRet |            3.72 |
+|          MaxEpRet |            13.6 |
+|          MinEpRet |          -0.256 |
+|     AverageEpCost |            27.4 |
+|         StdEpCost |            31.8 |
+|         MaxEpCost |             117 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |         3.9e+04 |
+|          CostRate |         0.00465 |
+|      AverageVVals |           0.698 |
+|          StdVVals |           0.768 |
+|          MaxVVals |            2.52 |
+|          MinVVals |           -1.53 |
+|  AverageCostVVals |            3.63 |
+|      StdCostVVals |            5.55 |
+|      MaxCostVVals |              59 |
+|      MinCostVVals |           -2.13 |
+|            LossPi |       -2.98e-08 |
+|       DeltaLossPi |         -0.0138 |
+|          SurrCost |       -7.15e-08 |
+|     DeltaSurrCost |         -0.0301 |
+|             LossV |           0.319 |
+|        DeltaLossV |          -0.175 |
+|            LossVC |            37.9 |
+|       DeltaLossVC |             -21 |
+|           Penalty |           0.726 |
+|      DeltaPenalty |          0.0136 |
+|             Alpha |            1.47 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.03 |
+|                KL |         0.00998 |
+| TotalEnvInteracts |         8.4e+06 |
+|              Time |        4.46e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             280 |
+|      AverageEpRet |               6 |
+|          StdEpRet |            4.11 |
+|          MaxEpRet |            15.9 |
+|          MinEpRet |           -2.64 |
+|     AverageEpCost |            33.8 |
+|         StdEpCost |            52.8 |
+|         MaxEpCost |             250 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        4.01e+04 |
+|          CostRate |         0.00475 |
+|      AverageVVals |           0.717 |
+|          StdVVals |            0.82 |
+|          MaxVVals |            2.85 |
+|          MinVVals |           -1.62 |
+|  AverageCostVVals |            3.42 |
+|      StdCostVVals |            4.98 |
+|      MaxCostVVals |            39.4 |
+|      MinCostVVals |           -3.65 |
+|            LossPi |       -2.98e-08 |
+|       DeltaLossPi |         -0.0128 |
+|          SurrCost |       -5.96e-08 |
+|     DeltaSurrCost |         -0.0281 |
+|             LossV |           0.294 |
+|        DeltaLossV |          -0.177 |
+|            LossVC |            46.4 |
+|       DeltaLossVC |           -26.9 |
+|           Penalty |           0.739 |
+|      DeltaPenalty |          0.0154 |
+|             Alpha |            1.46 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.02 |
+|                KL |         0.00933 |
+| TotalEnvInteracts |        8.43e+06 |
+|              Time |        4.55e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             281 |
+|      AverageEpRet |            4.97 |
+|          StdEpRet |            3.14 |
+|          MaxEpRet |            10.9 |
+|          MinEpRet |           -1.18 |
+|     AverageEpCost |            69.9 |
+|         StdEpCost |             111 |
+|         MaxEpCost |             401 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        4.22e+04 |
+|          CostRate |         0.00498 |
+|      AverageVVals |            0.69 |
+|          StdVVals |             0.8 |
+|          MaxVVals |            3.18 |
+|          MinVVals |           -1.54 |
+|  AverageCostVVals |            4.35 |
+|      StdCostVVals |            6.63 |
+|      MaxCostVVals |            48.6 |
+|      MinCostVVals |           -4.01 |
+|            LossPi |       -3.58e-08 |
+|       DeltaLossPi |         -0.0233 |
+|          SurrCost |       -7.15e-08 |
+|     DeltaSurrCost |         -0.0498 |
+|             LossV |           0.298 |
+|        DeltaLossV |          -0.199 |
+|            LossVC |             228 |
+|       DeltaLossVC |            -192 |
+|           Penalty |           0.755 |
+|      DeltaPenalty |          0.0232 |
+|             Alpha |           0.872 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.02 |
+|                KL |         0.00944 |
+| TotalEnvInteracts |        8.46e+06 |
+|              Time |        4.64e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             282 |
+|      AverageEpRet |            6.12 |
+|          StdEpRet |            4.67 |
+|          MaxEpRet |            14.3 |
+|          MinEpRet |           -1.83 |
+|     AverageEpCost |            39.6 |
+|         StdEpCost |            47.1 |
+|         MaxEpCost |             175 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        4.33e+04 |
+|          CostRate |          0.0051 |
+|      AverageVVals |           0.562 |
+|          StdVVals |           0.749 |
+|          MaxVVals |            2.81 |
+|          MinVVals |           -1.26 |
+|  AverageCostVVals |            4.78 |
+|      StdCostVVals |            8.21 |
+|      MaxCostVVals |            83.2 |
+|      MinCostVVals |           -9.48 |
+|            LossPi |        1.19e-08 |
+|       DeltaLossPi |         -0.0188 |
+|          SurrCost |               0 |
+|     DeltaSurrCost |         -0.0417 |
+|             LossV |           0.366 |
+|        DeltaLossV |           -0.22 |
+|            LossVC |            66.4 |
+|       DeltaLossVC |           -44.5 |
+|           Penalty |           0.778 |
+|      DeltaPenalty |          0.0251 |
+|             Alpha |            1.06 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.02 |
+|                KL |         0.00951 |
+| TotalEnvInteracts |        8.49e+06 |
+|              Time |        4.73e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             283 |
+|      AverageEpRet |            5.75 |
+|          StdEpRet |            3.08 |
+|          MaxEpRet |            11.2 |
+|          MinEpRet |           -0.49 |
+|     AverageEpCost |            25.8 |
+|         StdEpCost |            34.1 |
+|         MaxEpCost |             134 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        4.41e+04 |
+|          CostRate |         0.00518 |
+|      AverageVVals |           0.725 |
+|          StdVVals |           0.802 |
+|          MaxVVals |            2.65 |
+|          MinVVals |           -1.62 |
+|  AverageCostVVals |             4.1 |
+|      StdCostVVals |            5.91 |
+|      MaxCostVVals |            49.9 |
+|      MinCostVVals |           -6.43 |
+|            LossPi |       -1.34e-08 |
+|       DeltaLossPi |         -0.0158 |
+|          SurrCost |       -3.87e-08 |
+|     DeltaSurrCost |         -0.0321 |
+|             LossV |           0.318 |
+|        DeltaLossV |          -0.171 |
+|            LossVC |            45.9 |
+|       DeltaLossVC |             -21 |
+|           Penalty |           0.803 |
+|      DeltaPenalty |          0.0235 |
+|             Alpha |            1.32 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.03 |
+|                KL |         0.00966 |
+| TotalEnvInteracts |        8.52e+06 |
+|              Time |        4.82e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             284 |
+|      AverageEpRet |            5.83 |
+|          StdEpRet |            3.69 |
+|          MaxEpRet |            12.2 |
+|          MinEpRet |           -2.57 |
+|     AverageEpCost |            38.9 |
+|         StdEpCost |            72.5 |
+|         MaxEpCost |             400 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        4.53e+04 |
+|          CostRate |          0.0053 |
+|      AverageVVals |           0.658 |
+|          StdVVals |           0.776 |
+|          MaxVVals |             2.8 |
+|          MinVVals |           -2.12 |
+|  AverageCostVVals |            3.04 |
+|      StdCostVVals |            3.69 |
+|      MaxCostVVals |            44.5 |
+|      MinCostVVals |           -1.49 |
+|            LossPi |        2.38e-08 |
+|       DeltaLossPi |         -0.0174 |
+|          SurrCost |               0 |
+|     DeltaSurrCost |         -0.0343 |
+|             LossV |            0.29 |
+|        DeltaLossV |          -0.153 |
+|            LossVC |            93.5 |
+|       DeltaLossVC |           -63.7 |
+|           Penalty |           0.827 |
+|      DeltaPenalty |          0.0253 |
+|             Alpha |            1.18 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.04 |
+|                KL |         0.00986 |
+| TotalEnvInteracts |        8.55e+06 |
+|              Time |        4.91e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             285 |
+|      AverageEpRet |             5.1 |
+|          StdEpRet |            2.89 |
+|          MaxEpRet |            11.9 |
+|          MinEpRet |          -0.643 |
+|     AverageEpCost |            35.5 |
+|         StdEpCost |            29.6 |
+|         MaxEpCost |             119 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        4.63e+04 |
+|          CostRate |          0.0054 |
+|      AverageVVals |           0.634 |
+|          StdVVals |           0.782 |
+|          MaxVVals |            2.47 |
+|          MinVVals |           -1.49 |
+|  AverageCostVVals |            3.86 |
+|      StdCostVVals |            6.29 |
+|      MaxCostVVals |            56.8 |
+|      MinCostVVals |        -0.00599 |
+|            LossPi |       -2.24e-09 |
+|       DeltaLossPi |         -0.0179 |
+|          SurrCost |        5.96e-09 |
+|     DeltaSurrCost |         -0.0364 |
+|             LossV |           0.298 |
+|        DeltaLossV |           -0.16 |
+|            LossVC |            53.7 |
+|       DeltaLossVC |           -31.9 |
+|           Penalty |           0.852 |
+|      DeltaPenalty |          0.0263 |
+|             Alpha |            1.24 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.03 |
+|                KL |         0.00964 |
+| TotalEnvInteracts |        8.58e+06 |
+|              Time |           5e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             286 |
+|      AverageEpRet |            5.51 |
+|          StdEpRet |            3.63 |
+|          MaxEpRet |              17 |
+|          MinEpRet |           -4.01 |
+|     AverageEpCost |              21 |
+|         StdEpCost |            22.8 |
+|         MaxEpCost |              86 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |         4.7e+04 |
+|          CostRate |         0.00546 |
+|      AverageVVals |           0.578 |
+|          StdVVals |           0.793 |
+|          MaxVVals |             2.6 |
+|          MinVVals |           -1.55 |
+|  AverageCostVVals |            3.21 |
+|      StdCostVVals |            3.72 |
+|      MaxCostVVals |            46.2 |
+|      MinCostVVals |           0.897 |
+|            LossPi |        1.19e-08 |
+|       DeltaLossPi |         -0.0109 |
+|          SurrCost |        2.83e-08 |
+|     DeltaSurrCost |           -0.02 |
+|             LossV |           0.307 |
+|        DeltaLossV |           -0.15 |
+|            LossVC |              20 |
+|       DeltaLossVC |           -7.16 |
+|           Penalty |           0.878 |
+|      DeltaPenalty |           0.023 |
+|             Alpha |            1.94 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.06 |
+|                KL |         0.00968 |
+| TotalEnvInteracts |        8.61e+06 |
+|              Time |        5.09e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             287 |
+|      AverageEpRet |            5.53 |
+|          StdEpRet |            3.09 |
+|          MaxEpRet |            12.5 |
+|          MinEpRet |           -1.67 |
+|     AverageEpCost |            33.6 |
+|         StdEpCost |            29.8 |
+|         MaxEpCost |             108 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |         4.8e+04 |
+|          CostRate |         0.00555 |
+|      AverageVVals |           0.622 |
+|          StdVVals |           0.778 |
+|          MaxVVals |            2.48 |
+|          MinVVals |           -1.48 |
+|  AverageCostVVals |            2.63 |
+|      StdCostVVals |            3.41 |
+|      MaxCostVVals |            37.6 |
+|      MinCostVVals |           -9.64 |
+|            LossPi |        7.45e-09 |
+|       DeltaLossPi |         -0.0129 |
+|          SurrCost |       -8.94e-09 |
+|     DeltaSurrCost |         -0.0232 |
+|             LossV |           0.332 |
+|        DeltaLossV |          -0.192 |
+|            LossVC |            33.1 |
+|       DeltaLossVC |             -17 |
+|           Penalty |           0.901 |
+|      DeltaPenalty |          0.0237 |
+|             Alpha |            1.54 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.04 |
+|                KL |         0.00961 |
+| TotalEnvInteracts |        8.64e+06 |
+|              Time |        5.18e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             288 |
+|      AverageEpRet |            5.07 |
+|          StdEpRet |            3.93 |
+|          MaxEpRet |            13.8 |
+|          MinEpRet |            -1.7 |
+|     AverageEpCost |            30.1 |
+|         StdEpCost |            31.8 |
+|         MaxEpCost |             113 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        4.89e+04 |
+|          CostRate |         0.00564 |
+|      AverageVVals |           0.589 |
+|          StdVVals |           0.783 |
+|          MaxVVals |            2.53 |
+|          MinVVals |           -1.64 |
+|  AverageCostVVals |            3.59 |
+|      StdCostVVals |            5.29 |
+|      MaxCostVVals |            51.5 |
+|      MinCostVVals |           -3.87 |
+|            LossPi |       -2.98e-09 |
+|       DeltaLossPi |         -0.0152 |
+|          SurrCost |        5.96e-09 |
+|     DeltaSurrCost |         -0.0296 |
+|             LossV |           0.292 |
+|        DeltaLossV |           -0.16 |
+|            LossVC |            43.1 |
+|       DeltaLossVC |           -21.1 |
+|           Penalty |           0.925 |
+|      DeltaPenalty |          0.0234 |
+|             Alpha |            1.27 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.04 |
+|                KL |         0.00956 |
+| TotalEnvInteracts |        8.67e+06 |
+|              Time |        5.27e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             289 |
+|      AverageEpRet |             5.6 |
+|          StdEpRet |            2.91 |
+|          MaxEpRet |            11.5 |
+|          MinEpRet |          0.0916 |
+|     AverageEpCost |            22.9 |
+|         StdEpCost |            36.9 |
+|         MaxEpCost |             146 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        4.96e+04 |
+|          CostRate |          0.0057 |
+|      AverageVVals |           0.547 |
+|          StdVVals |           0.757 |
+|          MaxVVals |            3.06 |
+|          MinVVals |           -1.53 |
+|  AverageCostVVals |            2.35 |
+|      StdCostVVals |            3.14 |
+|      MaxCostVVals |            41.4 |
+|      MinCostVVals |           -2.28 |
+|            LossPi |        5.96e-09 |
+|       DeltaLossPi |         -0.0122 |
+|          SurrCost |        1.19e-08 |
+|     DeltaSurrCost |         -0.0226 |
+|             LossV |           0.326 |
+|        DeltaLossV |           -0.18 |
+|            LossVC |            32.5 |
+|       DeltaLossVC |           -15.3 |
+|           Penalty |           0.948 |
+|      DeltaPenalty |          0.0209 |
+|             Alpha |            1.61 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.05 |
+|                KL |         0.00954 |
+| TotalEnvInteracts |         8.7e+06 |
+|              Time |        5.36e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             290 |
+|      AverageEpRet |            5.91 |
+|          StdEpRet |            3.39 |
+|          MaxEpRet |            13.9 |
+|          MinEpRet |            1.25 |
+|     AverageEpCost |            33.6 |
+|         StdEpCost |            36.1 |
+|         MaxEpCost |             124 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        5.06e+04 |
+|          CostRate |         0.00579 |
+|      AverageVVals |           0.541 |
+|          StdVVals |            0.78 |
+|          MaxVVals |            2.85 |
+|          MinVVals |           -1.53 |
+|  AverageCostVVals |            3.47 |
+|      StdCostVVals |            5.55 |
+|      MaxCostVVals |            74.1 |
+|      MinCostVVals |           -3.69 |
+|            LossPi |       -1.79e-08 |
+|       DeltaLossPi |          -0.016 |
+|          SurrCost |       -2.38e-08 |
+|     DeltaSurrCost |          -0.031 |
+|             LossV |           0.302 |
+|        DeltaLossV |          -0.164 |
+|            LossVC |            43.4 |
+|       DeltaLossVC |           -24.1 |
+|           Penalty |           0.969 |
+|      DeltaPenalty |          0.0218 |
+|             Alpha |            1.21 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.02 |
+|                KL |          0.0093 |
+| TotalEnvInteracts |        8.73e+06 |
+|              Time |        5.45e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             291 |
+|      AverageEpRet |            5.94 |
+|          StdEpRet |            3.51 |
+|          MaxEpRet |            14.3 |
+|          MinEpRet |           -1.36 |
+|     AverageEpCost |            15.3 |
+|         StdEpCost |            18.4 |
+|         MaxEpCost |              77 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |         5.1e+04 |
+|          CostRate |         0.00583 |
+|      AverageVVals |             0.7 |
+|          StdVVals |           0.729 |
+|          MaxVVals |            2.68 |
+|          MinVVals |           -1.38 |
+|  AverageCostVVals |            2.93 |
+|      StdCostVVals |            4.03 |
+|      MaxCostVVals |              42 |
+|      MinCostVVals |           -8.74 |
+|            LossPi |        1.19e-08 |
+|       DeltaLossPi |         -0.0121 |
+|          SurrCost |        2.68e-08 |
+|     DeltaSurrCost |         -0.0219 |
+|             LossV |           0.286 |
+|        DeltaLossV |           -0.17 |
+|            LossVC |            18.4 |
+|       DeltaLossVC |           -10.7 |
+|           Penalty |           0.991 |
+|      DeltaPenalty |          0.0167 |
+|             Alpha |            1.67 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.02 |
+|                KL |          0.0093 |
+| TotalEnvInteracts |        8.76e+06 |
+|              Time |        5.54e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             292 |
+|      AverageEpRet |            4.89 |
+|          StdEpRet |            3.64 |
+|          MaxEpRet |            12.5 |
+|          MinEpRet |           -1.68 |
+|     AverageEpCost |            14.6 |
+|         StdEpCost |            16.5 |
+|         MaxEpCost |              58 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        5.15e+04 |
+|          CostRate |         0.00586 |
+|      AverageVVals |           0.567 |
+|          StdVVals |           0.846 |
+|          MaxVVals |            2.88 |
+|          MinVVals |           -1.44 |
+|  AverageCostVVals |            1.72 |
+|      StdCostVVals |            2.91 |
+|      MaxCostVVals |            39.3 |
+|      MinCostVVals |           -4.32 |
+|            LossPi |       -1.42e-08 |
+|       DeltaLossPi |         -0.0121 |
+|          SurrCost |       -2.09e-08 |
+|     DeltaSurrCost |         -0.0226 |
+|             LossV |           0.307 |
+|        DeltaLossV |           -0.18 |
+|            LossVC |            17.2 |
+|       DeltaLossVC |           -7.46 |
+|           Penalty |            1.01 |
+|      DeltaPenalty |          0.0117 |
+|             Alpha |            1.74 |
+|    BacktrackIters |               0 |
+|           Entropy |               2 |
+|                KL |         0.00939 |
+| TotalEnvInteracts |        8.79e+06 |
+|              Time |        5.63e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             293 |
+|      AverageEpRet |            6.88 |
+|          StdEpRet |            3.59 |
+|          MaxEpRet |            14.4 |
+|          MinEpRet |           0.161 |
+|     AverageEpCost |            30.4 |
+|         StdEpCost |            23.1 |
+|         MaxEpCost |              80 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        5.24e+04 |
+|          CostRate |         0.00594 |
+|      AverageVVals |           0.648 |
+|          StdVVals |           0.769 |
+|          MaxVVals |            2.85 |
+|          MinVVals |           -1.56 |
+|  AverageCostVVals |            1.82 |
+|      StdCostVVals |            2.33 |
+|      MaxCostVVals |            33.6 |
+|      MinCostVVals |           -5.54 |
+|            LossPi |       -1.27e-08 |
+|       DeltaLossPi |         -0.0123 |
+|          SurrCost |       -5.96e-09 |
+|     DeltaSurrCost |         -0.0232 |
+|             LossV |           0.357 |
+|        DeltaLossV |          -0.214 |
+|            LossVC |            25.9 |
+|       DeltaLossVC |           -12.6 |
+|           Penalty |            1.02 |
+|      DeltaPenalty |          0.0125 |
+|             Alpha |            1.56 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.01 |
+|                KL |         0.00958 |
+| TotalEnvInteracts |        8.82e+06 |
+|              Time |        5.72e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             294 |
+|      AverageEpRet |            7.51 |
+|          StdEpRet |            3.37 |
+|          MaxEpRet |              14 |
+|          MinEpRet |            2.62 |
+|     AverageEpCost |            32.7 |
+|         StdEpCost |              32 |
+|         MaxEpCost |             113 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        5.34e+04 |
+|          CostRate |         0.00603 |
+|      AverageVVals |           0.774 |
+|          StdVVals |           0.807 |
+|          MaxVVals |            3.18 |
+|          MinVVals |           -1.67 |
+|  AverageCostVVals |            2.91 |
+|      StdCostVVals |            3.72 |
+|      MaxCostVVals |            44.4 |
+|      MinCostVVals |           -4.32 |
+|            LossPi |       -1.19e-08 |
+|       DeltaLossPi |         -0.0162 |
+|          SurrCost |       -2.38e-08 |
+|     DeltaSurrCost |         -0.0308 |
+|             LossV |           0.329 |
+|        DeltaLossV |          -0.186 |
+|            LossVC |            37.4 |
+|       DeltaLossVC |             -20 |
+|           Penalty |            1.03 |
+|      DeltaPenalty |          0.0139 |
+|             Alpha |            1.22 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.03 |
+|                KL |         0.00921 |
+| TotalEnvInteracts |        8.85e+06 |
+|              Time |        5.81e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             295 |
+|      AverageEpRet |            6.46 |
+|          StdEpRet |            3.54 |
+|          MaxEpRet |            15.5 |
+|          MinEpRet |           0.206 |
+|     AverageEpCost |            39.3 |
+|         StdEpCost |            56.1 |
+|         MaxEpCost |             282 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        5.45e+04 |
+|          CostRate |         0.00614 |
+|      AverageVVals |           0.713 |
+|          StdVVals |            0.78 |
+|          MaxVVals |            2.98 |
+|          MinVVals |           -1.46 |
+|  AverageCostVVals |            3.38 |
+|      StdCostVVals |            4.79 |
+|      MaxCostVVals |            41.6 |
+|      MinCostVVals |           -7.29 |
+|            LossPi |       -1.79e-08 |
+|       DeltaLossPi |         -0.0233 |
+|          SurrCost |       -2.98e-08 |
+|     DeltaSurrCost |         -0.0445 |
+|             LossV |           0.298 |
+|        DeltaLossV |          -0.163 |
+|            LossVC |            88.8 |
+|       DeltaLossVC |           -71.8 |
+|           Penalty |            1.05 |
+|      DeltaPenalty |          0.0173 |
+|             Alpha |           0.849 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.01 |
+|                KL |         0.00923 |
+| TotalEnvInteracts |        8.88e+06 |
+|              Time |         5.9e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 1 of line search.[0m
+---------------------------------------
+|             Epoch |             296 |
+|      AverageEpRet |            5.06 |
+|          StdEpRet |            3.43 |
+|          MaxEpRet |            14.5 |
+|          MinEpRet |           -1.58 |
+|     AverageEpCost |            17.5 |
+|         StdEpCost |            22.1 |
+|         MaxEpCost |             100 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        5.51e+04 |
+|          CostRate |         0.00618 |
+|      AverageVVals |           0.589 |
+|          StdVVals |           0.761 |
+|          MaxVVals |            2.78 |
+|          MinVVals |           -1.64 |
+|  AverageCostVVals |             2.9 |
+|      StdCostVVals |            3.84 |
+|      MaxCostVVals |            38.2 |
+|      MinCostVVals |           -1.94 |
+|            LossPi |       -2.24e-08 |
+|       DeltaLossPi |         -0.0101 |
+|          SurrCost |       -2.83e-08 |
+|     DeltaSurrCost |         -0.0187 |
+|             LossV |           0.325 |
+|        DeltaLossV |          -0.167 |
+|            LossVC |            22.9 |
+|       DeltaLossVC |           -13.5 |
+|           Penalty |            1.06 |
+|      DeltaPenalty |          0.0132 |
+|             Alpha |            1.65 |
+|    BacktrackIters |               1 |
+|           Entropy |            2.02 |
+|                KL |         0.00637 |
+| TotalEnvInteracts |        8.91e+06 |
+|              Time |        5.99e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             297 |
+|      AverageEpRet |            5.39 |
+|          StdEpRet |            4.43 |
+|          MaxEpRet |            17.4 |
+|          MinEpRet |           -2.66 |
+|     AverageEpCost |              30 |
+|         StdEpCost |            35.1 |
+|         MaxEpCost |             161 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |         5.6e+04 |
+|          CostRate |         0.00626 |
+|      AverageVVals |           0.622 |
+|          StdVVals |           0.811 |
+|          MaxVVals |            2.91 |
+|          MinVVals |            -1.6 |
+|  AverageCostVVals |            2.04 |
+|      StdCostVVals |            3.69 |
+|      MaxCostVVals |            54.7 |
+|      MinCostVVals |           -4.12 |
+|            LossPi |       -5.22e-09 |
+|       DeltaLossPi |         -0.0143 |
+|          SurrCost |       -1.94e-08 |
+|     DeltaSurrCost |         -0.0268 |
+|             LossV |           0.311 |
+|        DeltaLossV |           -0.17 |
+|            LossVC |            32.3 |
+|       DeltaLossVC |           -15.5 |
+|           Penalty |            1.08 |
+|      DeltaPenalty |          0.0138 |
+|             Alpha |            1.36 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.01 |
+|                KL |         0.00965 |
+| TotalEnvInteracts |        8.94e+06 |
+|              Time |        6.08e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             298 |
+|      AverageEpRet |            4.94 |
+|          StdEpRet |             3.4 |
+|          MaxEpRet |            14.5 |
+|          MinEpRet |           -1.54 |
+|     AverageEpCost |            21.9 |
+|         StdEpCost |            27.6 |
+|         MaxEpCost |             118 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        5.66e+04 |
+|          CostRate |         0.00631 |
+|      AverageVVals |           0.627 |
+|          StdVVals |           0.801 |
+|          MaxVVals |            2.83 |
+|          MinVVals |            -1.5 |
+|  AverageCostVVals |            2.64 |
+|      StdCostVVals |             3.6 |
+|      MaxCostVVals |            50.5 |
+|      MinCostVVals |          -0.738 |
+|            LossPi |               0 |
+|       DeltaLossPi |         -0.0144 |
+|          SurrCost |       -2.98e-09 |
+|     DeltaSurrCost |         -0.0248 |
+|             LossV |           0.297 |
+|        DeltaLossV |          -0.168 |
+|            LossVC |            18.1 |
+|       DeltaLossVC |           -8.21 |
+|           Penalty |            1.09 |
+|      DeltaPenalty |          0.0115 |
+|             Alpha |            1.47 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.01 |
+|                KL |         0.00976 |
+| TotalEnvInteracts |        8.97e+06 |
+|              Time |        6.17e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             299 |
+|      AverageEpRet |            5.68 |
+|          StdEpRet |            4.18 |
+|          MaxEpRet |            16.6 |
+|          MinEpRet |           -1.71 |
+|     AverageEpCost |            24.8 |
+|         StdEpCost |            34.4 |
+|         MaxEpCost |             173 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        5.74e+04 |
+|          CostRate |         0.00638 |
+|      AverageVVals |           0.506 |
+|          StdVVals |            0.76 |
+|          MaxVVals |            2.69 |
+|          MinVVals |           -1.86 |
+|  AverageCostVVals |            2.45 |
+|      StdCostVVals |            4.36 |
+|      MaxCostVVals |            59.8 |
+|      MinCostVVals |           -2.03 |
+|            LossPi |       -2.98e-08 |
+|       DeltaLossPi |         -0.0138 |
+|          SurrCost |       -3.58e-08 |
+|     DeltaSurrCost |         -0.0253 |
+|             LossV |           0.332 |
+|        DeltaLossV |          -0.191 |
+|            LossVC |            29.5 |
+|       DeltaLossVC |           -17.8 |
+|           Penalty |             1.1 |
+|      DeltaPenalty |          0.0104 |
+|             Alpha |            1.36 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.02 |
+|                KL |         0.00964 |
+| TotalEnvInteracts |           9e+06 |
+|              Time |        6.26e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 1 of line search.[0m
+---------------------------------------
+|             Epoch |             300 |
+|      AverageEpRet |            6.45 |
+|          StdEpRet |            3.67 |
+|          MaxEpRet |            15.1 |
+|          MinEpRet |           -2.31 |
+|     AverageEpCost |            26.6 |
+|         StdEpCost |              28 |
+|         MaxEpCost |             112 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        5.82e+04 |
+|          CostRate |         0.00644 |
+|      AverageVVals |           0.744 |
+|          StdVVals |           0.782 |
+|          MaxVVals |            3.46 |
+|          MinVVals |           -1.43 |
+|  AverageCostVVals |            2.94 |
+|      StdCostVVals |             4.6 |
+|      MaxCostVVals |            41.1 |
+|      MinCostVVals |           -5.04 |
+|            LossPi |        1.64e-08 |
+|       DeltaLossPi |         -0.0107 |
+|          SurrCost |        2.98e-08 |
+|     DeltaSurrCost |         -0.0196 |
+|             LossV |           0.398 |
+|        DeltaLossV |          -0.228 |
+|            LossVC |            24.6 |
+|       DeltaLossVC |           -11.5 |
+|           Penalty |            1.11 |
+|      DeltaPenalty |          0.0101 |
+|             Alpha |            1.56 |
+|    BacktrackIters |               1 |
+|           Entropy |            2.02 |
+|                KL |         0.00646 |
+| TotalEnvInteracts |        9.03e+06 |
+|              Time |        6.35e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             301 |
+|      AverageEpRet |            6.21 |
+|          StdEpRet |            3.09 |
+|          MaxEpRet |            13.9 |
+|          MinEpRet |           -1.89 |
+|     AverageEpCost |            29.1 |
+|         StdEpCost |            30.5 |
+|         MaxEpCost |             125 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |         5.9e+04 |
+|          CostRate |         0.00652 |
+|      AverageVVals |           0.688 |
+|          StdVVals |           0.759 |
+|          MaxVVals |             2.6 |
+|          MinVVals |           -1.55 |
+|  AverageCostVVals |            2.83 |
+|      StdCostVVals |            3.93 |
+|      MaxCostVVals |              48 |
+|      MinCostVVals |           -4.87 |
+|            LossPi |        1.79e-08 |
+|       DeltaLossPi |         -0.0136 |
+|          SurrCost |        2.98e-08 |
+|     DeltaSurrCost |         -0.0246 |
+|             LossV |           0.341 |
+|        DeltaLossV |          -0.201 |
+|            LossVC |            30.5 |
+|       DeltaLossVC |           -16.1 |
+|           Penalty |            1.12 |
+|      DeltaPenalty |          0.0106 |
+|             Alpha |            1.41 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.03 |
+|                KL |          0.0097 |
+| TotalEnvInteracts |        9.06e+06 |
+|              Time |        6.44e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             302 |
+|      AverageEpRet |            5.88 |
+|          StdEpRet |            3.18 |
+|          MaxEpRet |            9.91 |
+|          MinEpRet |           -1.34 |
+|     AverageEpCost |            22.8 |
+|         StdEpCost |            32.1 |
+|         MaxEpCost |             156 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        5.97e+04 |
+|          CostRate |         0.00657 |
+|      AverageVVals |           0.686 |
+|          StdVVals |           0.828 |
+|          MaxVVals |            3.24 |
+|          MinVVals |           -1.63 |
+|  AverageCostVVals |            2.86 |
+|      StdCostVVals |            4.12 |
+|      MaxCostVVals |            47.5 |
+|      MinCostVVals |           -3.32 |
+|            LossPi |        4.47e-09 |
+|       DeltaLossPi |         -0.0146 |
+|          SurrCost |        1.19e-08 |
+|     DeltaSurrCost |         -0.0254 |
+|             LossV |           0.362 |
+|        DeltaLossV |          -0.218 |
+|            LossVC |            26.7 |
+|       DeltaLossVC |           -17.6 |
+|           Penalty |            1.13 |
+|      DeltaPenalty |         0.00889 |
+|             Alpha |            1.46 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.02 |
+|                KL |          0.0097 |
+| TotalEnvInteracts |        9.09e+06 |
+|              Time |        6.53e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             303 |
+|      AverageEpRet |            7.08 |
+|          StdEpRet |            4.16 |
+|          MaxEpRet |            17.7 |
+|          MinEpRet |           0.318 |
+|     AverageEpCost |            32.3 |
+|         StdEpCost |              40 |
+|         MaxEpCost |             131 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        6.07e+04 |
+|          CostRate |         0.00666 |
+|      AverageVVals |           0.706 |
+|          StdVVals |            0.79 |
+|          MaxVVals |            3.31 |
+|          MinVVals |           -1.45 |
+|  AverageCostVVals |            3.08 |
+|      StdCostVVals |             5.2 |
+|      MaxCostVVals |            45.3 |
+|      MinCostVVals |           -5.06 |
+|            LossPi |        8.94e-09 |
+|       DeltaLossPi |         -0.0168 |
+|          SurrCost |        8.94e-09 |
+|     DeltaSurrCost |         -0.0315 |
+|             LossV |           0.378 |
+|        DeltaLossV |           -0.21 |
+|            LossVC |            36.5 |
+|       DeltaLossVC |           -20.2 |
+|           Penalty |            1.14 |
+|      DeltaPenalty |          0.0108 |
+|             Alpha |            1.26 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.01 |
+|                KL |         0.00946 |
+| TotalEnvInteracts |        9.12e+06 |
+|              Time |        6.62e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             304 |
+|      AverageEpRet |            5.42 |
+|          StdEpRet |            3.48 |
+|          MaxEpRet |            12.1 |
+|          MinEpRet |          -0.771 |
+|     AverageEpCost |            16.7 |
+|         StdEpCost |            19.8 |
+|         MaxEpCost |              71 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        6.12e+04 |
+|          CostRate |         0.00669 |
+|      AverageVVals |           0.637 |
+|          StdVVals |           0.864 |
+|          MaxVVals |            3.47 |
+|          MinVVals |           -1.55 |
+|  AverageCostVVals |            2.34 |
+|      StdCostVVals |            4.34 |
+|      MaxCostVVals |            47.9 |
+|      MinCostVVals |           -6.97 |
+|            LossPi |        2.98e-09 |
+|       DeltaLossPi |         -0.0114 |
+|          SurrCost |        4.47e-09 |
+|     DeltaSurrCost |         -0.0217 |
+|             LossV |           0.352 |
+|        DeltaLossV |          -0.195 |
+|            LossVC |              13 |
+|       DeltaLossVC |           -7.39 |
+|           Penalty |            1.15 |
+|      DeltaPenalty |         0.00667 |
+|             Alpha |            1.85 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.03 |
+|                KL |         0.00951 |
+| TotalEnvInteracts |        9.15e+06 |
+|              Time |        6.71e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             305 |
+|      AverageEpRet |            4.66 |
+|          StdEpRet |            2.88 |
+|          MaxEpRet |            9.28 |
+|          MinEpRet |           -2.27 |
+|     AverageEpCost |            26.2 |
+|         StdEpCost |              47 |
+|         MaxEpCost |             255 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |         6.2e+04 |
+|          CostRate |         0.00675 |
+|      AverageVVals |           0.537 |
+|          StdVVals |           0.753 |
+|          MaxVVals |            2.45 |
+|          MinVVals |            -1.5 |
+|  AverageCostVVals |            2.04 |
+|      StdCostVVals |            4.02 |
+|      MaxCostVVals |            49.5 |
+|      MinCostVVals |           -6.35 |
+|            LossPi |               0 |
+|       DeltaLossPi |         -0.0181 |
+|          SurrCost |       -2.38e-08 |
+|     DeltaSurrCost |         -0.0334 |
+|             LossV |           0.334 |
+|        DeltaLossV |          -0.181 |
+|            LossVC |            61.4 |
+|       DeltaLossVC |           -45.6 |
+|           Penalty |            1.16 |
+|      DeltaPenalty |         0.00652 |
+|             Alpha |            1.03 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.03 |
+|                KL |         0.00976 |
+| TotalEnvInteracts |        9.18e+06 |
+|              Time |         6.8e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             306 |
+|      AverageEpRet |               6 |
+|          StdEpRet |            4.16 |
+|          MaxEpRet |            13.5 |
+|          MinEpRet |           -1.44 |
+|     AverageEpCost |            9.73 |
+|         StdEpCost |            14.9 |
+|         MaxEpCost |              62 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        6.23e+04 |
+|          CostRate |         0.00676 |
+|      AverageVVals |           0.589 |
+|          StdVVals |           0.769 |
+|          MaxVVals |            2.99 |
+|          MinVVals |           -1.69 |
+|  AverageCostVVals |            2.08 |
+|      StdCostVVals |            3.73 |
+|      MaxCostVVals |            52.9 |
+|      MinCostVVals |           -11.6 |
+|            LossPi |        1.79e-08 |
+|       DeltaLossPi |         -0.0156 |
+|          SurrCost |        3.58e-08 |
+|     DeltaSurrCost |         -0.0285 |
+|             LossV |           0.318 |
+|        DeltaLossV |          -0.162 |
+|            LossVC |            17.4 |
+|       DeltaLossVC |           -10.9 |
+|           Penalty |            1.17 |
+|      DeltaPenalty |        0.000161 |
+|             Alpha |            1.32 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.03 |
+|                KL |         0.00933 |
+| TotalEnvInteracts |        9.21e+06 |
+|              Time |        6.89e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             307 |
+|      AverageEpRet |            4.57 |
+|          StdEpRet |            3.51 |
+|          MaxEpRet |            13.9 |
+|          MinEpRet |           -1.93 |
+|     AverageEpCost |            20.7 |
+|         StdEpCost |            16.7 |
+|         MaxEpCost |              76 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        6.29e+04 |
+|          CostRate |         0.00681 |
+|      AverageVVals |           0.632 |
+|          StdVVals |           0.719 |
+|          MaxVVals |             2.6 |
+|          MinVVals |           -1.68 |
+|  AverageCostVVals |            1.16 |
+|      StdCostVVals |            1.72 |
+|      MaxCostVVals |            27.5 |
+|      MinCostVVals |           -5.22 |
+|            LossPi |        5.96e-09 |
+|       DeltaLossPi |        -0.00996 |
+|          SurrCost |        5.96e-09 |
+|     DeltaSurrCost |         -0.0164 |
+|             LossV |           0.293 |
+|        DeltaLossV |          -0.119 |
+|            LossVC |            16.7 |
+|       DeltaLossVC |           -8.46 |
+|           Penalty |            1.17 |
+|      DeltaPenalty |        -0.00145 |
+|             Alpha |            1.92 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.03 |
+|                KL |          0.0093 |
+| TotalEnvInteracts |        9.24e+06 |
+|              Time |        6.98e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             308 |
+|      AverageEpRet |            5.13 |
+|          StdEpRet |            3.26 |
+|          MaxEpRet |            13.9 |
+|          MinEpRet |          -0.363 |
+|     AverageEpCost |            23.1 |
+|         StdEpCost |            23.2 |
+|         MaxEpCost |              97 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        6.36e+04 |
+|          CostRate |         0.00686 |
+|      AverageVVals |           0.543 |
+|          StdVVals |           0.757 |
+|          MaxVVals |             2.3 |
+|          MinVVals |           -1.94 |
+|  AverageCostVVals |            2.52 |
+|      StdCostVVals |             3.8 |
+|      MaxCostVVals |            41.3 |
+|      MinCostVVals |           -2.85 |
+|            LossPi |        2.98e-09 |
+|       DeltaLossPi |         -0.0128 |
+|          SurrCost |               0 |
+|     DeltaSurrCost |          -0.021 |
+|             LossV |           0.287 |
+|        DeltaLossV |          -0.136 |
+|            LossVC |            21.4 |
+|       DeltaLossVC |           -8.39 |
+|           Penalty |            1.16 |
+|      DeltaPenalty |        -0.00201 |
+|             Alpha |            1.57 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.02 |
+|                KL |         0.00971 |
+| TotalEnvInteracts |        9.27e+06 |
+|              Time |        7.06e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             309 |
+|      AverageEpRet |            4.76 |
+|          StdEpRet |            3.52 |
+|          MaxEpRet |            10.7 |
+|          MinEpRet |          -0.623 |
+|     AverageEpCost |            23.2 |
+|         StdEpCost |            25.8 |
+|         MaxEpCost |             100 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        6.43e+04 |
+|          CostRate |         0.00691 |
+|      AverageVVals |           0.529 |
+|          StdVVals |           0.765 |
+|          MaxVVals |            2.74 |
+|          MinVVals |           -1.46 |
+|  AverageCostVVals |            2.78 |
+|      StdCostVVals |            4.51 |
+|      MaxCostVVals |              70 |
+|      MinCostVVals |           -19.1 |
+|            LossPi |        5.96e-09 |
+|       DeltaLossPi |         -0.0161 |
+|          SurrCost |        2.38e-08 |
+|     DeltaSurrCost |          -0.029 |
+|             LossV |            0.28 |
+|        DeltaLossV |          -0.147 |
+|            LossVC |              26 |
+|       DeltaLossVC |           -15.5 |
+|           Penalty |            1.16 |
+|      DeltaPenalty |        -0.00248 |
+|             Alpha |             1.2 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.04 |
+|                KL |         0.00923 |
+| TotalEnvInteracts |         9.3e+06 |
+|              Time |        7.16e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             310 |
+|      AverageEpRet |            5.42 |
+|          StdEpRet |            3.84 |
+|          MaxEpRet |            13.1 |
+|          MinEpRet |           -2.07 |
+|     AverageEpCost |            24.1 |
+|         StdEpCost |            34.3 |
+|         MaxEpCost |             156 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |         6.5e+04 |
+|          CostRate |         0.00697 |
+|      AverageVVals |            0.54 |
+|          StdVVals |           0.737 |
+|          MaxVVals |            2.83 |
+|          MinVVals |           -1.55 |
+|  AverageCostVVals |            2.13 |
+|      StdCostVVals |            3.43 |
+|      MaxCostVVals |            49.6 |
+|      MinCostVVals |              -8 |
+|            LossPi |        4.47e-09 |
+|       DeltaLossPi |         -0.0136 |
+|          SurrCost |        2.98e-09 |
+|     DeltaSurrCost |         -0.0239 |
+|             LossV |           0.323 |
+|        DeltaLossV |          -0.166 |
+|            LossVC |            45.3 |
+|       DeltaLossVC |           -14.9 |
+|           Penalty |            1.16 |
+|      DeltaPenalty |        -0.00259 |
+|             Alpha |            1.39 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.03 |
+|                KL |         0.00938 |
+| TotalEnvInteracts |        9.33e+06 |
+|              Time |        7.24e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             311 |
+|      AverageEpRet |            3.93 |
+|          StdEpRet |             2.6 |
+|          MaxEpRet |            8.13 |
+|          MinEpRet |           -1.73 |
+|     AverageEpCost |            28.5 |
+|         StdEpCost |            44.3 |
+|         MaxEpCost |             151 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        6.59e+04 |
+|          CostRate |         0.00704 |
+|      AverageVVals |           0.558 |
+|          StdVVals |           0.777 |
+|          MaxVVals |            3.02 |
+|          MinVVals |           -1.47 |
+|  AverageCostVVals |            2.25 |
+|      StdCostVVals |            2.88 |
+|      MaxCostVVals |            31.3 |
+|      MinCostVVals |           -4.44 |
+|            LossPi |        5.96e-09 |
+|       DeltaLossPi |         -0.0182 |
+|          SurrCost |        2.98e-09 |
+|     DeltaSurrCost |         -0.0337 |
+|             LossV |           0.321 |
+|        DeltaLossV |          -0.188 |
+|            LossVC |              60 |
+|       DeltaLossVC |           -35.4 |
+|           Penalty |            1.16 |
+|      DeltaPenalty |       -0.000999 |
+|             Alpha |            1.07 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.03 |
+|                KL |         0.00914 |
+| TotalEnvInteracts |        9.36e+06 |
+|              Time |        7.33e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             312 |
+|      AverageEpRet |            4.06 |
+|          StdEpRet |            3.74 |
+|          MaxEpRet |            11.2 |
+|          MinEpRet |           -2.14 |
+|     AverageEpCost |              16 |
+|         StdEpCost |            16.4 |
+|         MaxEpCost |              61 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        6.64e+04 |
+|          CostRate |         0.00707 |
+|      AverageVVals |           0.465 |
+|          StdVVals |           0.675 |
+|          MaxVVals |            2.65 |
+|          MinVVals |           -1.68 |
+|  AverageCostVVals |            2.48 |
+|      StdCostVVals |            4.05 |
+|      MaxCostVVals |            49.5 |
+|      MinCostVVals |          -0.224 |
+|            LossPi |       -2.98e-09 |
+|       DeltaLossPi |         -0.0153 |
+|          SurrCost |       -4.47e-09 |
+|     DeltaSurrCost |         -0.0276 |
+|             LossV |           0.296 |
+|        DeltaLossV |          -0.151 |
+|            LossVC |            22.1 |
+|       DeltaLossVC |           -12.5 |
+|           Penalty |            1.16 |
+|      DeltaPenalty |         -0.0043 |
+|             Alpha |            1.43 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.02 |
+|                KL |         0.00968 |
+| TotalEnvInteracts |        9.39e+06 |
+|              Time |        7.42e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             313 |
+|      AverageEpRet |            5.25 |
+|          StdEpRet |            3.75 |
+|          MaxEpRet |            14.1 |
+|          MinEpRet |            -1.2 |
+|     AverageEpCost |            20.2 |
+|         StdEpCost |              22 |
+|         MaxEpCost |              86 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |         6.7e+04 |
+|          CostRate |         0.00711 |
+|      AverageVVals |           0.521 |
+|          StdVVals |           0.751 |
+|          MaxVVals |            2.61 |
+|          MinVVals |           -1.69 |
+|  AverageCostVVals |            1.69 |
+|      StdCostVVals |            2.34 |
+|      MaxCostVVals |            21.2 |
+|      MinCostVVals |           -1.66 |
+|            LossPi |        1.49e-09 |
+|       DeltaLossPi |         -0.0118 |
+|          SurrCost |        2.98e-09 |
+|     DeltaSurrCost |           -0.02 |
+|             LossV |           0.316 |
+|        DeltaLossV |          -0.152 |
+|            LossVC |            23.8 |
+|       DeltaLossVC |           -11.6 |
+|           Penalty |            1.15 |
+|      DeltaPenalty |        -0.00571 |
+|             Alpha |            1.65 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.03 |
+|                KL |         0.00916 |
+| TotalEnvInteracts |        9.42e+06 |
+|              Time |        7.51e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             314 |
+|      AverageEpRet |            5.03 |
+|          StdEpRet |            4.45 |
+|          MaxEpRet |              16 |
+|          MinEpRet |           -1.64 |
+|     AverageEpCost |            22.2 |
+|         StdEpCost |            30.8 |
+|         MaxEpCost |             157 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        6.76e+04 |
+|          CostRate |         0.00716 |
+|      AverageVVals |           0.522 |
+|          StdVVals |           0.824 |
+|          MaxVVals |            2.99 |
+|          MinVVals |            -1.4 |
+|  AverageCostVVals |            1.97 |
+|      StdCostVVals |            3.09 |
+|      MaxCostVVals |            37.2 |
+|      MinCostVVals |           -2.28 |
+|            LossPi |       -5.96e-09 |
+|       DeltaLossPi |         -0.0144 |
+|          SurrCost |               0 |
+|     DeltaSurrCost |         -0.0257 |
+|             LossV |           0.347 |
+|        DeltaLossV |          -0.184 |
+|            LossVC |            37.1 |
+|       DeltaLossVC |           -24.6 |
+|           Penalty |            1.15 |
+|      DeltaPenalty |        -0.00621 |
+|             Alpha |             1.3 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.02 |
+|                KL |         0.00969 |
+| TotalEnvInteracts |        9.45e+06 |
+|              Time |         7.6e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             315 |
+|      AverageEpRet |             5.3 |
+|          StdEpRet |            3.69 |
+|          MaxEpRet |            14.2 |
+|          MinEpRet |           -1.19 |
+|     AverageEpCost |            14.8 |
+|         StdEpCost |            18.5 |
+|         MaxEpCost |              60 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        6.81e+04 |
+|          CostRate |         0.00718 |
+|      AverageVVals |           0.604 |
+|          StdVVals |           0.737 |
+|          MaxVVals |               3 |
+|          MinVVals |           -1.63 |
+|  AverageCostVVals |            2.14 |
+|      StdCostVVals |            4.01 |
+|      MaxCostVVals |            49.8 |
+|      MinCostVVals |           -1.25 |
+|            LossPi |        2.09e-08 |
+|       DeltaLossPi |         -0.0133 |
+|          SurrCost |        2.68e-08 |
+|     DeltaSurrCost |         -0.0228 |
+|             LossV |           0.305 |
+|        DeltaLossV |          -0.164 |
+|            LossVC |            20.6 |
+|       DeltaLossVC |           -10.3 |
+|           Penalty |            1.14 |
+|      DeltaPenalty |        -0.00941 |
+|             Alpha |            1.64 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.01 |
+|                KL |         0.00994 |
+| TotalEnvInteracts |        9.48e+06 |
+|              Time |        7.69e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             316 |
+|      AverageEpRet |            5.52 |
+|          StdEpRet |            2.72 |
+|          MaxEpRet |            10.8 |
+|          MinEpRet |           -2.13 |
+|     AverageEpCost |            26.8 |
+|         StdEpCost |              28 |
+|         MaxEpCost |             130 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        6.89e+04 |
+|          CostRate |         0.00724 |
+|      AverageVVals |           0.587 |
+|          StdVVals |           0.798 |
+|          MaxVVals |            2.65 |
+|          MinVVals |           -1.38 |
+|  AverageCostVVals |            1.74 |
+|      StdCostVVals |            2.46 |
+|      MaxCostVVals |            28.9 |
+|      MinCostVVals |           -2.52 |
+|            LossPi |       -1.34e-08 |
+|       DeltaLossPi |         -0.0123 |
+|          SurrCost |       -1.19e-08 |
+|     DeltaSurrCost |          -0.023 |
+|             LossV |           0.337 |
+|        DeltaLossV |          -0.191 |
+|            LossVC |            26.5 |
+|       DeltaLossVC |           -16.7 |
+|           Penalty |            1.13 |
+|      DeltaPenalty |         -0.0078 |
+|             Alpha |            1.48 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.03 |
+|                KL |         0.00986 |
+| TotalEnvInteracts |        9.51e+06 |
+|              Time |        7.78e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             317 |
+|      AverageEpRet |            4.73 |
+|          StdEpRet |            3.63 |
+|          MaxEpRet |            12.3 |
+|          MinEpRet |           -2.13 |
+|     AverageEpCost |            22.8 |
+|         StdEpCost |            43.2 |
+|         MaxEpCost |             232 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        6.96e+04 |
+|          CostRate |         0.00729 |
+|      AverageVVals |           0.571 |
+|          StdVVals |           0.756 |
+|          MaxVVals |            2.49 |
+|          MinVVals |           -1.49 |
+|  AverageCostVVals |            2.17 |
+|      StdCostVVals |            3.51 |
+|      MaxCostVVals |            38.8 |
+|      MinCostVVals |           -5.27 |
+|            LossPi |        2.38e-08 |
+|       DeltaLossPi |         -0.0158 |
+|          SurrCost |        4.77e-08 |
+|     DeltaSurrCost |         -0.0283 |
+|             LossV |           0.328 |
+|        DeltaLossV |          -0.172 |
+|            LossVC |            49.2 |
+|       DeltaLossVC |           -19.2 |
+|           Penalty |            1.12 |
+|      DeltaPenalty |        -0.00785 |
+|             Alpha |            1.25 |
+|    BacktrackIters |               0 |
+|           Entropy |            2.01 |
+|                KL |         0.00902 |
+| TotalEnvInteracts |        9.54e+06 |
+|              Time |        7.87e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             318 |
+|      AverageEpRet |            5.52 |
+|          StdEpRet |            3.58 |
+|          MaxEpRet |            13.7 |
+|          MinEpRet |            -1.2 |
+|     AverageEpCost |            14.7 |
+|         StdEpCost |            19.1 |
+|         MaxEpCost |              81 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |           7e+04 |
+|          CostRate |         0.00731 |
+|      AverageVVals |           0.591 |
+|          StdVVals |           0.807 |
+|          MaxVVals |            2.84 |
+|          MinVVals |           -1.43 |
+|  AverageCostVVals |            2.09 |
+|      StdCostVVals |            2.86 |
+|      MaxCostVVals |              36 |
+|      MinCostVVals |           -5.58 |
+|            LossPi |       -1.71e-08 |
+|       DeltaLossPi |         -0.0115 |
+|          SurrCost |       -2.09e-08 |
+|     DeltaSurrCost |         -0.0194 |
+|             LossV |            0.31 |
+|        DeltaLossV |          -0.138 |
+|            LossVC |            14.6 |
+|       DeltaLossVC |           -7.85 |
+|           Penalty |            1.12 |
+|      DeltaPenalty |         -0.0109 |
+|             Alpha |            1.61 |
+|    BacktrackIters |               0 |
+|           Entropy |               2 |
+|                KL |         0.00964 |
+| TotalEnvInteracts |        9.57e+06 |
+|              Time |        7.97e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             319 |
+|      AverageEpRet |             5.6 |
+|          StdEpRet |            3.16 |
+|          MaxEpRet |            12.9 |
+|          MinEpRet |           -2.04 |
+|     AverageEpCost |            14.1 |
+|         StdEpCost |              18 |
+|         MaxEpCost |              57 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        7.04e+04 |
+|          CostRate |         0.00734 |
+|      AverageVVals |           0.608 |
+|          StdVVals |           0.794 |
+|          MaxVVals |            2.66 |
+|          MinVVals |           -1.44 |
+|  AverageCostVVals |            1.57 |
+|      StdCostVVals |            2.51 |
+|      MaxCostVVals |            26.2 |
+|      MinCostVVals |           -4.28 |
+|            LossPi |       -2.98e-09 |
+|       DeltaLossPi |         -0.0127 |
+|          SurrCost |        2.98e-09 |
+|     DeltaSurrCost |         -0.0225 |
+|             LossV |           0.296 |
+|        DeltaLossV |          -0.135 |
+|            LossVC |            15.1 |
+|       DeltaLossVC |           -5.33 |
+|           Penalty |             1.1 |
+|      DeltaPenalty |         -0.0138 |
+|             Alpha |             1.6 |
+|    BacktrackIters |               0 |
+|           Entropy |            1.98 |
+|                KL |         0.00954 |
+| TotalEnvInteracts |         9.6e+06 |
+|              Time |        8.05e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             320 |
+|      AverageEpRet |            5.87 |
+|          StdEpRet |            4.04 |
+|          MaxEpRet |            14.9 |
+|          MinEpRet |           -2.28 |
+|     AverageEpCost |            28.1 |
+|         StdEpCost |            26.7 |
+|         MaxEpCost |              91 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        7.13e+04 |
+|          CostRate |          0.0074 |
+|      AverageVVals |           0.585 |
+|          StdVVals |           0.751 |
+|          MaxVVals |            2.72 |
+|          MinVVals |           -1.34 |
+|  AverageCostVVals |            1.65 |
+|      StdCostVVals |             2.4 |
+|      MaxCostVVals |            29.3 |
+|      MinCostVVals |           -2.93 |
+|            LossPi |        1.19e-08 |
+|       DeltaLossPi |         -0.0113 |
+|          SurrCost |        2.98e-08 |
+|     DeltaSurrCost |         -0.0202 |
+|             LossV |           0.325 |
+|        DeltaLossV |           -0.18 |
+|            LossVC |            27.6 |
+|       DeltaLossVC |           -15.8 |
+|           Penalty |            1.09 |
+|      DeltaPenalty |         -0.0112 |
+|             Alpha |            1.63 |
+|    BacktrackIters |               0 |
+|           Entropy |            1.98 |
+|                KL |         0.00935 |
+| TotalEnvInteracts |        9.63e+06 |
+|              Time |        8.14e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             321 |
+|      AverageEpRet |               5 |
+|          StdEpRet |            2.87 |
+|          MaxEpRet |            12.8 |
+|          MinEpRet |          -0.496 |
+|     AverageEpCost |            21.7 |
+|         StdEpCost |            36.7 |
+|         MaxEpCost |             154 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        7.19e+04 |
+|          CostRate |         0.00745 |
+|      AverageVVals |           0.624 |
+|          StdVVals |           0.765 |
+|          MaxVVals |            2.62 |
+|          MinVVals |           -1.59 |
+|  AverageCostVVals |             2.5 |
+|      StdCostVVals |            4.42 |
+|      MaxCostVVals |            44.4 |
+|      MinCostVVals |           -3.45 |
+|            LossPi |       -2.98e-09 |
+|       DeltaLossPi |         -0.0134 |
+|          SurrCost |       -1.19e-08 |
+|     DeltaSurrCost |         -0.0253 |
+|             LossV |           0.288 |
+|        DeltaLossV |          -0.118 |
+|            LossVC |            30.7 |
+|       DeltaLossVC |           -18.6 |
+|           Penalty |            1.08 |
+|      DeltaPenalty |         -0.0113 |
+|             Alpha |            1.53 |
+|    BacktrackIters |               0 |
+|           Entropy |            1.96 |
+|                KL |         0.00956 |
+| TotalEnvInteracts |        9.66e+06 |
+|              Time |        8.23e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             322 |
+|      AverageEpRet |            5.17 |
+|          StdEpRet |            3.58 |
+|          MaxEpRet |            15.8 |
+|          MinEpRet |           -2.05 |
+|     AverageEpCost |            25.1 |
+|         StdEpCost |            33.7 |
+|         MaxEpCost |             144 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        7.27e+04 |
+|          CostRate |          0.0075 |
+|      AverageVVals |           0.553 |
+|          StdVVals |            0.79 |
+|          MaxVVals |            2.46 |
+|          MinVVals |           -1.42 |
+|  AverageCostVVals |             1.5 |
+|      StdCostVVals |             3.8 |
+|      MaxCostVVals |            46.7 |
+|      MinCostVVals |            -4.1 |
+|            LossPi |       -1.19e-08 |
+|       DeltaLossPi |         -0.0144 |
+|          SurrCost |       -1.19e-08 |
+|     DeltaSurrCost |         -0.0261 |
+|             LossV |           0.305 |
+|        DeltaLossV |          -0.129 |
+|            LossVC |            34.1 |
+|       DeltaLossVC |           -25.1 |
+|           Penalty |            1.07 |
+|      DeltaPenalty |         -0.0102 |
+|             Alpha |             1.4 |
+|    BacktrackIters |               0 |
+|           Entropy |            1.96 |
+|                KL |         0.00919 |
+| TotalEnvInteracts |        9.69e+06 |
+|              Time |        8.32e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             323 |
+|      AverageEpRet |            5.04 |
+|          StdEpRet |            4.17 |
+|          MaxEpRet |            14.1 |
+|          MinEpRet |           -1.03 |
+|     AverageEpCost |            15.4 |
+|         StdEpCost |            18.6 |
+|         MaxEpCost |              56 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        7.31e+04 |
+|          CostRate |         0.00752 |
+|      AverageVVals |           0.602 |
+|          StdVVals |           0.819 |
+|          MaxVVals |            2.44 |
+|          MinVVals |           -1.53 |
+|  AverageCostVVals |             2.2 |
+|      StdCostVVals |            4.13 |
+|      MaxCostVVals |            38.4 |
+|      MinCostVVals |           -15.3 |
+|            LossPi |       -8.94e-09 |
+|       DeltaLossPi |         -0.0138 |
+|          SurrCost |       -8.94e-09 |
+|     DeltaSurrCost |         -0.0262 |
+|             LossV |           0.337 |
+|        DeltaLossV |          -0.148 |
+|            LossVC |            21.6 |
+|       DeltaLossVC |           -12.7 |
+|           Penalty |            1.06 |
+|      DeltaPenalty |         -0.0126 |
+|             Alpha |            1.45 |
+|    BacktrackIters |               0 |
+|           Entropy |            1.97 |
+|                KL |         0.00963 |
+| TotalEnvInteracts |        9.72e+06 |
+|              Time |        8.41e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             324 |
+|      AverageEpRet |            5.44 |
+|          StdEpRet |            4.07 |
+|          MaxEpRet |            16.6 |
+|          MinEpRet |           -2.78 |
+|     AverageEpCost |            15.5 |
+|         StdEpCost |            20.5 |
+|         MaxEpCost |              63 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        7.36e+04 |
+|          CostRate |         0.00755 |
+|      AverageVVals |            0.56 |
+|          StdVVals |           0.786 |
+|          MaxVVals |            2.71 |
+|          MinVVals |           -1.71 |
+|  AverageCostVVals |            2.11 |
+|      StdCostVVals |            3.74 |
+|      MaxCostVVals |            44.2 |
+|      MinCostVVals |           -3.91 |
+|            LossPi |       -2.98e-09 |
+|       DeltaLossPi |         -0.0133 |
+|          SurrCost |       -1.19e-08 |
+|     DeltaSurrCost |         -0.0241 |
+|             LossV |           0.322 |
+|        DeltaLossV |          -0.168 |
+|            LossVC |            16.2 |
+|       DeltaLossVC |           -8.67 |
+|           Penalty |            1.04 |
+|      DeltaPenalty |         -0.0148 |
+|             Alpha |            1.65 |
+|    BacktrackIters |               0 |
+|           Entropy |            1.96 |
+|                KL |         0.00978 |
+| TotalEnvInteracts |        9.75e+06 |
+|              Time |         8.5e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             325 |
+|      AverageEpRet |            5.58 |
+|          StdEpRet |            3.21 |
+|          MaxEpRet |            14.3 |
+|          MinEpRet |           -1.62 |
+|     AverageEpCost |            26.6 |
+|         StdEpCost |            34.5 |
+|         MaxEpCost |             151 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        7.44e+04 |
+|          CostRate |         0.00761 |
+|      AverageVVals |           0.614 |
+|          StdVVals |           0.751 |
+|          MaxVVals |            3.06 |
+|          MinVVals |           -1.34 |
+|  AverageCostVVals |            1.47 |
+|      StdCostVVals |            2.31 |
+|      MaxCostVVals |            26.6 |
+|      MinCostVVals |           -1.16 |
+|            LossPi |        5.96e-09 |
+|       DeltaLossPi |         -0.0118 |
+|          SurrCost |       -1.19e-08 |
+|     DeltaSurrCost |         -0.0207 |
+|             LossV |           0.268 |
+|        DeltaLossV |          -0.143 |
+|            LossVC |            39.7 |
+|       DeltaLossVC |           -22.9 |
+|           Penalty |            1.03 |
+|      DeltaPenalty |         -0.0127 |
+|             Alpha |            1.59 |
+|    BacktrackIters |               0 |
+|           Entropy |            1.96 |
+|                KL |         0.00968 |
+| TotalEnvInteracts |        9.78e+06 |
+|              Time |        8.59e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             326 |
+|      AverageEpRet |            5.28 |
+|          StdEpRet |             3.1 |
+|          MaxEpRet |            10.5 |
+|          MinEpRet |          -0.988 |
+|     AverageEpCost |            33.3 |
+|         StdEpCost |            53.6 |
+|         MaxEpCost |             226 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        7.54e+04 |
+|          CostRate |         0.00769 |
+|      AverageVVals |             0.6 |
+|          StdVVals |           0.774 |
+|          MaxVVals |            2.73 |
+|          MinVVals |           -1.51 |
+|  AverageCostVVals |             2.5 |
+|      StdCostVVals |            3.95 |
+|      MaxCostVVals |            42.7 |
+|      MinCostVVals |            -3.4 |
+|            LossPi |       -2.09e-08 |
+|       DeltaLossPi |         -0.0204 |
+|          SurrCost |       -4.17e-08 |
+|     DeltaSurrCost |         -0.0398 |
+|             LossV |           0.277 |
+|        DeltaLossV |          -0.133 |
+|            LossVC |              80 |
+|       DeltaLossVC |           -61.8 |
+|           Penalty |            1.02 |
+|      DeltaPenalty |        -0.00831 |
+|             Alpha |            1.01 |
+|    BacktrackIters |               0 |
+|           Entropy |            1.95 |
+|                KL |         0.00949 |
+| TotalEnvInteracts |        9.81e+06 |
+|              Time |        8.68e+03 |
+---------------------------------------
+[31;1mWarning! Safety constraint is already violated.[0m
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             327 |
+|      AverageEpRet |            4.51 |
+|          StdEpRet |            3.62 |
+|          MaxEpRet |            14.2 |
+|          MinEpRet |            -1.3 |
+|     AverageEpCost |            30.1 |
+|         StdEpCost |            69.3 |
+|         MaxEpCost |             358 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        7.63e+04 |
+|          CostRate |         0.00775 |
+|      AverageVVals |           0.566 |
+|          StdVVals |           0.778 |
+|          MaxVVals |            3.08 |
+|          MinVVals |           -1.45 |
+|  AverageCostVVals |            2.49 |
+|      StdCostVVals |            4.78 |
+|      MaxCostVVals |            68.9 |
+|      MinCostVVals |             -18 |
+|            LossPi |               0 |
+|       DeltaLossPi |         -0.0182 |
+|          SurrCost |        3.58e-08 |
+|     DeltaSurrCost |          -0.035 |
+|             LossV |           0.294 |
+|        DeltaLossV |          -0.151 |
+|            LossVC |             110 |
+|       DeltaLossVC |           -69.2 |
+|           Penalty |            1.01 |
+|      DeltaPenalty |        -0.00563 |
+|             Alpha |            1.02 |
+|    BacktrackIters |               0 |
+|           Entropy |            1.94 |
+|                KL |         0.00952 |
+| TotalEnvInteracts |        9.84e+06 |
+|              Time |        8.77e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             328 |
+|      AverageEpRet |            5.66 |
+|          StdEpRet |            3.83 |
+|          MaxEpRet |            14.8 |
+|          MinEpRet |           -2.02 |
+|     AverageEpCost |            14.6 |
+|         StdEpCost |              34 |
+|         MaxEpCost |             180 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        7.67e+04 |
+|          CostRate |         0.00777 |
+|      AverageVVals |           0.557 |
+|          StdVVals |           0.733 |
+|          MaxVVals |            2.82 |
+|          MinVVals |           -1.82 |
+|  AverageCostVVals |             2.7 |
+|      StdCostVVals |            4.49 |
+|      MaxCostVVals |            39.6 |
+|      MinCostVVals |           -11.2 |
+|            LossPi |        7.45e-10 |
+|       DeltaLossPi |         -0.0146 |
+|          SurrCost |        5.96e-09 |
+|     DeltaSurrCost |           -0.03 |
+|             LossV |           0.293 |
+|        DeltaLossV |          -0.146 |
+|            LossVC |            27.8 |
+|       DeltaLossVC |           -18.9 |
+|           Penalty |               1 |
+|      DeltaPenalty |        -0.00881 |
+|             Alpha |            1.36 |
+|    BacktrackIters |               0 |
+|           Entropy |            1.95 |
+|                KL |         0.00958 |
+| TotalEnvInteracts |        9.87e+06 |
+|              Time |        8.86e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             329 |
+|      AverageEpRet |             4.1 |
+|          StdEpRet |            3.28 |
+|          MaxEpRet |            9.73 |
+|          MinEpRet |           -2.07 |
+|     AverageEpCost |            21.3 |
+|         StdEpCost |            56.2 |
+|         MaxEpCost |             306 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        7.74e+04 |
+|          CostRate |         0.00782 |
+|      AverageVVals |           0.591 |
+|          StdVVals |           0.744 |
+|          MaxVVals |            2.52 |
+|          MinVVals |           -1.47 |
+|  AverageCostVVals |            1.69 |
+|      StdCostVVals |            3.54 |
+|      MaxCostVVals |            43.1 |
+|      MinCostVVals |           -5.53 |
+|            LossPi |        1.79e-08 |
+|       DeltaLossPi |          -0.012 |
+|          SurrCost |        4.17e-08 |
+|     DeltaSurrCost |         -0.0223 |
+|             LossV |           0.278 |
+|        DeltaLossV |          -0.129 |
+|            LossVC |            39.7 |
+|       DeltaLossVC |           -30.1 |
+|           Penalty |           0.995 |
+|      DeltaPenalty |        -0.00925 |
+|             Alpha |            1.58 |
+|    BacktrackIters |               0 |
+|           Entropy |            1.96 |
+|                KL |         0.00946 |
+| TotalEnvInteracts |         9.9e+06 |
+|              Time |        8.95e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             330 |
+|      AverageEpRet |            4.45 |
+|          StdEpRet |            4.08 |
+|          MaxEpRet |            13.7 |
+|          MinEpRet |           -3.78 |
+|     AverageEpCost |            23.4 |
+|         StdEpCost |            36.9 |
+|         MaxEpCost |             160 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        7.81e+04 |
+|          CostRate |         0.00786 |
+|      AverageVVals |           0.487 |
+|          StdVVals |           0.772 |
+|          MaxVVals |             2.5 |
+|          MinVVals |           -1.46 |
+|  AverageCostVVals |            1.75 |
+|      StdCostVVals |            4.02 |
+|      MaxCostVVals |            46.1 |
+|      MinCostVVals |           -7.59 |
+|            LossPi |       -8.94e-09 |
+|       DeltaLossPi |         -0.0153 |
+|          SurrCost |       -1.19e-08 |
+|     DeltaSurrCost |         -0.0295 |
+|             LossV |           0.319 |
+|        DeltaLossV |          -0.148 |
+|            LossVC |              52 |
+|       DeltaLossVC |           -36.6 |
+|           Penalty |           0.986 |
+|      DeltaPenalty |        -0.00891 |
+|             Alpha |            1.25 |
+|    BacktrackIters |               0 |
+|           Entropy |            1.95 |
+|                KL |          0.0097 |
+| TotalEnvInteracts |        9.93e+06 |
+|              Time |        9.04e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 1 of line search.[0m
+---------------------------------------
+|             Epoch |             331 |
+|      AverageEpRet |            5.17 |
+|          StdEpRet |            3.24 |
+|          MaxEpRet |            10.9 |
+|          MinEpRet |          -0.894 |
+|     AverageEpCost |            20.2 |
+|         StdEpCost |            61.5 |
+|         MaxEpCost |             342 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        7.87e+04 |
+|          CostRate |          0.0079 |
+|      AverageVVals |           0.533 |
+|          StdVVals |           0.779 |
+|          MaxVVals |            2.51 |
+|          MinVVals |           -1.47 |
+|  AverageCostVVals |             2.3 |
+|      StdCostVVals |            3.63 |
+|      MaxCostVVals |            25.9 |
+|      MinCostVVals |            -5.5 |
+|            LossPi |               0 |
+|       DeltaLossPi |         -0.0134 |
+|          SurrCost |       -1.19e-08 |
+|     DeltaSurrCost |         -0.0271 |
+|             LossV |           0.316 |
+|        DeltaLossV |          -0.155 |
+|            LossVC |            75.5 |
+|       DeltaLossVC |           -65.2 |
+|           Penalty |           0.977 |
+|      DeltaPenalty |        -0.00975 |
+|             Alpha |             1.1 |
+|    BacktrackIters |               1 |
+|           Entropy |            1.95 |
+|                KL |         0.00646 |
+| TotalEnvInteracts |        9.96e+06 |
+|              Time |        9.13e+03 |
+---------------------------------------
+[32;1mAccepting new params at step 0 of line search.[0m
+---------------------------------------
+|             Epoch |             332 |
+|      AverageEpRet |            5.36 |
+|          StdEpRet |            3.75 |
+|          MaxEpRet |            12.3 |
+|          MinEpRet |           -1.04 |
+|     AverageEpCost |            21.9 |
+|         StdEpCost |              28 |
+|         MaxEpCost |             121 |
+|         MinEpCost |               0 |
+|             EpLen |           1e+03 |
+|    CumulativeCost |        7.93e+04 |
+|          CostRate |         0.00794 |
+|      AverageVVals |           0.603 |
+|          StdVVals |           0.719 |
+|          MaxVVals |            2.62 |
+|          MinVVals |           -1.42 |
+|  AverageCostVVals |            1.51 |
+|      StdCostVVals |            3.44 |
+|      MaxCostVVals |            53.5 |
+|      MinCostVVals |           -10.7 |
+|            LossPi |       -5.96e-09 |
+|       DeltaLossPi |         -0.0141 |
+|          SurrCost |       -1.79e-08 |
+|     DeltaSurrCost |         -0.0279 |
+|             LossV |           0.282 |
+|        DeltaLossV |          -0.142 |
+|            LossVC |            46.5 |
+|       DeltaLossVC |           -25.1 |
+|           Penalty |           0.967 |
+|      DeltaPenalty |        -0.00989 |
+|             Alpha |            1.34 |
+|    BacktrackIters |               0 |
+|           Entropy |            1.96 |
+|                KL |         0.00967 |
+| TotalEnvInteracts |        9.99e+06 |
+|              Time |        9.22e+03 |
+---------------------------------------

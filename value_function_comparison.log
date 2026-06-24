@@ -1,0 +1,123 @@
+2026-04-17 13:02:58.210974: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+WARNING:tensorflow:From /home/ed21b059/miniconda3/envs/safedice/lib/python3.6/site-packages/tensorflow_gan/python/estimator/tpu_gan_estimator.py:42: The name tf.estimator.tpu.TPUEstimator is deprecated. Please use tf.compat.v1.estimator.tpu.TPUEstimator instead.
+
+
+================================================================================
+VALUE FUNCTION COMPARISON: Q-Network vs SafeDICE Critic
+================================================================================
+
+📂 Loading computed value function from: state_values_policy_traj300.npz
+  ✓ Loaded 300,000 computed state values
+
+📂 Loading states and labels from: q_function_models/state_values_and_labels.npz
+  ✓ Loaded 499,500 labeled states
+  ✓ Bad percentile threshold: 20.0%
+⚠️  Note: V_computed has 300,000 states, V_from_labels has 499,500 states
+   Using first 300,000 states for comparison
+
+📂 Loading trajectory states...
+  Loading from: SafeDICE/dataset/safetygym/ppo_PointGoal1_s0.pickle
+  ⚠️  Dataset has 1000000 states, using first 300000
+  ✓ Loaded 300,000 unique states
+
+🔧 Loading SafeDICE critic...
+2026-04-17 13:03:02.883593: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcuda.so.1
+2026-04-17 13:03:02.959362: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2026-04-17 13:03:02.960261: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:01:01.0 name: NVIDIA A100 80GB PCIe computeCapability: 8.0
+coreClock: 1.41GHz coreCount: 108 deviceMemorySize: 79.25GiB deviceMemoryBandwidth: 1.76TiB/s
+2026-04-17 13:03:02.960374: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2026-04-17 13:03:02.962155: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 1 with properties: 
+pciBusID: 0000:01:02.0 name: NVIDIA A100 80GB PCIe computeCapability: 8.0
+coreClock: 1.41GHz coreCount: 108 deviceMemorySize: 79.25GiB deviceMemoryBandwidth: 1.76TiB/s
+2026-04-17 13:03:02.962288: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2026-04-17 13:03:02.963303: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 2 with properties: 
+pciBusID: 0000:01:03.0 name: NVIDIA A100 80GB PCIe computeCapability: 8.0
+coreClock: 1.41GHz coreCount: 108 deviceMemorySize: 79.25GiB deviceMemoryBandwidth: 1.76TiB/s
+2026-04-17 13:03:02.963395: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2026-04-17 13:03:02.964260: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 3 with properties: 
+pciBusID: 0000:01:04.0 name: NVIDIA A100 80GB PCIe computeCapability: 8.0
+coreClock: 1.41GHz coreCount: 108 deviceMemorySize: 79.25GiB deviceMemoryBandwidth: 1.76TiB/s
+2026-04-17 13:03:02.964299: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2026-04-17 13:03:02.968432: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublas.so.11
+2026-04-17 13:03:02.968539: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublasLt.so.11
+2026-04-17 13:03:02.970203: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcufft.so.10
+2026-04-17 13:03:02.970924: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcurand.so.10
+2026-04-17 13:03:02.972451: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusolver.so.11
+2026-04-17 13:03:02.973875: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusparse.so.11
+2026-04-17 13:03:02.974422: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudnn.so.8
+2026-04-17 13:03:02.974552: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2026-04-17 13:03:02.975406: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2026-04-17 13:03:02.976588: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2026-04-17 13:03:02.977613: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2026-04-17 13:03:02.978451: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2026-04-17 13:03:02.979347: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2026-04-17 13:03:02.980371: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2026-04-17 13:03:02.981250: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2026-04-17 13:03:02.982008: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0, 1, 2, 3
+🔄 Loading SafeDICE critic from: SafeDICE/weights/antidice_PointGoal1_seed0_20260330_205404_iter1000000.pickle
+2026-04-17 13:03:02.985587: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-04-17 13:03:05.040170: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2026-04-17 13:03:05.041147: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:01:01.0 name: NVIDIA A100 80GB PCIe computeCapability: 8.0
+coreClock: 1.41GHz coreCount: 108 deviceMemorySize: 79.25GiB deviceMemoryBandwidth: 1.76TiB/s
+2026-04-17 13:03:05.041260: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2026-04-17 13:03:05.042393: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 1 with properties: 
+pciBusID: 0000:01:02.0 name: NVIDIA A100 80GB PCIe computeCapability: 8.0
+coreClock: 1.41GHz coreCount: 108 deviceMemorySize: 79.25GiB deviceMemoryBandwidth: 1.76TiB/s
+2026-04-17 13:03:05.042499: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2026-04-17 13:03:05.043970: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 2 with properties: 
+pciBusID: 0000:01:03.0 name: NVIDIA A100 80GB PCIe computeCapability: 8.0
+coreClock: 1.41GHz coreCount: 108 deviceMemorySize: 79.25GiB deviceMemoryBandwidth: 1.76TiB/s
+2026-04-17 13:03:05.044070: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2026-04-17 13:03:05.044877: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 3 with properties: 
+pciBusID: 0000:01:04.0 name: NVIDIA A100 80GB PCIe computeCapability: 8.0
+coreClock: 1.41GHz coreCount: 108 deviceMemorySize: 79.25GiB deviceMemoryBandwidth: 1.76TiB/s
+2026-04-17 13:03:05.044978: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2026-04-17 13:03:05.045792: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2026-04-17 13:03:05.046645: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2026-04-17 13:03:05.047734: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2026-04-17 13:03:05.048547: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2026-04-17 13:03:05.049373: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2026-04-17 13:03:05.050797: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2026-04-17 13:03:05.052140: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2026-04-17 13:03:05.052873: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0, 1, 2, 3
+2026-04-17 13:03:05.052958: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2026-04-17 13:03:26.393686: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+2026-04-17 13:03:26.393736: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      0 1 2 3 
+2026-04-17 13:03:26.393746: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 0:   N Y N N 
+2026-04-17 13:03:26.393750: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 1:   Y N N N 
+2026-04-17 13:03:26.393755: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 2:   N N N Y 
+2026-04-17 13:03:26.393759: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 3:   N N Y N 
+2026-04-17 13:03:26.394123: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2026-04-17 13:03:26.401451: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2026-04-17 13:03:26.402724: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2026-04-17 13:03:26.404051: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2026-04-17 13:03:26.405024: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2026-04-17 13:03:26.406264: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2026-04-17 13:03:26.407239: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2026-04-17 13:03:26.408639: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2026-04-17 13:03:26.409436: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2026-04-17 13:03:26.410211: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 739 MB memory) -> physical GPU (device: 0, name: NVIDIA A100 80GB PCIe, pci bus id: 0000:01:01.0, compute capability: 8.0)
+2026-04-17 13:03:26.410831: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2026-04-17 13:03:26.411766: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 13442 MB memory) -> physical GPU (device: 1, name: NVIDIA A100 80GB PCIe, pci bus id: 0000:01:02.0, compute capability: 8.0)
+2026-04-17 13:03:26.413371: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2026-04-17 13:03:26.416834: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:2 with 29337 MB memory) -> physical GPU (device: 2, name: NVIDIA A100 80GB PCIe, pci bus id: 0000:01:03.0, compute capability: 8.0)
+2026-04-17 13:03:26.420266: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2026-04-17 13:03:26.421123: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:3 with 9855 MB memory) -> physical GPU (device: 3, name: NVIDIA A100 80GB PCIe, pci bus id: 0000:01:04.0, compute capability: 8.0)
+  ✓ State dim: 60, Action dim: 2
+Traceback (most recent call last):
+  File "value_function/compare_value_function.py", line 620, in <module>
+    main()
+  File "value_function/compare_value_function.py", line 599, in main
+    args.safedice_weights
+  File "value_function/compare_value_function.py", line 190, in __init__
+    self.critic_loader = SafeDICECriticLoader(safedice_weights_path)
+  File "value_function/compare_value_function.py", line 54, in __init__
+    self._load_weights()
+  File "value_function/compare_value_function.py", line 113, in _load_weights
+    config=self.config
+  File "SafeDICE/algorithms/safedice.py", line 18, in __init__
+    hidden_size = config['hidden_size']
+KeyError: 'hidden_size'

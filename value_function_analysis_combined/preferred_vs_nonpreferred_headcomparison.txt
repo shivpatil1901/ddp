@@ -1,0 +1,21 @@
+Preferred vs Non-Preferred Head Comparison
+========================================================================================
+
+Weights: SafeDICE/weights/antidice_PointGoal1_seed0_20260330_205404_iter900000.pickle
+Preferred dataset: SafeDICE/dataset/safetygym/ppo_lagrangian_PointGoal1_s0.pickle
+Non-preferred dataset: SafeDICE/dataset/safetygym/ppo_PointGoal1_s0.pickle
+Max trajectories per dataset: 200
+
+PREFERRED RESULTS:
+  Trajectories: 200
+  V(s0) mean/range: -23.602890 [-57.1269, -2.8800]
+  Env safe/unsafe: 109 / 91
+
+NON-PREFERRED RESULTS:
+  Trajectories: 200
+  V(s0) mean/range: -29.347273 [-58.1728, -3.2641]
+  Env safe/unsafe: 0 / 200
+
+COMPARISON:
+  V(s0) separation: 5.744383
+  Verdict: STRONG differentiation

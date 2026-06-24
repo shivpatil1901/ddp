@@ -1,0 +1,24 @@
+SafeDICE Value Function Analysis Summary
+================================================================================
+
+Weights file: SafeDICE/weights/antidice_PointGoal1_seed0_20260206_184622_iter1000000.pickle
+Dataset file: SafeDICE/dataset/safetygym/ppo_PointGoal1_s0.pickle
+
+Number of trajectories: 10
+Avg trajectory length: 1000.0
+
+Value Function Statistics:
+  global_min: -55.9726
+  global_max: 32.3552
+  mean_of_means: 6.9775
+  std_of_stds: 10.5744
+
+Initial-State Head Analysis:
+  Preference source: median_return_threshold=13.300079
+  Preferred demos V(s0): min=-40.5609, max=-0.3401, mean=-19.4908
+  Non-preferred demos V(s0): min=-33.8202, max=-7.7516, mean=-21.2573
+  Corr(V(s0), traj return): 0.2362
+  Env safe/unsafe by cumulative cost <= 25.00: 0 safe, 10 unsafe
+  Calibrated C_limit (cost head latent): -0.804502
+  Unsafe rule: score_ge_threshold_is_unsafe
+  Balanced accuracy at C_limit: 0.5000

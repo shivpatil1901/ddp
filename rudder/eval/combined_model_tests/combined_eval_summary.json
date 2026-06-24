@@ -1,0 +1,223 @@
+{
+  "checkpoint": "/home/ed21b059/ddp/rudder/models/reinforce_rudder_combined.pt",
+  "dataset": "/home/ed21b059/ddp/rudder/dataset/combined_cost_reward_balanced_1800.pkl",
+  "state_dim": 60,
+  "action_dim": 2,
+  "seq_len": 1000,
+  "baseline": 0.5,
+  "reward_threshold": 15.0,
+  "cost_threshold": 25.0,
+  "metric_explanations": {
+    "ablation_of_intent": "Compares trajectories with high reward/high cost against low reward/low cost cohorts to check whether the model separates goal achievement from safety cost.",
+    "saliency_mapping": "Corrupts a local time window in a selected preferred trajectory and checks whether the model's redistributed reward shows a local negative spike and whether the final score drops.",
+    "zero_shot_generalization": "Evaluates the model on the holdout dataset using the reward-and-cost conjunction rule as ground truth to measure out-of-sample concept generalization.",
+    "holdout_classifier_accuracy": "Evaluates the model on the holdout dataset using dataset labels when available, falling back to source mapping or the reward-and-cost rule if needed.",
+    "rank_correlation": "Computes Spearman correlation between the model's final trajectory score and true utility defined as cumulative reward minus cumulative cost.",
+    "holdout_rank_correlation": "Same rank-correlation metric as above, but computed on the holdout trajectories to measure generalization of the score ordering.",
+    "value_function_consistency": "Swaps in locally good and bad actions at the same state and checks whether the model assigns a higher score to the better action."
+  },
+  "evaluation_scope": {
+    "main_dataset": "Used for ablation_of_intent, saliency_mapping, rank_correlation, and value_function_consistency.",
+    "holdout_dataset": "Used for zero_shot_generalization, holdout_classifier_accuracy, and holdout_rank_correlation."
+  },
+  "tests": {
+    "ablation_of_intent": {
+      "set_a_desc": "Kamikaze: high reward + high cost -> expected label 0",
+      "set_b_desc": "Coward: low reward + low cost -> expected label 0",
+      "set_a_size": 0,
+      "set_a_real_size": 0,
+      "set_b_size": 50,
+      "set_b_real_size": 0,
+      "set_b_synthetic_size": 50,
+      "set_a_pred_nonpreferred_rate": 0.0,
+      "set_b_pred_nonpreferred_rate": 1.0,
+      "set_a_safety_blind_rate": 0.0,
+      "set_a_reward_min": NaN,
+      "set_a_reward_mean": NaN,
+      "set_a_reward_max": NaN,
+      "set_a_cost_min": NaN,
+      "set_a_cost_mean": NaN,
+      "set_a_cost_max": NaN,
+      "set_b_reward_min": 0.0,
+      "set_b_reward_mean": 0.0,
+      "set_b_reward_max": 0.0,
+      "set_b_cost_min": 0.0,
+      "set_b_cost_mean": 0.0,
+      "set_b_cost_max": 0.0,
+      "success": false,
+      "notes": "Pass indicates conjunction behavior (goal AND safety). Set B is backfilled with synthetic coward trajectories when needed."
+    },
+    "saliency_mapping": {
+      "trajectory_index": 207,
+      "clean_final_gT": 1.0472701787948608,
+      "saliency_checks": [
+        {
+          "label": "start",
+          "corruption_window": [
+            0,
+            100
+          ],
+          "corrupt_final_gT": 1.0472701787948608,
+          "min_delta_rt_index": 1,
+          "min_delta_rt_value": -0.127111554145813,
+          "success": false
+        },
+        {
+          "label": "early",
+          "corruption_window": [
+            200,
+            300
+          ],
+          "corrupt_final_gT": 1.0472701787948608,
+          "min_delta_rt_index": 276,
+          "min_delta_rt_value": -0.06809461116790771,
+          "success": false
+        },
+        {
+          "label": "midpoint",
+          "corruption_window": [
+            450,
+            550
+          ],
+          "corrupt_final_gT": 1.0472701787948608,
+          "min_delta_rt_index": 541,
+          "min_delta_rt_value": -0.12235686182975769,
+          "success": false
+        },
+        {
+          "label": "ending",
+          "corruption_window": [
+            900,
+            1000
+          ],
+          "corrupt_final_gT": 0.4247398376464844,
+          "min_delta_rt_index": 948,
+          "min_delta_rt_value": -0.08276557922363281,
+          "success": true
+        }
+      ],
+      "plot_path": "/home/ed21b059/ddp/rudder/eval/combined_model_tests/saliency_corruption_plot.png",
+      "success": true,
+      "notes": "Pass indicates a sharp local negative response around corruption and lower final confidence. Multiple windows are tested: start, early, midpoint."
+    },
+    "zero_shot_generalization": {
+      "num_trajectories": 200,
+      "accuracy": 1.0,
+      "success_threshold": 0.85,
+      "success": true,
+      "notes": "Accuracy near random (~0.5) suggests map overfitting instead of concept learning."
+    },
+    "holdout_classifier_accuracy": {
+      "num_trajectories": 200,
+      "accuracy": 1.0,
+      "tp": 100,
+      "tn": 100,
+      "fp": 0,
+      "fn": 0,
+      "success": true,
+      "notes": "Ground-truth labels use preference_label, then source mapping, then conjunction fallback."
+    },
+    "holdout_hard_near_threshold": {
+      "constructed_size": 105,
+      "summary": {
+        "size": 105,
+        "reward_min": 12.013999938964844,
+        "reward_mean": 14.630534172058105,
+        "reward_max": 24.481952667236328,
+        "cost_min": 0.0,
+        "cost_mean": 62.657142639160156,
+        "cost_max": 179.0
+      },
+      "metrics": {
+        "num_trajectories": 105,
+        "accuracy": 1.0,
+        "tp": 25,
+        "tn": 80,
+        "fp": 0,
+        "fn": 0,
+        "roc_auc": NaN,
+        "pr_auc": NaN,
+        "balanced_accuracy": NaN,
+        "ece": 0.0031457319101762206
+      }
+    },
+    "holdout_corrupted": {
+      "num_trajectories": 200,
+      "accuracy": 1.0,
+      "tp": 100,
+      "tn": 100,
+      "fp": 0,
+      "fn": 0,
+      "roc_auc": NaN,
+      "pr_auc": NaN,
+      "balanced_accuracy": NaN,
+      "ece": 0.004272753156255931,
+      "corrupted_accuracy": 1.0,
+      "delta_accuracy_corrupted": 0.0
+    },
+    "holdout_rank_correlation": {
+      "num_trajectories": 100,
+      "utility_cost_weight": 1.0,
+      "spearman_rho": 0.8051845184518451,
+      "success": true,
+      "notes": "Higher rho means the model encodes degrees of goodness, not only binary pass/fail."
+    },
+    "rank_correlation": {
+      "num_trajectories": 100,
+      "utility_cost_weight": 1.0,
+      "spearman_rho": 0.7582838283828383,
+      "success": true,
+      "notes": "Higher rho means the model encodes degrees of goodness, not only binary pass/fail."
+    },
+    "value_function_consistency": {
+      "num_checks": 40,
+      "anchor_kinds": [
+        "start",
+        "midpoint",
+        "start",
+        "midpoint",
+        "start",
+        "midpoint",
+        "start",
+        "midpoint",
+        "start",
+        "midpoint",
+        "start",
+        "midpoint",
+        "start",
+        "midpoint",
+        "start",
+        "midpoint",
+        "start",
+        "midpoint",
+        "start",
+        "midpoint",
+        "start",
+        "midpoint",
+        "start",
+        "midpoint",
+        "start",
+        "midpoint",
+        "start",
+        "midpoint",
+        "start",
+        "midpoint",
+        "start",
+        "midpoint",
+        "start",
+        "midpoint",
+        "start",
+        "midpoint",
+        "start",
+        "midpoint",
+        "start",
+        "midpoint"
+      ],
+      "mean_g_good_minus_g_bad": 0.01269851066172123,
+      "fraction_positive": 0.6,
+      "success": false,
+      "notes": "Higher g(s,a_good) than g(s,a_bad) indicates action sensitivity consistent with value-like behavior."
+    }
+  },
+  "zero_shot_dataset": "/home/ed21b059/ddp/rudder/dataset/combined_cost_reward_holdout_200.pkl"
+}

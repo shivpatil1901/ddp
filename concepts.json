@@ -1,0 +1,409 @@
+{
+    "61": {
+        "concept": "Right-Side Obstacle Detection during Rearward Goal Tracking",
+        "reasoning": "Neuron 61 is characterized by the presence of a 'Vase' (non-hazardous obstacle) on the right flank (Vase_Lidar 13-14) while the goal is behind the agent. Unlike neuron 65, the lateral acceleration is more stable, suggesting a nominal state of monitoring obstacles rather than an emergency maneuver.",
+        "feature_signals": {
+            "navigational_intent": "Goal is behind the agent (Goal_Lidar 9-15), with a specific inhibitory signal at 202.5°, suggesting the goal must be offset from that specific angle.",
+            "cost_source": "Proximity to Vases at the right-rear (Bins 13-14) and Hazards across the front and left sectors.",
+            "physical_dynamics": "Relatively low and stable Velocimeter and Gyro values indicate steady movement or orientation.",
+            "inhibitory_logic": "Goal_Lidar_9 is strongly negative, meaning the neuron specifically deactivates if the goal is at exactly 202.5°."
+        },
+        "is_failure_mode": "False"
+    },
+    "62": {
+        "concept": "Aggressive Rightward Turning with Frontal Hazards",
+        "reasoning": "Neuron 62 shows high positive Accelerometer_y and negative Accelerometer_x, signifying a hard deceleration or turn to the right. This is coupled with hazards detected in the frontal and right-side LIDAR bins, indicating a reactive safety maneuver to avoid an impending collision.",
+        "feature_signals": {
+            "navigational_intent": "The goal is broadly behind the agent (Bins 8-15), but the focus is clearly on hazard mitigation.",
+            "cost_source": "Widespread Hazard LIDAR activation (Bins 0-9 and 14-15), indicating the agent is potentially surrounded or approaching a dense hazard zone.",
+            "physical_dynamics": "Extreme Accelerometer_y (lateral force) and negative Accelerometer_x (braking/reversing) indicate a sharp, aggressive maneuver.",
+            "inhibitory_logic": "Negative signals in Hazard_Lidar 10-11 suggest the neuron filters out threats from the rear-left sector."
+        },
+        "is_failure_mode": "True"
+    },
+    "64": {
+        "concept": "Front-Right Hazard Collision Course",
+        "reasoning": "Neuron 64 activates when the agent has high forward velocity (Velocimeter_x) and acceleration (Accelerometer_x) while hazards are detected directly in front and to the right (Hazard_Lidar 0-2 and 14-15). The goal is behind the agent, but the high speed toward obstacles represents an active failure mode.",
+        "feature_signals": {
+            "navigational_intent": "Goal is located behind the agent (Goal_Lidar_9 is maxed at ~3.0), but the agent is moving in the opposite direction.",
+            "cost_source": "Hazards are detected in the front (Bin 0) and right-flank (Bins 14-15), as well as Vases to the left.",
+            "physical_dynamics": "Strong positive Accelerometer_x and Velocimeter_x confirm the agent is moving forward with significant momentum.",
+            "inhibitory_logic": "Strongly negative Hazard_Lidar 10-11 and Vase_Lidar 13-15 signals indicate the neuron is not active if the obstacles are to the rear-left or rear-right."
+        },
+        "is_failure_mode": "True"
+    },
+    "65": {
+        "concept": "Left-Side Hazard Avoidance during Goal Navigation",
+        "reasoning": "Neuron 65 activates when hazards are detected on the agent's left flank (LIDAR bins 3-5 and 11-13) while the goal is positioned behind or to the left (Goal LIDAR 9-11). The base features show significant lateral acceleration (Accelerometer_y), suggesting a steering or corrective maneuver to maintain safety while seeking the goal.",
+        "feature_signals": {
+            "navigational_intent": "The agent is tracking a goal located primarily behind it (Goal_Lidar_9 at ~202.5°) and across the left-to-rear arc.",
+            "cost_source": "High proximity to hazards on the left flank and rear-right (Hazard_Lidar 3-9 and 14-15).",
+            "physical_dynamics": "High variance in Accelerometer_y indicates lateral force, likely representing a turning motion to clear the hazards.",
+            "inhibitory_logic": "Strong negative signals in Hazard_Lidar_10-11 indicate the neuron is not active if hazards are specifically at the 225°-247° rear-left diagonal."
+        },
+        "is_failure_mode": "False"
+    },
+    "66": {
+        "concept": "Left-Sector Obstacle Avoidance while Seeking Rear Goal",
+        "reasoning": "Neuron 66 triggers when the agent is navigating toward a goal located behind it (Goal LIDAR 9-15) while encountering obstacles on its left flank. The high positive variance in Accelerometer_y combined with positive Accelerometer_x suggests a forward-right diagonal steering maneuver to clear objects in the left-front and left-rear sectors (Vase_Lidar 13-14 and Hazard_Lidar 5-11).",
+        "feature_signals": {
+            "navigational_intent": "Goal is positioned behind the agent, with the strongest signal at Bin 9 (202.5°).",
+            "cost_source": "Proximity to hazards in the left and rear-left sectors (Bins 5-11) and vases in the rear-right (Bins 13-14).",
+            "physical_dynamics": "Noticeable positive lateral (y) and forward (x) acceleration, indicating a controlled turn away from the left-side obstacles.",
+            "inhibitory_logic": "Vase_Lidar_13 shows a strong negative outlier, suggesting the neuron deactivates if an obstacle is specifically at that rear-right diagonal."
+        },
+        "is_failure_mode": "False"
+    },
+    "67": {
+        "concept": "High-Speed Forward Navigation toward Rear-Offset Goal",
+        "reasoning": "Neuron 67 represents a nominal navigation state where the agent is accelerating forward (high positive Accelerometer_x) despite the goal being behind it at a specific 202.5° angle. This likely represents a 'looping' path or a movement to gain clearance from frontal hazards (LIDAR 0-1) before turning toward the target.",
+        "feature_signals": {
+            "navigational_intent": "Target goal is strongly fixed behind the agent at Bin 9 (202.5°).",
+            "cost_source": "Proximity to frontal hazards (Bins 0-1) and rear-left hazards (Bins 10-11).",
+            "physical_dynamics": "Strong forward acceleration (Accelerometer_x ~3.5) with minimal lateral force, indicating straight-line speed.",
+            "inhibitory_logic": "Strong negative outliers in Vase_Lidar 13 and Goal_Lidar 9 suggest strict spatial constraints on when this acceleration is 'safe'."
+        },
+        "is_failure_mode": "False"
+    },
+    "69": {
+        "concept": "Sharp Right-Bank Turn to Evade Left-Side Hazards",
+        "reasoning": "Neuron 69 is an active avoidance mode. The agent exhibits extreme negative lateral acceleration (Accelerometer_y < -15), signifying a very sharp rightward bank. This is triggered by a dense cluster of hazards on the left side (Hazard_Lidar 5-11). The agent is effectively 'throwing' its weight to the right to miss obstacles while the goal is located in the front-left sector.",
+        "feature_signals": {
+            "navigational_intent": "The goal is in the front-left (Goal_Lidar 0-2 and 6), but the agent is forced to prioritize avoidance.",
+            "cost_source": "Significant hazard presence across the entire left hemisphere (Bins 5-11).",
+            "physical_dynamics": "Extreme negative Accelerometer_y indicates an aggressive right-side maneuver.",
+            "inhibitory_logic": "Goal_Lidar_9 is strongly negative, inhibiting this specific maneuver if the goal is directly behind the agent."
+        },
+        "is_failure_mode": "True"
+    },
+    "70": {
+        "concept": "Rear-Right Hazard Collision Avoidance (Braking/Reversing)",
+        "reasoning": "Neuron 70 activates during a high-risk scenario where hazards are close to the agent's rear-left (Hazard_Lidar 9-11) and front-left (Hazard_Lidar 3-5). The negative forward acceleration (Accelerometer_x) indicates braking or reversing to avoid a collision, while the goal is positioned directly in front.",
+        "feature_signals": {
+            "navigational_intent": "Goal is located in the forward and front-right sectors (Goal_Lidar 10-15).",
+            "cost_source": "High proximity to hazards in the immediate rear-left (Bins 9-11) and frontal-left (Bins 3-5).",
+            "physical_dynamics": "Negative Accelerometer_x suggests a rapid reduction in forward speed or a reverse thrust to gain distance from threats.",
+            "inhibitory_logic": "Goal_Lidar_9 is extremely negative, showing the neuron is strictly inhibited if the target is behind the agent."
+        },
+        "is_failure_mode": "True"
+    },
+    "71": {
+        "concept": "Left-Sector Hazard Clearance during Straight Navigation",
+        "reasoning": "Neuron 71 activates when the agent is moving forward (positive Accelerometer_x) while maintaining a safe distance from hazards located in the left and rear-left sectors (Hazard_Lidar 5-11). The presence of a non-hazardous obstacle (Vase) on the rear-right flank (Vase_Lidar 13-14) suggests a narrow passage navigation or a specific corridor-clearing behavior.",
+        "feature_signals": {
+            "navigational_intent": "The goal is broadly behind the agent (Bins 8-15), with the strongest focus on the 202.5° sector.",
+            "cost_source": "Proximity to left-side hazards (Bins 5-11) and a rear-right vase (Bins 13-14).",
+            "physical_dynamics": "Forward acceleration (Accelerometer_x) and significant lateral stabilization (high variance in Accelerometer_y) to avoid drifting into hazards.",
+            "inhibitory_logic": "Strongly inhibited by Hazard_Lidar 11, indicating this neuron deactivates if the hazard is specifically at the rear-left diagonal."
+        },
+        "is_failure_mode": "False"
+    },
+    "72": {
+        "concept": "Reactive Leftward Steering to Avoid Right-Side Hazards",
+        "reasoning": "Neuron 72 triggers when the agent detects a cluster of hazards on its right flank (Hazard_Lidar 0-3 and 14-15). The base features show significant lateral acceleration (high variance in Accelerometer_y), which, combined with the hazard layout, suggests a reactive steering maneuver to the left to avoid side-swiping obstacles while tracking a rear goal.",
+        "feature_signals": {
+            "navigational_intent": "The goal is located behind the agent (Goal_Lidar 9-15), but movement is dictated by right-side avoidance.",
+            "cost_source": "High proximity to hazards on the front-right and rear-right sectors (Bins 0-3, 14-15).",
+            "physical_dynamics": "High lateral force (Accelerometer_y) signifies a sharp turn or banking maneuver.",
+            "inhibitory_logic": "Strongly negative Goal_Lidar_9 suggests this specific avoidance logic is suspended if the goal is perfectly centered behind the agent."
+        },
+        "is_failure_mode": "True"
+    },
+    "73": {
+        "concept": "High-Speed Goal Pursuit with Frontal Clear-Path",
+        "reasoning": "Neuron 73 represents a high-velocity navigation state. The agent is moving forward into a relatively clear frontal path (low frontal LIDAR) while the goal is positioned behind it. The high positive values in Goal_Lidar_9 (~2.5) and minimal lateral acceleration suggest a confident, straight-line movement, possibly to loop back toward the target.",
+        "feature_signals": {
+            "navigational_intent": "Intense tracking of a goal located at the 202.5° rear sector.",
+            "cost_source": "Low-level hazard detection in the periphery; no immediate proximity threats detected.",
+            "physical_dynamics": "Stable forward movement with low rotational velocity (Gyro) and lateral force.",
+            "inhibitory_logic": "Strongly inhibited by Vase_Lidar 13, meaning the presence of a non-hazardous obstacle behind the robot kills this specific 'straight pursuit' logic."
+        },
+        "is_failure_mode": "False"
+    },
+    "74": {
+        "concept": "Lateral Hazard Buffet during Precision Navigation",
+        "reasoning": "Neuron 74 activates when hazards are detected on both the left and right sectors (Hazard_Lidar 1-4 and 9-11) while a Vase is detected on the rear-right. This indicates the agent is squeezed between obstacles. The extreme variance in Accelerometer_y suggests rapid, small-scale lateral adjustments to thread through a hazardous gap.",
+        "feature_signals": {
+            "navigational_intent": "Goal is behind the agent (Goal_Lidar 12-15) but is inhibited at the 202.5° mark, suggesting the target must be specifically to the right-rear.",
+            "cost_source": "Dual-flank hazard proximity (Bins 1-4 and 9-11) and a rear-right vase (Bin 13).",
+            "physical_dynamics": "Massive lateral acceleration variance indicates high-frequency steering inputs.",
+            "inhibitory_logic": "Strong negative outliers in Goal_Lidar 9 and Hazard_Lidar 11 suggest strict geometric constraints for this neuron's activation."
+        },
+        "is_failure_mode": "True"
+    },
+    "77": {
+        "concept": "Left-Sector Obstacle Avoidance during Goal Pursuit",
+        "reasoning": "Neuron 77 triggers when hazards are detected in the front-left and rear-left sectors (Hazard_Lidar 7-11) while a Vase is detected specifically in the rear-right quadrant (Vase_Lidar 13-14). The base features show high variance in lateral acceleration (Accelerometer_y), suggesting a series of steering corrections to maintain distance from left-side hazards while seeking a goal located behind the agent.",
+        "feature_signals": {
+            "navigational_intent": "The agent is pursuing a goal located behind it (Goal_Lidar 11-15), with a strong inhibitory signal if the goal is exactly at 202.5°.",
+            "cost_source": "Proximity to hazards in the rear-left (Bins 7-11) and a vase in the rear-right (Bins 13-14).",
+            "physical_dynamics": "Significant lateral force (Accelerometer_y) and negative forward acceleration (Accelerometer_x), likely indicating slowing down to maneuver around obstacles.",
+            "inhibitory_logic": "Goal_Lidar_9 is strongly negative, showing that the neuron deactivates if the goal is positioned at that specific rearward angle."
+        },
+        "is_failure_mode": "False"
+    },
+    "79": {
+        "concept": "Aggressive Rightward Bank to Evade Multi-Sector Hazards",
+        "reasoning": "Neuron 79 represents an emergency avoidance state. The agent exhibits extreme negative forward acceleration (Accelerometer_x ~ -5) and negative lateral acceleration (Accelerometer_y), indicating a hard 'braking and right-bank' maneuver. This is a direct response to a dense cluster of hazards spanning the frontal and left sectors (Hazard_Lidar 1-11).",
+        "feature_signals": {
+            "navigational_intent": "The goal is located at the 202.5° rear sector (Goal_Lidar_9 is very high), but the agent is forced into an avoidance path.",
+            "cost_source": "Broad-spectrum hazard proximity across the front (Bin 1) and entire left flank (Bins 3-11).",
+            "physical_dynamics": "Severe negative Accelerometer_x and high-variance lateral acceleration confirm an aggressive reactive maneuver.",
+            "inhibitory_logic": "Strongly inhibited by Vase_Lidar 14, deactivating if an obstacle is specifically at that rear-right diagonal."
+        },
+        "is_failure_mode": "True"
+    },
+    "81": {
+        "concept": "Rear-Right Obstacle Avoidance while Reversing",
+        "reasoning": "Neuron 81 activates when the agent is maneuvering near a non-hazardous obstacle (Vase) on its rear-right flank (Vase_Lidar 13). The presence of multiple hazards across the left and rear sectors (Hazard_Lidar 5-11), coupled with high lateral force variance, suggests a precision reverse-steering maneuver to clear the right-side vase without hitting left-side hazards.",
+        "feature_signals": {
+            "navigational_intent": "Intense tracking of a goal at the 202.5° angle, suggesting the agent is trying to back into or turn toward the target.",
+            "cost_source": "Proximity to a vase at the rear-right (Bin 13) and hazards distributed across the left hemisphere (Bins 5-11).",
+            "physical_dynamics": "High lateral acceleration (Accelerometer_y) indicates active steering to maintain clearance.",
+            "inhibitory_logic": "Vase_Lidar_13 shows a strong negative outlier, indicating the neuron's sensitivity to the exact proximity of the right-side obstacle."
+        },
+        "is_failure_mode": "False"
+    },
+    "84": {
+        "concept": "Collision Course with Left-Flank Hazards",
+        "reasoning": "Neuron 84 indicates a dangerous failure mode. The agent is moving forward (positive Accelerometer_x) and banking left (negative Accelerometer_y) despite high-magnitude hazard proximity in the front-left and left sectors (Hazard_Lidar 3-11). Unlike nominal avoidance, the speed toward these obstacles is high, representing a 'safe clearing' failure.",
+        "feature_signals": {
+            "navigational_intent": "The goal is behind the agent (Goal_Lidar 10 and 5-6), but the agent is accelerating in the forward-left direction.",
+            "cost_source": "High proximity hazards across the entire left side (Bins 3-11).",
+            "physical_dynamics": "Positive forward acceleration (Accelerometer_x) and negative lateral acceleration (Accelerometer_y) confirm a high-speed path toward obstacles.",
+            "inhibitory_logic": "Strongly negative Goal_Lidar_9 suggests the neuron deactivates if the goal is directly behind, focusing the activation on cases where the goal is offset."
+        },
+        "is_failure_mode": "True"
+    },
+    "86": {
+        "concept": "Left-Sector Precision Navigation with Frontal Hazard Clearance",
+        "reasoning": "Neuron 86 activates during a forward-oriented navigation phase where hazards are cleared from the front and left sectors. The agent shows positive forward acceleration (Accelerometer_x) and linear movement toward a goal positioned significantly at the 202.5° rear angle. Proximity to a vase in the rear-right sector (Vase_Lidar 13-14) indicates a restricted path navigation where the agent must maintain specific clearance to the right while moving forward.",
+        "feature_signals": {
+            "navigational_intent": "The agent is pursuing a goal positioned behind it, with the strongest signal at Bin 9 (202.5°).",
+            "cost_source": "Proximity to hazards in the left and rear-left sectors (Bins 5-11) and a vase on the rear-right flank (Bins 13-14).",
+            "physical_dynamics": "Forward acceleration (Accelerometer_x) is positive, while lateral acceleration (Accelerometer_y) shows negative variance, suggesting steady steering away from right-side obstacles.",
+            "inhibitory_logic": "Strongly inhibited by Hazard_Lidar 11, indicating this logic is suspended if hazards move too far into the rear-left diagonal."
+        },
+        "is_failure_mode": "False"
+    },
+    "87": {
+        "concept": "Braking and Reverse-Steering to Avoid Left-Side Hazards",
+        "reasoning": "Neuron 87 triggers during a safety maneuver involving braking or reversing. The negative forward acceleration (Accelerometer_x) and positive lateral acceleration (Accelerometer_y) suggest the agent is backing up or pivoting right to clear a dense cluster of hazards on its left flank (Hazard_Lidar 3-11). The goal is positioned behind the agent, which it may be trying to align with through this reverse maneuver.",
+        "feature_signals": {
+            "navigational_intent": "The target goal is behind the agent (Goal_Lidar 9-15), which is common during reverse-alignment behaviors.",
+            "cost_source": "High-magnitude hazard proximity across the entire left side (Bins 3-11) and frontal-left diagonal.",
+            "physical_dynamics": "Negative Accelerometer_x indicates active braking or reversing force, while Accelerometer_y variance shows steering adjustments.",
+            "inhibitory_logic": "Goal_Lidar_9 has a strong negative outlier, suggesting the neuron deactivates if the goal is perfectly centered behind, favoring cases where the goal is offset."
+        },
+        "is_failure_mode": "True"
+    },
+    "88": {
+        "concept": "Hazard-Dense Corridor Navigation with Right-Side Obstacle",
+        "reasoning": "Neuron 88 represents navigation through a hazardous 'corridor.' Hazards are detected on both the left and right sectors (Hazard_Lidar 1-5 and 9-11), while a vase is detected in the rear-right (Bin 13). The agent maintains near-zero forward acceleration but high lateral acceleration variance, suggesting it is delicately threading between objects to reach a goal behind it.",
+        "feature_signals": {
+            "navigational_intent": "Goal is behind the agent (Goal_Lidar 9-15), necessitating a turn or a reverse movement.",
+            "cost_source": "Multiple hazard detections in front-left (Bins 1-5) and rear-left (Bins 9-11), plus a vase at the rear-right (Bin 13).",
+            "physical_dynamics": "Low Velocimeter_x but high Accelerometer_y variance indicates cautious lateral repositioning rather than high-speed travel.",
+            "inhibitory_logic": "Inhibited by specific angles in Goal_Lidar 9, showing strict orientation requirements for this 'corridor' behavior."
+        },
+        "is_failure_mode": "False"
+    },
+    "90": {
+        "concept": "Emergency Right-Side Evasion from Front-Left Threats",
+        "reasoning": "Neuron 90 is a high-magnitude failure avoidance mode. The agent is performing an aggressive rightward evasion (negative Accelerometer_y variance with high magnitude) to escape hazards clustered in the front and left sectors (Hazard_Lidar 0-1 and 3-11). The agent is effectively spinning or banking hard to the right while its goal is directly behind it.",
+        "feature_signals": {
+            "navigational_intent": "The goal is at the 202.5° rear sector, but the agent is moving violently in the ego-right direction to avoid cost.",
+            "cost_source": "Intense hazard proximity in the frontal sectors (Bins 0, 15) and across the left flank (Bins 3-11).",
+            "physical_dynamics": "Massive variance in Accelerometer_y (lateral force) and near-zero Velocimeter_x indicate a sharp, stationary or slow-speed pivot to the right.",
+            "inhibitory_logic": "Goal_Lidar_9 is extremely negative, signifying that this emergency logic is inhibited if the goal is at exactly 202.5°, possibly to prevent losing orientation."
+        },
+        "is_failure_mode": "True"
+    },
+    "91": {
+        "concept": "Left-Sector Obstacle Avoidance during Goal Pursuit",
+        "reasoning": "Neuron 91 activates when hazards are densely clustered in the front-left and rear-left sectors (Hazard_Lidar bins 2-9). The agent shows negative forward and lateral acceleration (Accelerometer_x and Accelerometer_y), indicating a defensive braking and right-steering maneuver to clear these left-side threats while tracking a goal that is offset to the left.",
+        "feature_signals": {
+            "navigational_intent": "The goal is located in the left-rear sector, but its signal is significantly inhibited at exactly 202.5° (Goal_Lidar_9), suggesting a specific offset requirement.",
+            "cost_source": "High proximity to hazards across the left flank (Bins 2-9) and a non-hazardous vase in the rear-right (Bins 13-14).",
+            "physical_dynamics": "Negative Accelerometer_x and high-variance Accelerometer_y indicate active braking and corrective steering.",
+            "inhibitory_logic": "Goal_Lidar_9 is strongly negative, showing the neuron deactivates if the goal is perfectly centered behind the agent."
+        },
+        "is_failure_mode": "False"
+    },
+    "92": {
+        "concept": "Rear-Right Goal Pursuit with Frontal Hazard Clearance",
+        "reasoning": "Neuron 92 represents a purposeful navigation state where the agent is moving forward and banking left (positive Accelerometer_y) to align with a goal located in the rear-right sector. Frontal hazards (Bins 0-1) are present but the agent's physical dynamics suggest a controlled clearing maneuver rather than an emergency stop.",
+        "feature_signals": {
+            "navigational_intent": "Strong tracking of a goal in the rear-right quadrant (Goal_Lidar 9-11).",
+            "cost_source": "Proximity to frontal hazards (Bins 0-1) and left-rear hazards (Bins 6-9).",
+            "physical_dynamics": "High forward velocity (Velocimeter_x) and stable lateral acceleration indicate a confident navigation path.",
+            "inhibitory_logic": "Inhibitory signals in Goal_Lidar 9 suggest the neuron is sensitive to the exact diagonal orientation of the target."
+        },
+        "is_failure_mode": "False"
+    },
+    "93": {
+        "concept": "Emergency Right-Bank Braking to Evade Left-Side Hazards",
+        "reasoning": "Neuron 93 triggers a high-magnitude failure-avoidance maneuver. The agent exhibits extreme negative lateral acceleration (Accelerometer_y < -12) and negative forward acceleration (Accelerometer_x), indicating a violent right-bank braking action. This is a direct response to a dense hazard field spanning the entire left and front-left sectors (Hazard_Lidar 1-11).",
+        "feature_signals": {
+            "navigational_intent": "The goal is in the front-left sector, but the agent's path is completely obstructed, forcing the avoidance maneuver.",
+            "cost_source": "Intense hazard proximity across the frontal and left hemispheres (Bins 1-11).",
+            "physical_dynamics": "Severe negative Accelerometer_y and negative Accelerometer_x confirm an aggressive emergency maneuver.",
+            "inhibitory_logic": "Vase_Lidar_13 is strongly negative, inhibiting this specific emergency logic if a non-hazardous obstacle is at the rear-right."
+        },
+        "is_failure_mode": "True"
+    },
+    "94": {
+        "concept": "Hazard-Dense Looping Turn toward Rear-Right Goal",
+        "reasoning": "Neuron 94 activates when the agent is surrounded by hazards in almost all sectors except the rear-right. The agent is performing a large positive lateral acceleration (Accelerometer_y > 15) and negative forward acceleration, suggesting a 'braking pivot' to the left to reach a goal positioned in the rear-right sector (Goal_Lidar 9-10).",
+        "feature_signals": {
+            "navigational_intent": "Goal is strongly identified in the rear-right (Bins 9-10).",
+            "cost_source": "Hazards are detected in the front, front-left, and left sectors (Bins 0-9).",
+            "physical_dynamics": "Extreme lateral force (Accelerometer_y) and braking (negative Accelerometer_x) indicate a sharp stationary or slow-speed turn.",
+            "inhibitory_logic": "Vase_Lidar_13 is strongly negative, deactivating this complex turning logic if a vase is detected on the rear-right flank."
+        },
+        "is_failure_mode": "True"
+    },
+    "96": {
+        "concept": "Left-Sector Obstacle Avoidance during Rear-Diagonal Goal Tracking",
+        "reasoning": "Neuron 96 is highly active when a 'Vase' (non-hazardous obstacle) is detected specifically on the rear-right flank (Vase_Lidar 13-14) while hazards are clustered across the left hemisphere (Hazard_Lidar 3-11). The base features show significant lateral acceleration variance (Accelerometer_y), suggesting the agent is performing steering adjustments to maintain safety while the target goal is positioned behind it at a specific offset (Goal_Lidar 9).",
+        "feature_signals": {
+            "navigational_intent": "The goal is located behind the agent, primarily in the 202.5° sector (Bin 9), with high activation variance.",
+            "cost_source": "Proximity to hazards in the left and rear-left sectors (Bins 3-11) and a vase on the rear-right flank (Bins 13-14).",
+            "physical_dynamics": "High variance in lateral acceleration (Accelerometer_y) and slight forward force indicate active maneuvering rather than straight-line travel.",
+            "inhibitory_logic": "Strongly inhibited if the goal is positioned at exactly the 202.5° rear-center diagonal, as indicated by the wide negative tail in Goal_Lidar_9."
+        },
+        "is_failure_mode": "False"
+    },
+    "98": {
+        "concept": "Emergency Rightward Braking Turn to Evade Left-Side Hazards",
+        "reasoning": "Neuron 98 triggers a protective failure-avoidance maneuver. The agent exhibits extreme negative lateral acceleration (Accelerometer_y < -15) and negative forward acceleration (Accelerometer_x), indicating a violent right-bank braking action. This is a direct exteroceptive response to hazards detected across the frontal and left-side sectors (Hazard_Lidar 3-11), while the goal is obstructed in the front-left.",
+        "feature_signals": {
+            "navigational_intent": "The goal is in the front-left sector, but the activation indicates the agent is prioritizing cost avoidance over goal pursuit.",
+            "cost_source": "Intense hazard proximity signals across the frontal (Bins 0-1) and entire left flank (Bins 3-11).",
+            "physical_dynamics": "Severe negative Accelerometer_y and negative Accelerometer_x confirm an aggressive emergency evasive maneuver.",
+            "inhibitory_logic": "Goal_Lidar_9 is strongly negative, showing that the neuron is inhibited when the goal is directly behind, focusing its logic on frontal obstructions."
+        },
+        "is_failure_mode": "True"
+    },
+    "102": {
+        "concept": "Rear-Left Collision Avoidance (Braking and Reverse-Right Steering)",
+        "reasoning": "Neuron 102 triggers during high-risk scenarios where hazards are detected in the immediate rear-left quadrant (Hazard_Lidar 7-11). The negative forward acceleration (Accelerometer_x) and high lateral force (Accelerometer_y variance) suggest the agent is braking or reversing to avoid side-swiping or backing into hazards while trying to align with a goal in the front-right sector.",
+        "feature_signals": {
+            "navigational_intent": "Goal is located in the forward and front-right sectors (Goal_Lidar 10-15).",
+            "cost_source": "Significant hazard proximity in the rear-left (Bins 7-11) and a vase in the rear-right (Bins 13-14).",
+            "physical_dynamics": "Negative Accelerometer_x and high Accelerometer_y variance confirm a reverse-steering or hard-braking safety maneuver.",
+            "inhibitory_logic": "Goal_Lidar_9 is extremely negative, signifying that this maneuver is strictly inhibited if the target is behind the agent."
+        },
+        "is_failure_mode": "True"
+    },
+    "103": {
+        "concept": "Precision Corridor Navigation with Rearward Goal Focus",
+        "reasoning": "Neuron 103 represents a nominal state of navigating a hazardous 'gap' or corridor. Hazards are detected on both the left (Bins 4-8) and right sectors (Bins 1-3), while a vase is detected at the rear-right (Bin 13). The agent maintains near-zero forward acceleration but high lateral variance, suggesting it is delicately threading between objects to reach a goal positioned behind it.",
+        "feature_signals": {
+            "navigational_intent": "Goal is positioned in the 202.5° rear sector (Bin 9) with high activation variance.",
+            "cost_source": "Dual-flank hazard detection (Bins 1-8) and a rear-right vase (Bin 13).",
+            "physical_dynamics": "Stable Velocimeter values but high Accelerometer_y variance indicates cautious lateral repositioning during navigation.",
+            "inhibitory_logic": "Goal_Lidar_9 has a strong negative tail, implying the neuron is sensitive to the exact orientation and will deactivate if the agent drifts off-angle from the goal."
+        },
+        "is_failure_mode": "False"
+    },
+    "105": {
+        "concept": "Emergency Right-Bank Braking to Evade Left-Side Obstacles",
+        "reasoning": "Neuron 105 triggers a protective failure-avoidance maneuver. The agent exhibits significant negative lateral acceleration (Accelerometer_y) and negative forward acceleration (Accelerometer_x), indicating a hard 'braking and right-bank' maneuver. This is a direct exteroceptive response to hazards detected across the front-left and left sectors (Hazard_Lidar 3-11), while a vase is detected on the rear-right flank (Vase_Lidar 13-14).",
+        "feature_signals": {
+            "navigational_intent": "The goal is located behind the agent (Goal_Lidar 11-15), but movement is dictated by active cost avoidance.",
+            "cost_source": "High proximity to hazards across the entire left hemisphere (Bins 3-11) and a vase in the rear-right (Bins 13-14).",
+            "physical_dynamics": "Negative Accelerometer_x and Accelerometer_y confirm an aggressive emergency evasive maneuver to avoid leftward collisions.",
+            "inhibitory_logic": "Goal_Lidar_9 is strongly negative, showing that the neuron is inhibited when the goal is directly behind, focusing its logic on frontal/flank obstructions."
+        },
+        "is_failure_mode": "True"
+    },
+    "106": {
+        "concept": "Left-Sector Hazard Avoidance during Goal Pursuit",
+        "reasoning": "Neuron 106 represents a nominal navigation state where the agent is maneuvering to avoid hazards on its left flank. The high variance in lateral acceleration (Accelerometer_y) suggests corrective steering to maintain a safe distance from hazards detected in the front-left and rear-left sectors (Hazard_Lidar 5-11), while the goal is positioned behind the agent.",
+        "feature_signals": {
+            "navigational_intent": "The agent is tracking a goal located primarily in the 202.5° rear sector (Bin 9).",
+            "cost_source": "Proximity to hazards in the left and rear-left sectors (Bins 5-11) and non-hazardous obstacles on the right-rear flank (Vase_Lidar 9-14).",
+            "physical_dynamics": "High lateral acceleration variance indicates active steering to clear hazards while maintaining forward momentum toward the goal.",
+            "inhibitory_logic": "Vase_Lidar_13 has a strong negative outlier, indicating the neuron deactivates if an obstacle is specifically at that rear-right diagonal."
+        },
+        "is_failure_mode": "False"
+    },
+    "109": {
+        "concept": "Precision Corridor Navigation with Rear-Right Clearance",
+        "reasoning": "Neuron 109 activates when the agent is navigating a hazardous 'gap'. Hazards are detected on both the left (Bins 9-11) and front (Bins 0-1) sectors, while a vase is detected at the rear-right (Bins 11-13). The agent exhibits stable forward velocity and moderate lateral acceleration, suggesting it is delicately threading between objects to reach a goal positioned behind it.",
+        "feature_signals": {
+            "navigational_intent": "Intense tracking of a goal at the 202.5° rear sector (Bin 9) with high activation variance.",
+            "cost_source": "Multi-sector hazard detection (front and rear-left) and a rear-right vase (Bins 11-13).",
+            "physical_dynamics": "Stable Velocimeter values and controlled Accelerometer_y indicate purposeful, steady navigation through a restricted path.",
+            "inhibitory_logic": "Goal_Lidar_9 has a strong negative tail, implying the neuron deactivates if the agent drifts off-angle from the target goal."
+        },
+        "is_failure_mode": "False"
+    },
+    "110": {
+        "concept": "High-Magnitude Rightward Evasion from Left-Flank Hazards",
+        "reasoning": "Neuron 110 is a high-magnitude failure avoidance mode. The agent is performing an extreme rightward evasion (massive negative Accelerometer_y) to escape hazards clustered on the left flank (Hazard_Lidar 3-11). The positive forward acceleration (Accelerometer_x) suggests the agent is trying to 'power through' the turn to gain clearance from threats located behind and to the left.",
+        "feature_signals": {
+            "navigational_intent": "The goal is at the 202.5° rear sector, but the agent is forced into a violent bank to the right to avoid cost.",
+            "cost_source": "Intense hazard proximity across the entire left hemisphere (Bins 3-11) and vases detected in the front-left.",
+            "physical_dynamics": "Extreme magnitude in negative Accelerometer_y (lateral force) confirms a sharp, reactive bank to the right.",
+            "inhibitory_logic": "Goal_Lidar_9 is extremely negative, signifying that this emergency logic is inhibited if the goal is perfectly centered behind, possibly to prevent spin-outs."
+        },
+        "is_failure_mode": "True"
+    },
+    "111": {
+        "concept": "Nominal Forward Navigation toward a Rearward Goal",
+        "reasoning": "Neuron 111 shows positive forward velocity (Velocimeter_x) and acceleration (Accelerometer_x) with a clear focus on a goal positioned at the 202.5° rear sector. It manages surrounding exteroceptive features (Vases and Hazards) in a nominal way without extreme emergency braking.",
+        "feature_signals": {
+            "navigational_intent": "Intense tracking of a goal located behind the agent at Bin 9 (202.5°).",
+            "cost_source": "Proximity to non-hazardous vases (Bins 13-14) and peripheral hazards across multiple sectors.",
+            "physical_dynamics": "Strong forward thrust indicated by positive Accelerometer_x and corresponding Velocimeter_x.",
+            "inhibitory_logic": "Goal_Lidar_9 has a significant negative tail, suggesting the neuron is sensitive to the exactness of the goal alignment."
+        },
+        "is_failure_mode": "False"
+    },
+    "112": {
+        "concept": "Hazard-Restricted Reverse Alignment",
+        "reasoning": "Neuron 112 activates when the agent is braking or reversing (negative Accelerometer_x) into a goal at 202.5°. The spatial layout shows significant hazard presence in the front and rear-left sectors (Bins 0-1 and 9-11), forcing a cautious, slow-speed maneuver.",
+        "feature_signals": {
+            "navigational_intent": "The goal is directly behind at Bin 9, but the agent is decelerating to align safely.",
+            "cost_source": "High hazard proximity in the rear-left (Bins 9-11) and front (Bins 0-1).",
+            "physical_dynamics": "Negative forward acceleration indicates active braking or reverse thrust.",
+            "inhibitory_logic": "Strongly inhibited by Goal_Lidar_9 specifically when the goal is not perfectly positioned, forcing precise docking."
+        },
+        "is_failure_mode": "False"
+    },
+    "114": {
+        "concept": "Left-Sector Precision Avoidance while Seeking Rear Goal",
+        "reasoning": "Neuron 114 is active during steering maneuvers to clear hazards in the left hemisphere (Bins 5-11). The agent uses forward acceleration and lateral force (Accelerometer_y) to maintain clearance while tracking a goal positioned behind it.",
+        "feature_signals": {
+            "navigational_intent": "Tracking a goal behind the agent (Bin 9), but with significant inhibitory outliers.",
+            "cost_source": "Proximity to a vase in the rear-right (Bins 13-14) and hazards throughout the left flank.",
+            "physical_dynamics": "High forward and lateral acceleration variance suggests a controlled, curving path around obstacles.",
+            "inhibitory_logic": "Goal_Lidar_9 is strongly negative, implying the pursuit is inhibited if the path is too obstructed."
+        },
+        "is_failure_mode": "False"
+    },
+    "116": {
+        "concept": "Aggressive Rightward Bank to Evade Multi-Sector Hazards",
+        "reasoning": "Neuron 116 represents an emergency evasion state. The agent shows massive lateral acceleration variance (extreme values in Accelerometer_y) to avoid dense hazards detected in the front and left sectors. This is a reactive failure-mitigation mode.",
+        "feature_signals": {
+            "navigational_intent": "Goal is behind the agent (Bin 9), but the navigation is superseded by extreme hazard avoidance.",
+            "cost_source": "High proximity hazards across the entire front and left flank (Bins 0-11).",
+            "physical_dynamics": "Extreme magnitude and variance in Accelerometer_y indicate a violent steering action.",
+            "inhibitory_logic": "Significant negative tail in Goal_Lidar_9 shows the neuron deactivates if the goal orientation is lost during the bank."
+        },
+        "is_failure_mode": "True"
+    },
+    "117": {
+        "concept": "Lateral Hazard Avoidance with Rearward Goal Tracking",
+        "reasoning": "Neuron 117 activates when the agent is maneuvering in the presence of hazards located primarily on its left flank (Hazard_Lidar bins 2-9) and a non-hazardous vase on the rear-right (Vase_Lidar bin 13). The base features show high variance in lateral acceleration (Accelerometer_y), indicating active steering corrections to maintain safety while the agent attempts to navigate toward a goal positioned behind it (Goal_Lidar bin 9).",
+        "feature_signals": {
+            "navigational_intent": "The agent is tracking a goal located behind it at approximately 202.5° (Goal_Lidar_9), though the activation shows a very large negative tail suggesting strict orientation requirements.",
+            "cost_source": "Proximity to hazards across the left and rear-left sectors (Bins 2-9) and a non-hazardous obstacle at the rear-right diagonal (Vase_Lidar_13).",
+            "physical_dynamics": "High magnitude and variance in lateral acceleration (Accelerometer_y) indicate significant steering maneuvers to clear obstacles.",
+            "inhibitory_logic": "Strong negative signals in Goal_Lidar_9 and Hazard_Lidar 10-11 suggest the neuron is inhibited if the goal is perfectly centered behind or if hazards move into the immediate rear-left diagonal."
+        },
+        "is_failure_mode": "False"
+    }
+}
