@@ -1,0 +1,9 @@
+=3.12
+__pycache__/
+*.pyc
+*.log
+data_analysis_plots/
+logs/
+results/
+wandb/
+weights/
